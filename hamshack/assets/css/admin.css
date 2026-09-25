@@ -1,0 +1,51 @@
+/* Ham Shack admin styles */
+.hamshack-admin { max-width: 1100px; }
+.hamshack-admin-head { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; background: #0b0f14; border-radius: 14px; padding: 18px 24px; margin: 14px 0 6px; border: 1px solid #223040; }
+.hamshack-admin-head img, .hamshack-admin-head svg { height: 64px; width: auto; }
+.hamshack-card { background: #fff; border: 1px solid #dcdcde; border-radius: 12px; padding: 6px 24px 14px; margin: 18px 0; box-shadow: 0 1px 2px rgba(0,0,0,.04); }
+.hamshack-card h2 { display: flex; align-items: center; gap: 8px; font-size: 1.15em; margin: 16px 0 4px; }
+.hamshack-card h2 svg { color: #d98a00; }
+.hamshack-radio { display: inline-block; margin: 0 16px 6px 0; }
+.hamshack-checks label { display: inline-block; min-width: 90px; margin: 0 8px 6px 0; font-family: Menlo, Consolas, monospace; }
+.hamshack-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 4px 18px; }
+.hamshack-grid input[type="text"], .hamshack-grid input[type="url"], .hamshack-grid select, .hamshack-grid input[type="date"], .hamshack-grid input[type="time"], .hamshack-grid input[type="datetime-local"] { width: 100%; }
+.hamshack-qso-grid .f-call { grid-column: span 2; }
+.hamshack-qso-grid .f-comment { grid-column: 1 / -1; }
+.hamshack-notice .button { margin-left: 8px; }
+
+/* status pill in admin */
+.hamshack-admin .status-pill { display: inline-flex; align-items: center; gap: .5em; font: 700 12px/1 Menlo, Consolas, monospace; letter-spacing: .08em; text-transform: uppercase; padding: .6em .9em; border-radius: 999px; border: 1px solid #2c3d50; background: #0d131a; color: #8aa0b4; }
+.hamshack-admin .status-pill .dot { width: 9px; height: 9px; border-radius: 50%; background: currentColor; box-shadow: 0 0 10px currentColor; }
+.hamshack-admin .status-on { color: #ff3b3b; }
+.hamshack-admin .status-portable { color: #ffb020; }
+.hamshack-admin .status-listen { color: #22d3ee; }
+.hamshack-admin .status-detail { color: #fff; padding-left: .6em; border-left: 1px solid currentColor; }
+
+/* Dashboard widget */
+#hamshack_shack .postbox-header { background: #0b0f14; }
+#hamshack_shack .postbox-header h2 { color: #ffb020; }
+.hamshack-dash h3 { margin: 14px 0 8px; font-size: 13px; text-transform: uppercase; letter-spacing: .08em; color: #50575e; }
+.hamshack-dash h3:first-of-type { margin-top: 4px; }
+.hamshack-seg { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; }
+.hamshack-seg label { cursor: pointer; }
+.hamshack-seg input { position: absolute; opacity: 0; }
+.hamshack-seg span { display: inline-block; padding: 6px 10px; border-radius: 8px; border: 1px solid #c3c4c7; font-weight: 600; font-size: 12px; background: #f6f7f7; }
+.hamshack-seg input:checked + span { color: #fff; background: #50575e; border-color: #50575e; }
+.hamshack-seg .seg-on input:checked + span { background: #d63638; border-color: #d63638; }
+.hamshack-seg .seg-portable input:checked + span { background: #dba617; border-color: #dba617; color: #1d1100; }
+.hamshack-seg .seg-listen input:checked + span { background: #0891b2; border-color: #0891b2; }
+.hamshack-seg input:focus-visible + span { outline: 2px solid #2271b1; }
+.hamshack-row { display: flex; gap: 6px; margin-bottom: 6px; }
+.hamshack-row input { flex: 1; min-width: 0; }
+.hamshack-dash-events { margin: 0; }
+.hamshack-dash-events li { display: flex; justify-content: space-between; gap: 10px; border-bottom: 1px solid #f0f0f1; padding: 5px 0; margin: 0; }
+.hamshack-dash-events span { color: #646970; font-size: 12px; text-align: right; }
+.hamshack-dash-links { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+.hamshack-stats-line strong { font-size: 1.3em; color: #d98a00; }
+
+/* QRZ sync */
+.hamshack-qrz-status { padding: 10px 14px; border-radius: 8px; background: #f6f7f7; border-left: 4px solid #8c8f94; margin: 10px 0; }
+.hamshack-qrz-status.is-ok { border-left-color: #00a32a; background: #edfaef; }
+.hamshack-qrz-status.is-error { border-left-color: #d63638; background: #fcf0f1; }
+.hamshack-qrz-actions { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.hamshack-qrz-line { font-size: 12px; color: #646970; }

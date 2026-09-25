@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 220" role="img" aria-labelledby="t">
+  <title id="t">Straight Morse key illustration</title>
+  <defs>
+    <linearGradient id="brass" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe08a"/><stop offset=".5" stop-color="#d69a2d"/><stop offset="1" stop-color="#8a5a12"/></linearGradient>
+    <linearGradient id="wood" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a2a1c"/><stop offset="1" stop-color="#1e150d"/></linearGradient>
+    <radialGradient id="knob" cx=".4" cy=".3" r=".7"><stop offset="0" stop-color="#4b4b4b"/><stop offset="1" stop-color="#0b0b0b"/></radialGradient>
+  </defs>
+  <ellipse cx="210" cy="196" rx="190" ry="14" fill="#000" opacity=".45"/>
+  <rect x="30" y="150" width="360" height="40" rx="10" fill="url(#wood)" stroke="#4a3624"/>
+  <path d="M40 158 H380" stroke="#5a4330" stroke-opacity=".6"/>
+  <!-- pivot posts -->
+  <rect x="250" y="96" width="16" height="58" rx="3" fill="url(#brass)"/>
+  <rect x="280" y="96" width="16" height="58" rx="3" fill="url(#brass)"/>
+  <circle cx="273" cy="104" r="10" fill="url(#brass)" stroke="#6b4510"/>
+  <!-- lever -->
+  <path d="M90 118 L350 94 L352 106 L92 132Z" fill="url(#brass)" stroke="#6b4510"/>
+  <!-- contact -->
+  <rect x="150" y="132" width="12" height="20" fill="url(#brass)"/>
+  <circle cx="156" cy="131" r="5" fill="#ffd166"/>
+  <!-- spring & adjuster -->
+  <path d="M330 104 v10 l-6 4 12 4 -12 4 12 4 -12 4 6 4 v12" stroke="#c9d6e3" stroke-width="2" fill="none"/>
+  <rect x="322" y="140" width="16" height="14" rx="2" fill="url(#brass)"/>
+  <!-- knob -->
+  <ellipse cx="86" cy="116" rx="40" ry="12" fill="#050505"/>
+  <ellipse cx="86" cy="108" rx="40" ry="14" fill="url(#knob)"/>
+  <ellipse cx="86" cy="100" rx="30" ry="8" fill="#2a2a2a"/>
+  <!-- terminal screws -->
+  <circle cx="360" cy="170" r="7" fill="url(#brass)"/><circle cx="60" cy="170" r="7" fill="url(#brass)"/>
+  <!-- CW dits -->
+  <g fill="#22d3ee" opacity=".85">
+    <rect x="40" y="30" width="30" height="8" rx="4"/><circle cx="84" cy="34" r="4"/><rect x="96" y="30" width="30" height="8" rx="4"/><circle cx="140" cy="34" r="4"/>
+    <rect x="166" y="30" width="30" height="8" rx="4"/><rect x="202" y="30" width="30" height="8" rx="4"/><circle cx="246" cy="34" r="4"/><rect x="258" y="30" width="30" height="8" rx="4"/>
+  </g>
+  <text x="300" y="38" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="13" fill="#8aa0b4">CQ</text>
+</svg>

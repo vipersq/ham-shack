@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 420" role="img" aria-labelledby="t">
+  <title id="t">Handheld VHF/UHF radio illustration</title>
+  <defs>
+    <linearGradient id="b" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#141c24"/><stop offset=".5" stop-color="#26323e"/><stop offset="1" stop-color="#11181f"/></linearGradient>
+    <linearGradient id="l" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1a2a1f"/><stop offset="1" stop-color="#0c1610"/></linearGradient>
+    <filter id="g"><feGaussianBlur stdDeviation="1.6" result="x"/><feMerge><feMergeNode in="x"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <!-- antenna -->
+  <rect x="128" y="6" width="14" height="130" rx="7" fill="#0d1318" stroke="#2b3743"/>
+  <rect x="124" y="120" width="22" height="30" rx="4" fill="#1b242d"/>
+  <!-- knobs -->
+  <rect x="70" y="118" width="26" height="30" rx="5" fill="#1e2832" stroke="#34424f"/>
+  <path d="M74 126 h18 M74 132 h18 M74 138 h18" stroke="#0b1015" stroke-width="2"/>
+  <circle cx="97" cy="118" r="4" fill="#ff3b3b" filter="url(#g)"/>
+  <!-- body -->
+  <rect x="40" y="146" width="140" height="264" rx="22" fill="url(#b)" stroke="#34424f" stroke-width="2"/>
+  <!-- PTT side -->
+  <rect x="30" y="200" width="12" height="54" rx="4" fill="#ffb020" opacity=".9"/>
+  <!-- speaker grille -->
+  <g fill="#0a0f14">
+    <rect x="62" y="166" width="96" height="6" rx="3"/><rect x="62" y="178" width="96" height="6" rx="3"/><rect x="62" y="190" width="96" height="6" rx="3"/><rect x="62" y="202" width="96" height="6" rx="3"/>
+  </g>
+  <!-- display -->
+  <rect x="58" y="222" width="104" height="58" rx="6" fill="#05090c" stroke="#33414e"/>
+  <rect x="63" y="227" width="94" height="48" rx="4" fill="url(#l)"/>
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" filter="url(#g)">
+    <text x="68" y="240" font-size="8" fill="#39ff88">S20  CALLING</text>
+    <text x="68" y="262" font-size="17" font-weight="700" fill="#ffb020">145.500</text>
+    <text x="68" y="272" font-size="7" fill="#22d3ee">FM  5W  ▮▮▮▮▯</text>
+  </g>
+  <!-- keypad -->
+  <g fill="#1d2731" stroke="#34424f">
+    <rect x="58" y="292" width="30" height="20" rx="5"/><rect x="95" y="292" width="30" height="20" rx="5"/><rect x="132" y="292" width="30" height="20" rx="5"/>
+    <rect x="58" y="318" width="30" height="20" rx="5"/><rect x="95" y="318" width="30" height="20" rx="5"/><rect x="132" y="318" width="30" height="20" rx="5"/>
+    <rect x="58" y="344" width="30" height="20" rx="5"/><rect x="95" y="344" width="30" height="20" rx="5"/><rect x="132" y="344" width="30" height="20" rx="5"/>
+    <rect x="58" y="370" width="30" height="20" rx="5"/><rect x="95" y="370" width="30" height="20" rx="5"/><rect x="132" y="370" width="30" height="20" rx="5"/>
+  </g>
+  <g font-family="Inter,system-ui,sans-serif" font-size="10" font-weight="700" fill="#b8c7d6" text-anchor="middle">
+    <text x="73" y="306">1</text><text x="110" y="306">2</text><text x="147" y="306">3</text>
+    <text x="73" y="332">4</text><text x="110" y="332">5</text><text x="147" y="332">6</text>
+    <text x="73" y="358">7</text><text x="110" y="358">8</text><text x="147" y="358">9</text>
+    <text x="73" y="384">*</text><text x="110" y="384">0</text><text x="147" y="384">#</text>
+  </g>
+</svg>

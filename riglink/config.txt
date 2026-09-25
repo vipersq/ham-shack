@@ -1,0 +1,14 @@
+# Ham Shack Rig Link - settings
+# Your website address (no slash at the end)
+SiteUrl=https://www.example.com
+
+# Token from WordPress admin: Ham Shack -> Live rig (HRD) -> Generate token
+Token=PASTE-YOUR-TOKEN-HERE
+
+# HRD Rig Control IP server (normally no need to change)
+HrdHost=127.0.0.1
+HrdPort=7809
+
+# How often to read the radio / how often to send "still alive" when nothing changes (seconds)
+PollSeconds=3
+HeartbeatSeconds=60

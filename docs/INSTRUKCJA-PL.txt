@@ -1,0 +1,79 @@
+HAM SHACK – motyw WordPress + Rig Link dla krótkofalowców
+=========================================================
+
+Ciemna, „radiowa” strona WordPress dla stacji amatorskiej: blog, kalendarz
+wydarzeń, logbook QSO, status ON AIR, synchronizacja z QRZ.com, częstotliwość
+na żywo z radia i pasująca biografia na QRZ.com.
+
+ZAWARTOŚĆ PACZKI
+  hamshack-theme.zip      motyw WordPress (to wgrywasz do WordPressa)
+  HamShack-RigLink.zip    opcjonalny program dla Windows: częstotliwość z HRD na żywo
+  README-EN.txt           instrukcja po angielsku
+  INSTRUKCJA-PL.txt       ten plik
+
+CO POTRAFI
+  - Logo i karta QSL rysowane automatycznie z TWOJEGO znaku (z podkreśleniem Morse'a)
+  - Status: On air / Portable / Listening / QRT + częstotliwość i emisja
+    (przełączany z górnego paska panelu albo z Kokpitu)
+  - Kalendarz: zawody, nety, aktywacje, spotkania klubu; powtarzanie co tydzień /
+    2 tygodnie / miesiąc; czas lokalny + UTC; subskrypcja iCal (Google/Apple/Outlook)
+  - Logbook: szybkie logowanie QSO, import/eksport ADIF, publiczna wyszukiwarka
+    „Are you in my log?”, statystyki (QSO, znaki, kraje, lokatory, pasma)
+  - Synchronizacja z QRZ.com Logbook (wymaga subskrypcji QRZ z dostępem do API):
+    nowe QSO i potwierdzenia QSL co 15 min / 30 min / godzinę / dzień
+  - Live rig: częstotliwość i emisja prosto z radia przez Ham Radio Deluxe,
+    automatyczne ON AIR / OFF AIR (potrzebny Rig Link na komputerze w shacku)
+  - Generator biografii na QRZ.com w tym samym stylu, z żywym statusem i logbookiem
+  - Banery warunków propagacji N0NBH (hamqsl.com), 12 wariantów
+  - Strona stacji (radia, anteny, pasma, emisje, QSL), formularz kontaktowy z
+    ochroną przed spamem, widżety, kreator pierwszego uruchomienia
+
+WYMAGANIA
+  WordPress 6.2+ i PHP 7.4+ (sprawdzone na WordPress 7.1).
+  Rig Link: Windows 10/11 i Ham Radio Deluxe (HRD Rig Control).
+
+INSTALACJA MOTYWU (5 minut)
+  1. Panel WordPress -> Wygląd -> Motywy -> Dodaj nowy -> Wyślij motyw na serwer
+     -> wybierz hamshack-theme.zip -> Zainstaluj -> Włącz.
+  2. Kliknij „Run site setup” w niebieskim pasku (albo Ham Shack -> Setup & help).
+  3. Wpisz znak, imię, QTH, lokator, strefy, licencję i strefę czasową, kliknij
+     „Run site setup”. Strony, menu, kategorie, widżety i (opcjonalnie) przykładowe
+     wpisy/wydarzenia utworzą się same.
+  4. Ham Shack -> Station settings: radia, anteny, pasma, emisje, teksty strony
+     głównej, linki społecznościowe i e-mail do formularza.
+  W tekstach można używać {callsign}, {qth} i {locator} – wstawią się same.
+
+SYNCHRONIZACJA Z QRZ.COM
+  1. Na QRZ.com otwórz ustawienia Logbooka i skopiuj klucz API.
+  2. Ham Shack -> QRZ sync & ADIF: wklej klucz, zaznacz automatyczną synchronizację,
+     wybierz jak często, Save. Klucz jest od razu sprawdzany.
+  3. „Sync now” – pierwsze pobranie całego logu.
+  WordPress uruchamia zadania przy odwiedzinach strony. Żeby synchronizacja szła
+  równo co 15 min, dodaj w hostingu (cPanel -> Cron Jobs, co 15 minut):
+     cd /home/TWOJ_LOGIN_CPANEL/FOLDER_STRONY && /usr/local/bin/php -q wp-cron.php >/dev/null 2>&1
+
+CZĘSTOTLIWOŚĆ Z RADIA NA ŻYWO (opcjonalnie)
+  1. Ham Shack -> Live rig (HRD): zaznacz Enable -> Save, skopiuj token (pokazuje się raz).
+  2. Na komputerze w shacku rozpakuj HamShack-RigLink.zip do stałego folderu,
+     np. C:\HamShack-RigLink, i postępuj według README.txt w środku
+     (w skrócie: token do config.txt -> 1-TEST.bat -> 2-ENABLE-AUTOSTART.bat).
+
+BIOGRAFIA NA QRZ.COM
+  Ham Shack -> QRZ biography -> Copy code. Na QRZ.com: Edit -> Biography ->
+  tryb HTML/Source -> wklej -> zapisz. Status i logbook aktualizują się same.
+  Uwaga: QRZ ucina biografię na pierwszym emoji, dlatego generator je usuwa.
+
+SHORTCODE'Y
+  [hamshack_calendar]  [hamshack_events limit="5"]  [hamshack_logbook]
+  [hamshack_logbook_stats]  [hamshack_contact]
+
+WSKAZÓWKI
+  - Formularz kontaktowy używa poczty WordPressa; gdy maile nie dochodzą,
+    zainstaluj wtyczkę SMTP (np. WP Mail SMTP).
+  - Jeśli obrazki nie wyświetlają się na QRZ.com, dopisz qrz.com w cPanel ->
+    Hotlink Protection.
+  - Publicznie widać tylko znak, datę, godzinę, pasmo, emisję, RST i kraj QSO;
+    imiona, QTH i notatki zostają prywatne.
+
+Podziękowania: dane o propagacji – Paul L Herrman N0NBH (hamqsl.com); link z
+podziękowaniem zostaje zawsze. Motyw i Rig Link to wolne oprogramowanie (GPL v2+). 73!
