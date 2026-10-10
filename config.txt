@@ -1,0 +1,28 @@
+# Ham Shack Rig Link 2.0 - settings
+# Your website address (no slash at the end)
+SiteUrl=https://www.example.com
+
+# Token from WordPress admin: Ham Shack -> Live rig -> Generate token
+Token=PASTE-YOUR-TOKEN-HERE
+
+# ---- Ham Radio Deluxe (frequency and mode) ----
+# 1 = read from HRD, 0 = do not use HRD
+HrdEnabled=1
+HrdHost=127.0.0.1
+HrdPort=7809
+# How often to read the radio / how often to send "still alive" when nothing changes (seconds)
+PollSeconds=3
+HeartbeatSeconds=60
+
+# ---- WSJT-X (live FT8/FT4 decodes + QSOs logged in WSJT-X) ----
+# 1 = listen to WSJT-X, 0 = off
+WsjtxEnabled=1
+# Port from WSJT-X: Settings -> Reporting -> UDP Server port number (default 2237)
+WsjtxPort=2237
+# Also using JTAlert / GridTracker? Set WSJT-X to the multicast address 239.255.0.1
+# and enter it here - then every program gets the data at the same time.
+WsjtxMulticast=
+# How often to send a batch of decodes (seconds)
+WsjtxSendSeconds=15
+# 1 = when HRD is not running, take the frequency from WSJT-X
+WsjtxForRig=1

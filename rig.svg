@@ -1,0 +1,160 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 460" role="img" aria-labelledby="t">
+  <title id="t">HF transceiver illustration</title>
+  <style>
+    .seg{animation:s 1.8s ease-in-out infinite alternate}
+    .s2{animation-delay:.1s}.s3{animation-delay:.2s}.s4{animation-delay:.3s}.s5{animation-delay:.4s}.s6{animation-delay:.5s}.s7{animation-delay:.6s}.s8{animation-delay:.7s}.s9{animation-delay:.8s}.s10{animation-delay:.9s}.s11{animation-delay:1s}.s12{animation-delay:1.1s}
+    @keyframes s{0%{opacity:.18}60%{opacity:1}100%{opacity:.35}}
+    .wf{animation:w 6s linear infinite}
+    @keyframes w{from{transform:translateY(0)}to{transform:translateY(-60px)}}
+    .tx{animation:b 1.4s steps(2) infinite}
+    @keyframes b{50%{opacity:.25}}
+    @media (prefers-reduced-motion:reduce){.seg,.wf,.tx{animation:none}}
+  </style>
+  <defs>
+    <linearGradient id="body" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a3644"/><stop offset=".08" stop-color="#1b2530"/><stop offset="1" stop-color="#101820"/></linearGradient>
+    <linearGradient id="face" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1a232d"/><stop offset="1" stop-color="#121a22"/></linearGradient>
+    <linearGradient id="lcd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0c1a14"/><stop offset="1" stop-color="#07110d"/></linearGradient>
+    <radialGradient id="knob" cx=".4" cy=".35" r=".7"><stop offset="0" stop-color="#4a5868"/><stop offset=".55" stop-color="#1f2933"/><stop offset="1" stop-color="#0c1116"/></radialGradient>
+    <radialGradient id="knobS" cx=".4" cy=".35" r=".7"><stop offset="0" stop-color="#3b4755"/><stop offset="1" stop-color="#11171d"/></radialGradient>
+    <linearGradient id="wfall" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#0b1840"/><stop offset=".5" stop-color="#0a2a5c"/><stop offset="1" stop-color="#0b1840"/></linearGradient>
+    <filter id="glow" x="-20%" y="-50%" width="140%" height="200%"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="140%"><feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#000" flood-opacity=".6"/></filter>
+    <clipPath id="wfclip"><rect x="262" y="176" width="296" height="54" rx="3"/></clipPath>
+    <pattern id="grille" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r="1.6" fill="#0a0f14"/></pattern>
+  </defs>
+
+  <!-- feet & body -->
+  <rect x="70" y="392" width="60" height="18" rx="4" fill="#0a0e12"/>
+  <rect x="690" y="392" width="60" height="18" rx="4" fill="#0a0e12"/>
+  <g filter="url(#shadow)">
+    <rect x="30" y="60" width="760" height="340" rx="22" fill="url(#body)" stroke="#34424f" stroke-width="2"/>
+  </g>
+  <!-- top vents -->
+  <g stroke="#0b1016" stroke-width="3" stroke-linecap="round">
+    <path d="M120 72 H300 M330 72 H510 M540 72 H700"/>
+  </g>
+  <rect x="48" y="86" width="724" height="296" rx="14" fill="url(#face)" stroke="#27333f"/>
+
+  <!-- LEFT column: power, phones, mic, speaker -->
+  <g>
+    <rect x="70" y="108" width="54" height="30" rx="6" fill="#0f151b" stroke="#2c3946"/>
+    <circle cx="97" cy="123" r="8" fill="none" stroke="#39ff88" stroke-width="2.4" filter="url(#glow)"/>
+    <path d="M97 113 v9" stroke="#39ff88" stroke-width="2.4" stroke-linecap="round"/>
+    <text x="97" y="154" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="9" fill="#7f94a8" letter-spacing="1">POWER</text>
+
+    <circle cx="160" cy="123" r="12" fill="#0a0f14" stroke="#3a4856" stroke-width="3"/><circle cx="160" cy="123" r="4" fill="#000"/>
+    <text x="160" y="154" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="9" fill="#7f94a8" letter-spacing="1">PHONES</text>
+
+    <circle cx="97" cy="196" r="17" fill="#0a0f14" stroke="#3a4856" stroke-width="3"/>
+    <g fill="#1c252e"><circle cx="97" cy="186" r="2.4"/><circle cx="106" cy="193" r="2.4"/><circle cx="103" cy="204" r="2.4"/><circle cx="91" cy="204" r="2.4"/><circle cx="88" cy="193" r="2.4"/><circle cx="97" cy="196" r="2.4"/></g>
+    <text x="97" y="230" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="9" fill="#7f94a8" letter-spacing="1">MIC</text>
+
+    <rect x="140" y="176" width="80" height="54" rx="8" fill="#141b22" stroke="#2c3946"/>
+    <rect x="146" y="182" width="68" height="42" rx="5" fill="url(#grille)" opacity=".9"/>
+
+    <!-- TX / RX leds -->
+    <circle cx="160" cy="258" r="5" fill="#ff3b3b" class="tx" filter="url(#glow)"/>
+    <text x="172" y="262" font-family="Inter,system-ui,sans-serif" font-size="10" fill="#b8c7d6" font-weight="700">TX</text>
+    <circle cx="200" cy="258" r="5" fill="#39ff88" filter="url(#glow)"/>
+    <text x="210" y="262" font-family="Inter,system-ui,sans-serif" font-size="10" fill="#b8c7d6" font-weight="700">RX</text>
+
+    <!-- small knobs AF / RF -->
+    <g>
+      <circle cx="97" cy="300" r="26" fill="#0a0f14"/>
+      <circle cx="97" cy="300" r="22" fill="url(#knobS)" stroke="#3c4a58"/>
+      <path d="M97 282 v10" stroke="#ffb020" stroke-width="3" stroke-linecap="round"/>
+      <text x="97" y="344" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="9" fill="#7f94a8" letter-spacing="1">AF GAIN</text>
+      <circle cx="180" cy="300" r="26" fill="#0a0f14"/>
+      <circle cx="180" cy="300" r="22" fill="url(#knobS)" stroke="#3c4a58"/>
+      <path d="M180 282 l6 9" stroke="#ffb020" stroke-width="3" stroke-linecap="round"/>
+      <text x="180" y="344" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="9" fill="#7f94a8" letter-spacing="1">RF / SQL</text>
+    </g>
+  </g>
+
+  <!-- DISPLAY -->
+  <rect x="244" y="100" width="332" height="172" rx="10" fill="#05090c" stroke="#33414e" stroke-width="2"/>
+  <rect x="252" y="108" width="316" height="156" rx="6" fill="url(#lcd)"/>
+  <g font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" filter="url(#glow)">
+    <text x="262" y="126" font-size="10" fill="#22d3ee">VFO-A</text>
+    <text x="306" y="126" font-size="10" fill="#8aa0b4">USB-D</text>
+    <text x="352" y="126" font-size="10" fill="#8aa0b4">FIL2 3.0k</text>
+    <text x="430" y="126" font-size="10" fill="#8aa0b4">ATU</text>
+    <text x="460" y="126" font-size="10" fill="#ffb020">100W</text>
+    <text x="512" y="126" font-size="10" fill="#39ff88">FT8</text>
+    <text x="262" y="158" font-size="34" font-weight="700" fill="#ffb020" letter-spacing="1">14.074.000</text>
+    <text x="514" y="158" font-size="12" fill="#ffb020">MHz</text>
+  </g>
+  <!-- S-meter -->
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8" fill="#6f8599">
+    <text x="262" y="172">S-METER</text><text x="522" y="172">+60</text>
+  </g>
+  <g fill="#39ff88">
+    <rect class="seg"      x="386" y="165" width="8" height="7" rx="1"/>
+    <rect class="seg s2"   x="397" y="165" width="8" height="7" rx="1"/>
+    <rect class="seg s3"   x="408" y="165" width="8" height="7" rx="1"/>
+    <rect class="seg s4"   x="419" y="165" width="8" height="7" rx="1"/>
+    <rect class="seg s5"   x="430" y="165" width="8" height="7" rx="1"/>
+    <rect class="seg s6"   x="441" y="165" width="8" height="7" rx="1"/>
+    <rect class="seg s7"   x="452" y="165" width="8" height="7" rx="1"/>
+    <rect class="seg s8"   x="463" y="165" width="8" height="7" rx="1" fill="#ffd166"/>
+    <rect class="seg s9"   x="474" y="165" width="8" height="7" rx="1" fill="#ffd166"/>
+    <rect class="seg s10"  x="485" y="165" width="8" height="7" rx="1" fill="#ff9f1c"/>
+    <rect class="seg s11"  x="496" y="165" width="8" height="7" rx="1" fill="#ff5a3c"/>
+    <rect class="seg s12"  x="507" y="165" width="8" height="7" rx="1" fill="#ff3b3b"/>
+  </g>
+  <!-- waterfall -->
+  <rect x="262" y="176" width="296" height="54" rx="3" fill="url(#wfall)"/>
+  <g clip-path="url(#wfclip)">
+    <g class="wf">
+      <g fill="#22d3ee" fill-opacity=".85">
+        <rect x="286" y="176" width="3" height="120"/><rect x="301" y="190" width="4" height="30"/><rect x="318" y="176" width="3" height="90"/>
+        <rect x="344" y="200" width="3" height="60"/><rect x="366" y="176" width="3" height="120"/><rect x="389" y="212" width="4" height="40"/>
+        <rect x="410" y="176" width="3" height="70"/><rect x="433" y="230" width="3" height="66"/><rect x="455" y="176" width="4" height="120"/>
+        <rect x="478" y="196" width="3" height="50"/><rect x="500" y="176" width="3" height="80"/><rect x="526" y="220" width="3" height="76"/><rect x="545" y="176" width="3" height="40"/>
+      </g>
+      <g fill="#ffd166" fill-opacity=".9">
+        <rect x="366" y="176" width="3" height="18"/><rect x="455" y="236" width="4" height="20"/><rect x="318" y="250" width="3" height="16"/>
+      </g>
+    </g>
+    <path d="M262 230 L270 222 278 226 286 206 294 224 302 214 318 208 330 224 344 216 366 200 378 222 389 212 410 214 422 224 433 218 455 202 466 222 478 214 500 212 514 224 526 216 545 210 558 222 V230 Z" fill="#22d3ee" fill-opacity=".22" stroke="#22d3ee" stroke-width="1"/>
+  </g>
+  <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="9" fill="#8aa0b4">
+    <text x="262" y="246">RX CQ DX  -12dB  73 GL</text>
+    <text x="262" y="258" fill="#39ff88">SPLIT OFF   NB ON   AGC-M   PRE1</text>
+  </g>
+
+  <!-- buttons row under display -->
+  <g font-family="Inter,system-ui,sans-serif" font-size="9" font-weight="700" fill="#b8c7d6" text-anchor="middle" letter-spacing=".5">
+    <g><rect x="244" y="290" width="48" height="22" rx="5" fill="#1d2731" stroke="#34424f"/><text x="268" y="304">BAND</text></g>
+    <g><rect x="301" y="290" width="48" height="22" rx="5" fill="#1d2731" stroke="#34424f"/><text x="325" y="304">MODE</text></g>
+    <g><rect x="358" y="290" width="48" height="22" rx="5" fill="#1d2731" stroke="#34424f"/><text x="382" y="304">FIL</text></g>
+    <g><rect x="415" y="290" width="48" height="22" rx="5" fill="#1d2731" stroke="#ffb020" stroke-opacity=".6"/><text x="439" y="304" fill="#ffb020">ATU</text></g>
+    <g><rect x="472" y="290" width="48" height="22" rx="5" fill="#1d2731" stroke="#34424f"/><text x="496" y="304">NB</text></g>
+    <g><rect x="529" y="290" width="48" height="22" rx="5" fill="#1d2731" stroke="#34424f"/><text x="553" y="304">SPLIT</text></g>
+    <g><rect x="244" y="322" width="48" height="22" rx="5" fill="#1d2731" stroke="#34424f"/><text x="268" y="336">A/B</text></g>
+    <g><rect x="301" y="322" width="48" height="22" rx="5" fill="#1d2731" stroke="#34424f"/><text x="325" y="336">V/M</text></g>
+    <g><rect x="358" y="322" width="48" height="22" rx="5" fill="#1d2731" stroke="#34424f"/><text x="382" y="336">RIT</text></g>
+    <g><rect x="415" y="322" width="48" height="22" rx="5" fill="#1d2731" stroke="#34424f"/><text x="439" y="336">VOX</text></g>
+    <g><rect x="472" y="322" width="48" height="22" rx="5" fill="#1d2731" stroke="#34424f"/><text x="496" y="336">KEY</text></g>
+    <g><rect x="529" y="322" width="48" height="22" rx="5" fill="#1d2731" stroke="#ff3b3b" stroke-opacity=".6"/><text x="553" y="336" fill="#ff6b6b">MOX</text></g>
+  </g>
+
+  <!-- VFO knob -->
+  <g>
+    <circle cx="676" cy="214" r="84" fill="#080c10"/>
+    <circle cx="676" cy="214" r="78" fill="url(#knob)" stroke="#43515f" stroke-width="2"/>
+    <g stroke="#0c1116" stroke-width="2" opacity=".7">
+      <path d="M676 136 v8 M676 284 v8 M598 214 h8 M746 214 h8 M621 159 l6 6 M725 263 l6 6 M621 269 l6 -6 M725 165 l6 -6"/>
+    </g>
+    <circle cx="676" cy="214" r="54" fill="none" stroke="#56687a" stroke-opacity=".35"/>
+    <circle cx="704" cy="186" r="10" fill="#0c1116" stroke="#3c4a58"/>
+    <circle cx="676" cy="214" r="6" fill="#56687a"/>
+    <text x="676" y="322" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="10" fill="#7f94a8" letter-spacing="2">MAIN DIAL</text>
+  </g>
+  <!-- brand plate -->
+  <text x="604" y="112" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="13" font-weight="800" fill="#c9d6e3" letter-spacing="2">HAM SHACK</text>
+  <text x="604" y="125" font-family="Inter,system-ui,sans-serif" font-size="8" fill="#6f8599" letter-spacing="1.5">HF/50 TRANSCEIVER</text>
+
+  <!-- bottom trim -->
+  <path d="M60 368 H760" stroke="#ffb020" stroke-opacity=".35" stroke-width="2"/>
+</svg>
