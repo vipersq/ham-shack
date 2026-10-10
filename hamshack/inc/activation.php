@@ -121,10 +121,10 @@ add_action( 'admin_post_hamshack_setup', function () {
 /**
  * Create a page if a page with the slug does not exist. Returns its ID.
  */
-function hamshack_ensure_page( $slug, $title, $content = '' ) {
+function hamshack_ensure_page( $slug, $title, $content = '', $publish_existing = true ) {
 	$page = get_page_by_path( $slug );
 	if ( $page ) {
-		if ( 'publish' !== $page->post_status ) {
+		if ( $publish_existing && 'publish' !== $page->post_status ) {
 			wp_update_post( array( 'ID' => $page->ID, 'post_status' => 'publish' ) );
 		}
 		return $page->ID;
@@ -319,6 +319,8 @@ function hamshack_install( $samples = true ) {
 
 	delete_transient( 'hamshack_events_all' );
 	update_option( 'hamshack_installed', HAMSHACK_VERSION );
+	hamshack_upgrade_2();
+	hamshack_upgrade_21();
 	flush_rewrite_rules();
 }
 
@@ -438,3 +440,185 @@ function hamshack_add_samples( $cat, $type, $call = 'N0CALL', $town = '' ) {
 	}
 	delete_transient( 'hamshack_events_all' );
 }
+
+/**
+ * Add pages to the main menu under a "Radio" item (created after "Logbook" if missing).
+ *
+ * @param array $ids   slug => page ID.
+ * @param int   $first Page the "Radio" item itself links to.
+ */
+function hamshack_add_to_radio_menu( $ids, $first ) {
+	$locations = (array) get_theme_mod( 'nav_menu_locations', array() );
+	$mid       = ! empty( $locations['primary'] ) ? (int) $locations['primary'] : 0;
+	if ( $mid && wp_get_nav_menu_object( $mid ) ) {
+		$items   = (array) wp_get_nav_menu_items( $mid );
+		$in_menu = array();
+		$parent  = 0;
+		$log_pos = 0;
+		foreach ( $items as $it ) {
+			if ( 'page' === $it->object ) {
+				$in_menu[ (int) $it->object_id ] = 1;
+			}
+			if ( 'custom' === $it->type && 'Radio' === $it->title ) {
+				$parent = (int) $it->ID;
+			}
+			if ( 'page' === $it->object && (int) $it->object_id === (int) ( get_page_by_path( 'logbook' ) ? get_page_by_path( 'logbook' )->ID : 0 ) ) {
+				$log_pos = (int) $it->menu_order;
+			}
+		}
+		$missing = array_filter( $ids, function ( $id ) use ( $in_menu ) {
+			return $id && ! is_wp_error( $id ) && 'publish' === get_post_status( $id ) && ! isset( $in_menu[ (int) $id ] );
+		} );
+		if ( $missing ) {
+			if ( ! $parent ) {
+				// Make room right after "Logbook".
+				foreach ( $items as $it ) {
+					if ( $log_pos && (int) $it->menu_order > $log_pos && ! $it->menu_item_parent ) {
+						wp_update_post( array( 'ID' => $it->ID, 'menu_order' => (int) $it->menu_order + 1 ) );
+					}
+				}
+				$parent = wp_update_nav_menu_item( $mid, 0, array( 'menu-item-title' => 'Radio', 'menu-item-url' => get_permalink( $first ), 'menu-item-type' => 'custom', 'menu-item-status' => 'publish', 'menu-item-position' => $log_pos ? $log_pos + 1 : count( $items ) + 1 ) );
+			}
+			$pos = 100;
+			foreach ( $items as $it ) {
+				$pos = max( $pos, (int) get_post_field( 'menu_order', $it->ID ) + 1 );
+			}
+			foreach ( $missing as $slug => $pid ) {
+				wp_update_nav_menu_item( $mid, 0, array( 'menu-item-object-id' => $pid, 'menu-item-object' => 'page', 'menu-item-type' => 'post_type', 'menu-item-status' => 'publish', 'menu-item-parent-id' => $parent, 'menu-item-position' => $pos++ ) );
+			}
+		}
+	}
+
+}
+
+/* --------------------------------------------------------------------------
+ * Version 2.0 upgrade: new pages, "Radio" menu, data back-fill
+ * ------------------------------------------------------------------------ */
+
+/**
+ * Create the 2.0 pages and add them to the main menu under "Radio". Safe to run more than once.
+ */
+function hamshack_upgrade_2() {
+	$sc    = function ( $intro, $code ) {
+		return "<!-- wp:paragraph -->\n<p>" . $intro . "</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:shortcode -->\n" . $code . "\n<!-- /wp:shortcode -->";
+	};
+	$pages = array(
+		'live'        => array( 'Live', $sc( 'What is happening in the shack right now: live FT8 decodes, the greyline, who hears my signal and the latest DX spots.', '[hamshack_live]' ) ),
+		'map'         => array( 'QSO Map', $sc( 'Every station in my logbook on one map. Filter by band or mode, switch to grid squares, or type your callsign to find yourself.', '[hamshack_qso_map]' ) ),
+		'awards'      => array( 'Stats & Awards', $sc( 'Progress towards the classic awards and a few statistics from the logbook – updated automatically with every QSO.', '[hamshack_awards]' ) ),
+		'satellites'  => array( 'Satellites', $sc( 'Upcoming passes of amateur radio satellites over my station, with live positions. Times are local.', '[hamshack_satellites]' ) ),
+		'activations' => array( 'Activations', $sc( 'Parks, summits and other places I have put on the air.', '[hamshack_activations]' ) ),
+		'gallery'     => array( 'Gallery', $sc( 'The shack, antennas and days out with the radio.', '[hamshack_gallery]' ) ),
+		'learn'       => array( 'Learn', "<!-- wp:paragraph -->\n<p>New to Morse or studying for your licence? Practise here – everything runs in your browser.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:heading -->\n<h2>Morse code trainer</h2>\n<!-- /wp:heading -->\n\n<!-- wp:shortcode -->\n[hamshack_morse]\n<!-- /wp:shortcode -->\n\n<!-- wp:heading -->\n<h2>Practice quiz</h2>\n<!-- /wp:heading -->\n\n<!-- wp:shortcode -->\n[hamshack_quiz]\n<!-- /wp:shortcode -->" ),
+	);
+	$ids = array();
+	foreach ( $pages as $slug => $p ) {
+		$ids[ $slug ] = hamshack_ensure_page( $slug, $p[0], $p[1], false );
+	}
+
+	hamshack_add_to_radio_menu( $ids, $ids['live'] );
+
+	// Newsletter widget at the end of the blog sidebar.
+	$sidebars = get_option( 'sidebars_widgets', array() );
+	$has      = false;
+	foreach ( (array) $sidebars as $area => $ws ) {
+		if ( 'wp_inactive_widgets' !== $area && is_array( $ws ) ) {
+			foreach ( $ws as $w ) {
+				if ( 0 === strpos( $w, 'hamshack_subscribe-' ) ) {
+					$has = true;
+				}
+			}
+		}
+	}
+	if ( ! $has && isset( $sidebars['sidebar-1'] ) && is_array( $sidebars['sidebar-1'] ) ) {
+		$opt                  = (array) get_option( 'widget_hamshack_subscribe', array() );
+		$opt[2]               = array( 'title' => 'New posts by e-mail' );
+		$opt['_multiwidget'] = 1;
+		update_option( 'widget_hamshack_subscribe', $opt );
+		$sidebars['sidebar-1'][] = 'hamshack_subscribe-2';
+		update_option( 'sidebars_widgets', $sidebars );
+	}
+
+	// Fill in DXCC / zones / positions for QSOs logged before 2.0.
+	if ( ! wp_next_scheduled( 'hamshack_geo_backfill' ) ) {
+		wp_schedule_single_event( time() + 10, 'hamshack_geo_backfill' );
+	}
+	update_option( 'hamshack_v2_done', HAMSHACK_VERSION );
+	set_transient( 'hamshack_v2_notice', 1, WEEK_IN_SECONDS );
+	flush_rewrite_rules();
+}
+
+add_action( 'admin_init', function () {
+	if ( get_option( 'hamshack_installed' ) && ! get_option( 'hamshack_v2_done' ) && current_user_can( 'manage_options' ) ) {
+		hamshack_upgrade_2();
+	}
+} );
+add_action( 'after_switch_theme', function () {
+	if ( get_option( 'hamshack_installed' ) && ! get_option( 'hamshack_v2_done' ) ) {
+		hamshack_upgrade_2();
+	}
+}, 20 );
+
+add_action( 'admin_notices', function () {
+	if ( ! get_transient( 'hamshack_v2_notice' ) || ! current_user_can( 'manage_options' ) ) {
+		return;
+	}
+	if ( isset( $_GET['hamshack_hide_v2'] ) ) { // phpcs:ignore
+		delete_transient( 'hamshack_v2_notice' );
+		return;
+	}
+	echo '<div class="notice notice-success"><p><strong>' . esc_html__( 'Ham Shack 2.0 is ready!', 'hamshack' ) . '</strong> ' . esc_html__( 'New pages were added under “Radio” in the main menu: Live, QSO Map, Stats & Awards, Satellites, Activations, Gallery and Learn. QSOs are being enriched with country, zones and positions in the background.', 'hamshack' ) . ' <a href="' . esc_url( add_query_arg( 'hamshack_hide_v2', 1 ) ) . '">' . esc_html__( 'Hide', 'hamshack' ) . '</a></p></div>';
+} );
+
+/* --------------------------------------------------------------------------
+ * Version 2.1 upgrade: propagation, contests, skeds, repeaters, QSL wall
+ * ------------------------------------------------------------------------ */
+
+function hamshack_upgrade_21() {
+	$sc    = function ( $intro, $code ) {
+		return "<!-- wp:paragraph -->\n<p>" . $intro . "</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:shortcode -->\n" . $code . "\n<!-- /wp:shortcode -->";
+	};
+	$pages = array(
+		'propagation' => array( 'Propagation', $sc( 'Which bands are open right now, measured by ionosondes around the world, plus space weather, the local storm risk and the best hours for each continent from my own log.', '[hamshack_propagation]' ) ),
+		'contests'    => array( 'Contests', $sc( 'Contests in the next week, imported automatically from the WA7BNM contest calendar. When I take part, the live score appears here and on the home page.', '[hamshack_contests]' ) ),
+		'sked'        => array( 'Book a sked', $sc( 'Would you like to try a contact with me on a particular band or mode? Pick a time (UTC) and I will confirm by e-mail.', '[hamshack_sked]' ) ),
+		'repeaters'   => array( 'Repeaters', $sc( 'Voice and digital repeaters around my station, with frequencies, CTCSS tones and colour codes.', '[hamshack_repeaters]' ) ),
+		'qsl-wall'    => array( 'QSL Wall', $sc( 'Paper QSL cards that have arrived in the post. Hover over a card to see the back.', '[hamshack_qsl_wall]' ) ),
+	);
+	$ids   = array();
+	foreach ( $pages as $slug => $p ) {
+		$ids[ $slug ] = hamshack_ensure_page( $slug, $p[0], $p[1], false );
+	}
+	$live = get_page_by_path( 'live' );
+	hamshack_add_to_radio_menu( $ids, $live ? $live->ID : $ids['propagation'] );
+
+	if ( hamshack_int( 'contest_import' ) && ! wp_next_scheduled( 'hamshack_contest_import' ) ) {
+		wp_schedule_event( time() + 30, 'daily', 'hamshack_contest_import' );
+	}
+	update_option( 'hamshack_v21_done', HAMSHACK_VERSION );
+	update_option( 'hamshack_pwa_rev', time() );
+	set_transient( 'hamshack_v21_notice', 1, WEEK_IN_SECONDS );
+	flush_rewrite_rules();
+}
+
+add_action( 'admin_init', function () {
+	if ( get_option( 'hamshack_installed' ) && get_option( 'hamshack_v2_done' ) && ! get_option( 'hamshack_v21_done' ) && current_user_can( 'manage_options' ) ) {
+		hamshack_upgrade_21();
+	}
+} );
+add_action( 'after_switch_theme', function () {
+	if ( get_option( 'hamshack_installed' ) && ! get_option( 'hamshack_v21_done' ) ) {
+		hamshack_upgrade_21();
+	}
+}, 30 );
+
+add_action( 'admin_notices', function () {
+	if ( ! get_transient( 'hamshack_v21_notice' ) || ! current_user_can( 'manage_options' ) ) {
+		return;
+	}
+	if ( isset( $_GET['hamshack_hide_v21'] ) ) { // phpcs:ignore
+		delete_transient( 'hamshack_v21_notice' );
+		return;
+	}
+	echo '<div class="notice notice-success"><p><strong>' . esc_html__( 'Ham Shack 2.1 is ready!', 'hamshack' ) . '</strong> ' . esc_html__( 'New pages under “Radio”: Propagation, Contests, Book a sked, Repeaters and QSL Wall. Set up notifications, Club Log, APRS and the web SDR in Ham Shack → Integrations.', 'hamshack' ) . ' <a href="' . esc_url( admin_url( 'admin.php?page=hamshack-int' ) ) . '">' . esc_html__( 'Open Integrations', 'hamshack' ) . '</a> · <a href="' . esc_url( add_query_arg( 'hamshack_hide_v21', 1 ) ) . '">' . esc_html__( 'Hide', 'hamshack' ) . '</a></p></div>';
+} );

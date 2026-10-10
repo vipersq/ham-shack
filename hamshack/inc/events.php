@@ -264,6 +264,8 @@ function hamshack_all_events() {
 			'band'     => get_post_meta( $id, '_hs_band', true ),
 			'type'     => ( $terms && ! is_wp_error( $terms ) ) ? $terms[0]->slug : '',
 			'type_name'=> ( $terms && ! is_wp_error( $terms ) ) ? $terms[0]->name : '',
+			'auto'     => (bool) get_post_meta( $id, '_hs_auto', true ),
+			'entering' => (bool) get_post_meta( $id, '_hs_entering', true ),
 		);
 	}
 	set_transient( 'hamshack_events_all', $events, HOUR_IN_SECONDS );
@@ -289,9 +291,13 @@ add_action( 'set_object_terms', function () {
  * @param DateTimeImmutable $to   Range end.
  * @return array Sorted occurrences (each has 'ts' and 'end_ts').
  */
-function hamshack_occurrences( DateTimeImmutable $from, DateTimeImmutable $to ) {
+function hamshack_occurrences( DateTimeImmutable $from, DateTimeImmutable $to, $include_auto = false ) {
 	$out = array();
 	foreach ( hamshack_all_events() as $e ) {
+		// Contests imported from the contest calendar only show up once you mark them "I'm taking part".
+		if ( ! empty( $e['auto'] ) && empty( $e['entering'] ) && ! $include_auto ) {
+			continue;
+		}
 		$start = hamshack_event_dt( $e['start'] );
 		if ( ! $start ) {
 			continue;

@@ -1,0 +1,86 @@
+/*
+ * Light colour scheme – <html data-theme="light">.
+ * The header, footer and maps stay dark (the logo and the night-time map are drawn for a dark background).
+ */
+:root[data-theme="light"] {
+	color-scheme: light;
+	--bg: #f4f6f9;
+	--bg-2: #eaeef3;
+	--panel: #ffffff;
+	--panel-2: #eef2f6;
+	--line: #d5dde6;
+	--line-2: #c2ccd8;
+	--text: #2a3644;
+	--text-strong: #0d1620;
+	--muted: #5b6b7c;
+	--amber: #d98a00;
+	--amber-2: #f2b33d;
+	--cyan: #0b8fa8;
+	--green: #11894a;
+	--red: #d42a2a;
+	--violet: #6d4fd8;
+	--pink: #c0397f;
+	--blue: #2563eb;
+	--shadow: 0 10px 28px -14px rgba(20, 35, 55, .28);
+}
+
+/* Dark islands. */
+:root[data-theme="light"] .topbar,
+:root[data-theme="light"] .site-header,
+:root[data-theme="light"] .site-footer,
+:root[data-theme="light"] .hero,
+:root[data-theme="light"] .hs-map-frame,
+:root[data-theme="light"] .hs-lightbox {
+	color-scheme: dark;
+	--bg: #0b0f14; --bg-2: #0e141b; --panel: #121a23; --panel-2: #17222e; --line: #223040; --line-2: #2c3d50;
+	--text: #d6e2ee; --text-strong: #f1f6fb; --muted: #8aa0b4; --amber: #ffb020; --amber-2: #ffd166; --cyan: #22d3ee;
+	--green: #39ff88; --red: #ff3b3b; --violet: #a78bfa; --pink: #f472b6; --blue: #60a5fa;
+	color: var(--text);
+}
+:root[data-theme="light"] .topbar { background: #0b0f14; }
+:root[data-theme="light"] .site-footer { background: #0b0f14; }
+:root[data-theme="light"] .site-header { background: rgba(11, 15, 20, .97); }
+@media (max-width: 900px) {
+	/* The mobile menu panel lives inside the dark header. */
+	:root[data-theme="light"] .site-nav { background: #0e141b; }
+}
+
+/* Hard-coded dark surfaces → light. */
+:root[data-theme="light"] input[type="text"], :root[data-theme="light"] input[type="email"], :root[data-theme="light"] input[type="url"],
+:root[data-theme="light"] input[type="search"], :root[data-theme="light"] input[type="password"], :root[data-theme="light"] input[type="number"],
+:root[data-theme="light"] input[type="tel"], :root[data-theme="light"] input[type="date"], :root[data-theme="light"] input[type="time"],
+:root[data-theme="light"] select, :root[data-theme="light"] textarea, :root[data-theme="light"] .wp-block-search__input { background: #fff; color-scheme: light; }
+:root[data-theme="light"] .site-header input[type="search"] { background: #0a1017; color-scheme: dark; }
+:root[data-theme="light"] pre, :root[data-theme="light"] .wp-block-code { background: #eef2f6; }
+:root[data-theme="light"] .status-card { background: linear-gradient(180deg, #ffffff, #f1f4f8); }
+:root[data-theme="light"] .event-date, :root[data-theme="light"] .bar, :root[data-theme="light"] .band, :root[data-theme="light"] .kit-art,
+:root[data-theme="light"] .award-bar, :root[data-theme="light"] .cell, :root[data-theme="light"] .hbar .track, :root[data-theme="light"] .quiz-bar,
+:root[data-theme="light"] .hv { background: #eef2f6; }
+:root[data-theme="light"] .band { color: #8a99a8; }
+:root[data-theme="light"] .cell { color: #8a99a8; }
+:root[data-theme="light"] .section-alt { background: linear-gradient(180deg, #eaeef3, rgba(244, 246, 249, 0)); }
+:root[data-theme="light"] .page-hero { background: radial-gradient(800px 260px at 20% 0%, rgba(11, 143, 168, .10), transparent 70%), linear-gradient(180deg, #e6ebf1, transparent); }
+:root[data-theme="light"] .hero { background-color: #0b0f14; }
+:root[data-theme="light"] .card-cat { background: rgba(255, 255, 255, .92); }
+:root[data-theme="light"] .hs-tip { background: rgba(255, 255, 255, .98); color: var(--text); }
+:root[data-theme="light"] .hs-map-frame .hs-tip { background: rgba(12, 18, 26, .96); }
+:root[data-theme="light"] .data-table tr.is-need { background: rgba(17, 137, 74, .07); }
+:root[data-theme="light"] .sat-chip.is-on { color: #fff; }
+
+/* Hard-coded light text → readable on white. */
+:root[data-theme="light"] .card-excerpt { color: var(--muted); }
+:root[data-theme="light"] .qso-table th { background: var(--panel-2); }
+:root[data-theme="light"] .notice-ok { color: #0d6b38; }
+:root[data-theme="light"] .notice-err { color: #a11d1d; }
+:root[data-theme="light"] .wx-alert.is-storm { color: #a11d1d; }
+:root[data-theme="light"] .tag-new { color: #c42424; }
+:root[data-theme="light"] .bo { color: #8a99a8; }
+:root[data-theme="light"] .cb-nums > div { background: rgba(255, 255, 255, .85); }
+:root[data-theme="light"] ::selection { color: #0d1620; }
+
+/* The switch itself (lives in the dark top bar). */
+.theme-toggle { display: inline-grid; place-items: center; width: 28px; height: 28px; padding: 0; border-radius: 8px; background: transparent; border: 1px solid var(--line-2); color: var(--muted); box-shadow: none; cursor: pointer; }
+.theme-toggle:hover { color: var(--amber); border-color: var(--amber); }
+.theme-toggle .i-sun { display: none; }
+:root[data-theme="light"] .theme-toggle .i-sun { display: block; }
+:root[data-theme="light"] .theme-toggle .i-moon { display: none; }

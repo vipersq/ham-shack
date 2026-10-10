@@ -14,20 +14,20 @@ function hamshack_contact_handle() {
 	if ( 'POST' !== ( isset( $_SERVER['REQUEST_METHOD'] ) ? $_SERVER['REQUEST_METHOD'] : '' ) || empty( $_POST['hamshack_contact'] ) ) { // phpcs:ignore
 		return;
 	}
-	$back = wp_get_referer() ? wp_get_referer() : home_url( '/' );
+	$back = hamshack_back_url();
 	$back = remove_query_arg( array( 'sent', 'cerr' ), $back );
 	$fail = function ( $code ) use ( $back ) {
 		wp_safe_redirect( add_query_arg( 'cerr', $code, $back ) . '#contact-form' );
 		exit;
 	};
-	if ( ! isset( $_POST['_m6nonce'] ) || ! wp_verify_nonce( sanitize_key( $_POST['_m6nonce'] ), 'hamshack_contact' ) ) {
+	if ( is_user_logged_in() && ( ! isset( $_POST['_m6nonce'] ) || ! wp_verify_nonce( sanitize_key( $_POST['_m6nonce'] ), 'hamshack_contact' ) ) ) {
 		$fail( 'expired' );
 	}
 	// Honeypot + minimum fill time (bots).
 	if ( ! empty( $_POST['website'] ) ) {
 		$fail( 'spam' );
 	}
-	$ts = isset( $_POST['_m6t'] ) ? (int) $_POST['_m6t'] : 0;
+	$ts = hamshack_form_stamp_check( isset( $_POST['_m6t'] ) ? sanitize_text_field( wp_unslash( $_POST['_m6t'] ) ) : '' );
 	if ( ! $ts || time() - $ts < 4 ) {
 		$fail( 'spam' );
 	}
@@ -73,7 +73,7 @@ add_shortcode( 'hamshack_contact', function () {
 			<p class="notice notice-err" role="alert"><?php echo esc_html( $errors[ sanitize_key( $_GET['cerr'] ) ] ); // phpcs:ignore ?></p>
 		<?php endif; ?>
 		<input type="hidden" name="hamshack_contact" value="1">
-		<input type="hidden" name="_m6t" value="<?php echo (int) time(); ?>">
+		<input type="hidden" name="_m6t" value="<?php echo esc_attr( hamshack_form_stamp() ); ?>">
 		<?php wp_nonce_field( 'hamshack_contact', '_m6nonce' ); ?>
 		<div class="form-row">
 			<label><?php esc_html_e( 'Name', 'hamshack' ); ?> <span class="req">*</span><input type="text" name="c_name" required autocomplete="name"></label>

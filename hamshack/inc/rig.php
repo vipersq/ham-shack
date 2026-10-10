@@ -31,6 +31,8 @@ function hamshack_rig_state() {
 			'ts'        => 0,      // last time data arrived.
 			'changed'   => 0,      // last time frequency/mode changed.
 			'auto_on'   => 0,      // we switched the status ON (so we may switch it OFF again).
+			'wsjtx_public'  => 1,  // show WSJT-X decodes on the website.
+			'wsjtx_autolog' => 1,  // QSOs logged in WSJT-X go straight into the logbook.
 		)
 	);
 }
@@ -286,7 +288,7 @@ add_action( 'wp_enqueue_scripts', function () {
  * ------------------------------------------------------------------------ */
 
 add_action( 'admin_menu', function () {
-	add_submenu_page( 'hamshack', __( 'Live rig (HRD)', 'hamshack' ), __( 'Live rig (HRD)', 'hamshack' ), 'manage_options', 'hamshack-rig', 'hamshack_rig_page' );
+	add_submenu_page( 'hamshack', __( 'Live rig (HRD + WSJT-X)', 'hamshack' ), __( 'Live rig', 'hamshack' ), 'manage_options', 'hamshack-rig', 'hamshack_rig_page' );
 }, 25 );
 
 function hamshack_rig_page() {
@@ -298,7 +300,7 @@ function hamshack_rig_page() {
 	}
 	?>
 	<div class="wrap hamshack-admin">
-		<h1><?php esc_html_e( 'Live rig – frequency from Ham Radio Deluxe', 'hamshack' ); ?></h1>
+		<h1><?php esc_html_e( 'Live rig – frequency from Ham Radio Deluxe, decodes from WSJT-X', 'hamshack' ); ?></h1>
 		<?php if ( isset( $_GET['saved'] ) ) : // phpcs:ignore ?>
 			<div class="notice notice-success is-dismissible"><p><?php esc_html_e( 'Saved.', 'hamshack' ); ?></p></div>
 		<?php endif; ?>
@@ -335,6 +337,16 @@ function hamshack_rig_page() {
 				</td></tr>
 				<tr><th scope="row"><label for="hs-rig-timeout"><?php esc_html_e( 'Go OFF AIR after', 'hamshack' ); ?></label></th><td>
 					<input id="hs-rig-timeout" type="number" min="1" max="120" name="timeout" value="<?php echo (int) $state['timeout']; ?>" style="width:6em"> <?php esc_html_e( 'minutes without data', 'hamshack' ); ?>
+				</td></tr>
+				<tr><th scope="row"><?php esc_html_e( 'WSJT-X', 'hamshack' ); ?></th><td>
+					<label><input type="checkbox" name="wsjtx_public" value="1" <?php checked( $state['wsjtx_public'] ); ?>> <?php esc_html_e( 'Show live FT8/FT4 decodes on the website (Live page and home page)', 'hamshack' ); ?></label><br>
+					<label><input type="checkbox" name="wsjtx_autolog" value="1" <?php checked( $state['wsjtx_autolog'] ); ?>> <?php esc_html_e( 'Add QSOs logged in WSJT-X to the logbook straight away (duplicates from QRZ sync are skipped)', 'hamshack' ); ?></label>
+					<?php
+					$ws = hamshack_wsjtx_state();
+					if ( $ws['ts'] ) {
+						echo '<p class="description">' . esc_html( sprintf( __( 'Last data from WSJT-X: %s ago.', 'hamshack' ), human_time_diff( $ws['ts'] ) ) ) . '</p>';
+					}
+					?>
 				</td></tr>
 			</table>
 			<p><button class="button button-primary" name="do" value="save"><?php esc_html_e( 'Save', 'hamshack' ); ?></button></p>
@@ -383,6 +395,8 @@ add_action( 'admin_post_hamshack_rig_save', function () {
 				'enabled'  => empty( $_POST['enabled'] ) ? 0 : 1,
 				'auto_air' => empty( $_POST['auto_air'] ) ? 0 : 1,
 				'timeout'  => isset( $_POST['timeout'] ) ? max( 1, min( 120, (int) $_POST['timeout'] ) ) : 5,
+				'wsjtx_public'  => empty( $_POST['wsjtx_public'] ) ? 0 : 1,
+				'wsjtx_autolog' => empty( $_POST['wsjtx_autolog'] ) ? 0 : 1,
 			)
 		);
 		if ( $state['enabled'] && ! $state['token'] ) {

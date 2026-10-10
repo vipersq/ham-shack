@@ -129,3 +129,140 @@
 		document.addEventListener('visibilitychange', function () { if (!document.hidden) { poll(); } });
 	}
 })();
+
+/* eQSL: turn the SVG card into a PNG download. */
+(function () {
+	'use strict';
+	document.addEventListener('click', function (e) {
+		var btn = e.target.closest ? e.target.closest('[data-qsl-png]') : null;
+		if (!btn) { return; }
+		e.preventDefault();
+		var url = btn.getAttribute('data-qsl-png'), name = (btn.getAttribute('data-name') || 'qsl') + '.png';
+		btn.disabled = true;
+		fetch(url, { credentials: 'same-origin' }).then(function (r) { return r.text(); }).then(function (svg) {
+			return new Promise(function (resolve, reject) {
+				var img = new Image();
+				img.onload = function () { resolve(img); };
+				img.onerror = reject;
+				img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
+			});
+		}).then(function (img) {
+			var c = document.createElement('canvas');
+			c.width = 1800; c.height = 1160;
+			c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
+			c.toBlob(function (blob) {
+				var a = document.createElement('a');
+				a.href = URL.createObjectURL(blob); a.download = name;
+				document.body.appendChild(a); a.click(); a.remove();
+				setTimeout(function () { URL.revokeObjectURL(a.href); }, 4000);
+				btn.disabled = false;
+			}, 'image/png');
+		}).catch(function () { btn.disabled = false; window.open(url, '_blank'); });
+	});
+}());
+
+/* Lightbox for gallery photos and linked images in posts. */
+(function () {
+	'use strict';
+	var box = null, items = [], idx = 0;
+	function build() {
+		box = document.createElement('div');
+		box.className = 'hs-lightbox';
+		box.setAttribute('role', 'dialog');
+		box.setAttribute('aria-modal', 'true');
+		box.innerHTML = '<button type="button" class="lb-close" aria-label="Close">×</button><button type="button" class="lb-prev" aria-label="Previous">‹</button><figure><img alt=""><figcaption></figcaption></figure><button type="button" class="lb-next" aria-label="Next">›</button>';
+		document.body.appendChild(box);
+		box.addEventListener('click', function (e) {
+			if (e.target === box || e.target.classList.contains('lb-close')) { close(); }
+			if (e.target.classList.contains('lb-prev')) { show(idx - 1); }
+			if (e.target.classList.contains('lb-next')) { show(idx + 1); }
+		});
+		document.addEventListener('keydown', function (e) {
+			if (!box.classList.contains('is-open')) { return; }
+			if (e.key === 'Escape') { close(); } else if (e.key === 'ArrowLeft') { show(idx - 1); } else if (e.key === 'ArrowRight') { show(idx + 1); }
+		});
+	}
+	function show(i) {
+		idx = (i + items.length) % items.length;
+		var a = items[idx], img = box.querySelector('img');
+		img.src = a.href;
+		img.alt = (a.querySelector('img') || {}).alt || '';
+		box.querySelector('figcaption').textContent = a.getAttribute('data-caption') || img.alt || '';
+		box.querySelector('.lb-prev').hidden = box.querySelector('.lb-next').hidden = items.length < 2;
+	}
+	function close() { box.classList.remove('is-open'); document.documentElement.style.overflow = ''; }
+	document.addEventListener('click', function (e) {
+		var a = e.target.closest ? e.target.closest('a') : null;
+		if (!a || !a.querySelector('img')) { return; }
+		var isImg = /\.(jpe?g|png|gif|webp|avif)(\?.*)?$/i.test(a.getAttribute('href') || '');
+		if (!isImg || !(a.hasAttribute('data-lightbox') || a.closest('.entry-content'))) { return; }
+		e.preventDefault();
+		if (!box) { build(); }
+		var group = a.closest('[data-hs-gallery], .wp-block-gallery, .gallery, .entry-content') || document;
+		items = Array.prototype.filter.call(group.querySelectorAll('a'), function (x) {
+			return x.querySelector('img') && /\.(jpe?g|png|gif|webp|avif)(\?.*)?$/i.test(x.getAttribute('href') || '') && x.offsetParent !== null;
+		});
+		show(Math.max(0, items.indexOf(a)));
+		box.classList.add('is-open');
+		document.documentElement.style.overflow = 'hidden';
+	});
+	/* Gallery album filter */
+	document.addEventListener('click', function (e) {
+		var b = e.target.closest ? e.target.closest('[data-hs-gallery] [data-album]') : null;
+		if (!b || b.tagName !== 'BUTTON') { return; }
+		var g = b.closest('[data-hs-gallery]'), al = b.getAttribute('data-album');
+		g.querySelectorAll('.gallery-filter .chip-btn').forEach(function (x) { x.classList.toggle('is-on', x === b); });
+		g.querySelectorAll('.g-item').forEach(function (f) { f.hidden = !!al && f.getAttribute('data-album') !== al; });
+	});
+}());
+
+/* Contest scoreboard: refresh every minute without reloading the page. */
+(function () {
+	'use strict';
+	if (!document.querySelector('[data-hs-contest]')) { return; }
+	setInterval(function () {
+		if (document.hidden) { return; }
+		fetch(location.href, { credentials: 'same-origin', cache: 'no-store' }).then(function (r) { return r.text(); }).then(function (html) {
+			var doc = new DOMParser().parseFromString(html, 'text/html');
+			var fresh = doc.querySelectorAll('[data-hs-contest]'), old = document.querySelectorAll('[data-hs-contest]');
+			old.forEach(function (o, i) { if (fresh[i]) { o.replaceWith(document.importNode(fresh[i], true)); } });
+		}).catch(function () {});
+	}, 60000);
+}());
+
+/* Web SDR: load the receiver only when asked (it starts audio and uses bandwidth). */
+(function () {
+	'use strict';
+	document.querySelectorAll('[data-hs-sdr]').forEach(function (app) {
+		var btn = app.querySelector('[data-sdr-load]'), box = app.querySelector('[data-sdr-frame]'), src = app.getAttribute('data-src') || '';
+		if (!btn || !box || !/^https?:\/\//i.test(src)) { return; }
+		btn.addEventListener('click', function () {
+			// Most receivers are plain http – a secure page cannot embed them, so open a window instead.
+			if (location.protocol === 'https:' && /^http:/i.test(src)) { window.open(src, '_blank', 'noopener'); return; }
+			if (!box.firstChild) {
+				var f = document.createElement('iframe');
+				f.src = src; f.title = 'Web SDR'; f.loading = 'lazy';
+				f.setAttribute('allow', 'autoplay; microphone \'none\'');
+				f.setAttribute('referrerpolicy', 'no-referrer');
+				box.appendChild(f);
+			}
+			box.hidden = false; btn.hidden = true;
+		});
+	});
+}());
+
+/* Light / dark switch (the choice is remembered in this browser). */
+(function () {
+	'use strict';
+	var root = document.documentElement;
+	document.querySelectorAll('[data-theme-toggle]').forEach(function (b) {
+		b.setAttribute('aria-pressed', root.getAttribute('data-theme') === 'light' ? 'true' : 'false');
+		b.addEventListener('click', function () {
+			var light = root.getAttribute('data-theme') !== 'light';
+			if (light) { root.setAttribute('data-theme', 'light'); } else { root.removeAttribute('data-theme'); }
+			b.setAttribute('aria-pressed', light ? 'true' : 'false');
+			try { localStorage.setItem('hs-theme', light ? 'light' : 'dark'); } catch (e) {}
+			document.dispatchEvent(new CustomEvent('m6:theme', { detail: { light: light } }));
+		});
+	});
+}());

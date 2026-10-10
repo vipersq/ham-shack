@@ -13,6 +13,9 @@ $cal_page = get_page_by_path( 'calendar' );
 $log_page = get_page_by_path( 'logbook' );
 $stn_page = get_page_by_path( 'station' );
 $con_page = get_page_by_path( 'contact' );
+$map_page = get_page_by_path( 'map' );
+$live_page = get_page_by_path( 'live' );
+$awd_page = get_page_by_path( 'awards' );
 ?>
 
 <section class="hero">
@@ -52,6 +55,8 @@ $con_page = get_page_by_path( 'contact' );
 				array( $cal_page, 'calendar', __( 'Calendar', 'hamshack' ), __( 'Contests, nets & activations', 'hamshack' ) ),
 				array( $log_page, 'book', __( 'Logbook', 'hamshack' ), __( 'Search your callsign', 'hamshack' ) ),
 				array( $stn_page, 'antenna', __( 'Station', 'hamshack' ), __( 'Rigs, antennas & QSL', 'hamshack' ) ),
+				array( $live_page, 'live', __( 'Live', 'hamshack' ), __( 'FT8, DX cluster & greyline', 'hamshack' ) ),
+				array( $map_page, 'map', __( 'QSO map', 'hamshack' ), __( 'Everyone I have worked', 'hamshack' ) ),
 				array( $con_page, 'mail', __( 'Contact', 'hamshack' ), __( 'Skeds & QSL requests', 'hamshack' ) ),
 			);
 			foreach ( $tiles as $t ) :
@@ -68,6 +73,8 @@ $con_page = get_page_by_path( 'contact' );
 		</div>
 	</div>
 </section>
+
+<?php do_action( 'hamshack_home_top' ); ?>
 
 <?php
 $latest = new WP_Query( array( 'post_type' => 'post', 'posts_per_page' => 6, 'ignore_sticky_posts' => false ) );
@@ -148,6 +155,36 @@ if ( $qsos || $show_solar ) :
 			<?php endif; ?>
 		</div>
 	</section>
+<?php endif; ?>
+
+<?php if ( hamshack_opt( 'show_live', 1 ) ) : ?>
+<section class="section section-alt section-live">
+	<div class="container">
+		<header class="section-head">
+			<div>
+				<p class="eyebrow mono"><?php esc_html_e( 'Live', 'hamshack' ); ?></p>
+				<h2 class="section-title"><?php esc_html_e( 'The world from the shack', 'hamshack' ); ?></h2>
+			</div>
+			<div class="head-actions">
+				<?php if ( $map_page ) : ?>
+					<a class="btn btn-ghost btn-sm" href="<?php echo esc_url( get_permalink( $map_page ) ); ?>"><?php hamshack_the_icon( 'map', 16 ); ?> <?php esc_html_e( 'QSO map', 'hamshack' ); ?></a>
+				<?php endif; ?>
+				<?php if ( $awd_page ) : ?>
+					<a class="btn btn-ghost btn-sm" href="<?php echo esc_url( get_permalink( $awd_page ) ); ?>"><?php hamshack_the_icon( 'trophy', 16 ); ?> <?php esc_html_e( 'Awards', 'hamshack' ); ?></a>
+				<?php endif; ?>
+				<?php if ( $live_page ) : ?>
+					<a class="btn btn-ghost btn-sm" href="<?php echo esc_url( get_permalink( $live_page ) ); ?>"><?php esc_html_e( 'Live page', 'hamshack' ); ?> <?php hamshack_the_icon( 'arrow-r', 16 ); ?></a>
+				<?php endif; ?>
+			</div>
+		</header>
+		<div class="live-home">
+			<div><?php echo do_shortcode( '[hamshack_greyline]' ); // phpcs:ignore ?></div>
+			<div class="panel live-home-side">
+				<?php echo do_shortcode( '[hamshack_ft8 map="0" rows="9"]' ); // phpcs:ignore ?>
+			</div>
+		</div>
+	</div>
+</section>
 <?php endif; ?>
 
 <section class="section section-station">

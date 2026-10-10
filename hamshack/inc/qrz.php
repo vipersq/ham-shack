@@ -166,6 +166,7 @@ function hamshack_adif_to_qso( array $r ) {
 		'qsl_s'   => $qsl_s,
 		'qsl_r'   => $qsl_r,
 		'comment' => isset( $r['comment'] ) ? $r['comment'] : ( isset( $r['notes'] ) ? $r['notes'] : '' ),
+		'x'       => hamshack_adif_extras( $r ),
 	);
 }
 

@@ -51,7 +51,7 @@ function hamshack_sanitize_station( $in ) {
 	$in       = (array) $in;
 	$current  = wp_parse_args( (array) get_option( 'hamshack_station', array() ), hamshack_defaults() );
 	$out      = $current;
-	$text     = array( 'callsign', 'op_name', 'qth', 'locator', 'licence', 'itu_zone', 'cq_zone', 'status_freq', 'status_mode', 'status_note', 'hero_title', 'footer_text', 'qsl_info' );
+	$text     = array( 'callsign', 'op_name', 'qth', 'locator', 'lat', 'lon', 'licence', 'itu_zone', 'cq_zone', 'status_freq', 'status_mode', 'status_note', 'hero_title', 'footer_text', 'qsl_info' );
 	$textarea = array( 'rigs', 'antennas', 'hero_text' );
 	$urls     = array( 'qrz_url', 'youtube', 'facebook', 'x', 'mastodon', 'instagram' );
 
@@ -75,6 +75,12 @@ function hamshack_sanitize_station( $in ) {
 	}
 	$out['callsign'] = strtoupper( $out['callsign'] );
 	$out['locator']  = strtoupper( substr( $out['locator'], 0, 4 ) ) . strtolower( substr( $out['locator'], 4 ) );
+	foreach ( array( 'lat' => 90, 'lon' => 180 ) as $k => $lim ) {
+		if ( isset( $out[ $k ] ) ) {
+			$v         = str_replace( ',', '.', trim( (string) $out[ $k ] ) );
+			$out[ $k ] = ( is_numeric( $v ) && abs( (float) $v ) <= $lim ) ? (string) round( (float) $v, 4 ) : '';
+		}
+	}
 
 	// Checkbox groups are only present when the full form was submitted.
 	if ( isset( $in['_full'] ) ) {
@@ -84,6 +90,7 @@ function hamshack_sanitize_station( $in ) {
 		$out['solar_banner'] = hamshack_solar_key( isset( $in['solar_banner'] ) ? sanitize_key( $in['solar_banner'] ) : '' );
 		$out['solar_home']   = hamshack_solar_key( isset( $in['solar_home'] ) ? sanitize_key( $in['solar_home'] ) : '' );
 		$out['show_logbook'] = empty( $in['show_logbook'] ) ? 0 : 1;
+		$out['show_live']    = empty( $in['show_live'] ) ? 0 : 1;
 	}
 	if ( isset( $in['status'] ) && array_key_exists( $in['status'], hamshack_status_choices() ) ) {
 		if ( $in['status'] !== $current['status'] ) {
@@ -229,6 +236,8 @@ function hamshack_station_page() {
 					$f( 'op_name', __( 'Operator name', 'hamshack' ), 'text', __( 'Optional – shown on the Station page.', 'hamshack' ) );
 					$f( 'qth', __( 'QTH (location)', 'hamshack' ) );
 					$f( 'locator', __( 'Maidenhead locator', 'hamshack' ), 'text', __( '4 or 6 characters, e.g. JO62 or JO62qm.', 'hamshack' ) );
+					$f( 'lat', __( 'Latitude (maps)', 'hamshack' ), 'text', __( 'Optional, e.g. 51.0688 – the exact spot for maps, distances and satellite passes. Empty = centre of the locator square.', 'hamshack' ) );
+					$f( 'lon', __( 'Longitude (maps)', 'hamshack' ), 'text', __( 'Optional, e.g. -1.7945 (west is negative).', 'hamshack' ) );
 					$f( 'licence', __( 'Licence', 'hamshack' ) );
 					$f( 'itu_zone', __( 'ITU zone', 'hamshack' ) );
 					$f( 'cq_zone', __( 'CQ zone', 'hamshack' ) );
@@ -267,7 +276,8 @@ function hamshack_station_page() {
 					?>
 					<tr><th scope="row"><?php esc_html_e( 'Sections', 'hamshack' ); ?></th><td>
 						<label><input type="checkbox" name="hamshack_station[show_solar]" value="1" <?php checked( $o['show_solar'] ); ?>> <?php esc_html_e( 'Show N0NBH solar-terrestrial / band conditions on the home page', 'hamshack' ); ?></label><br>
-						<label><input type="checkbox" name="hamshack_station[show_logbook]" value="1" <?php checked( $o['show_logbook'] ); ?>> <?php esc_html_e( 'Show recent QSOs on the home page', 'hamshack' ); ?></label>
+						<label><input type="checkbox" name="hamshack_station[show_logbook]" value="1" <?php checked( $o['show_logbook'] ); ?>> <?php esc_html_e( 'Show recent QSOs on the home page', 'hamshack' ); ?></label><br>
+						<label><input type="checkbox" name="hamshack_station[show_live]" value="1" <?php checked( $o['show_live'] ); ?>> <?php esc_html_e( 'Show the live section (greyline map and FT8 decodes) on the home page', 'hamshack' ); ?></label>
 					</td></tr>
 					<?php foreach ( array( 'solar_home' => __( 'N0NBH banner – home page', 'hamshack' ), 'solar_banner' => __( 'N0NBH banner – sidebar widget', 'hamshack' ) ) as $sk => $slabel ) : ?>
 						<tr><th scope="row"><label for="hs-<?php echo esc_attr( $sk ); ?>"><?php echo esc_html( $slabel ); ?></label></th><td>

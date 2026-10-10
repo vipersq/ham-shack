@@ -2,7 +2,7 @@
 Theme Name: Ham Shack
 Author: Ham Shack
 Description: Dark amateur-radio blog theme for radio amateurs. Includes on-air status, events calendar with iCal feed, QSO logbook with ADIF import/export, station page, QSL card, contact form, widgets and one-click site setup.
-Version: 1.0.0
+Version: 2.1.0
 Requires at least: 6.2
 Tested up to: 7.1
 Requires PHP: 7.4
@@ -356,9 +356,10 @@ th { color: var(--muted); font-size: .78em; text-transform: uppercase; letter-sp
 /* ==========================================================================
    Forms
    ========================================================================== */
-input[type="text"], input[type="email"], input[type="url"], input[type="search"], input[type="password"], input[type="number"], input[type="tel"], select, textarea {
+input[type="text"], input[type="email"], input[type="url"], input[type="search"], input[type="password"], input[type="number"], input[type="tel"], input[type="date"], input[type="time"], input[type="datetime-local"], select, textarea {
 	width: 100%; font: inherit; font-size: .98rem; color: var(--text-strong); background: #0a1017; border: 1px solid var(--line-2); border-radius: 10px; padding: .75em .95em; transition: border-color .15s, box-shadow .15s;
 }
+input[type="date"], input[type="time"] { color-scheme: dark; min-height: 2.9em; }
 input:focus, select:focus, textarea:focus { outline: none; border-color: var(--amber); box-shadow: 0 0 0 3px rgba(255, 176, 32, .18); }
 ::placeholder { color: #5f7488; }
 label { display: block; font-weight: 600; font-size: .9rem; color: var(--text); }

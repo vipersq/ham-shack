@@ -20,7 +20,7 @@ while ( have_posts() ) :
 		<?php if ( has_post_thumbnail() ) : ?>
 			<figure class="container post-feature"><?php the_post_thumbnail( 'hamshack-hero' ); ?></figure>
 		<?php endif; ?>
-		<div class="container <?php echo has_shortcode( get_the_content(), 'hamshack_calendar' ) || has_shortcode( get_the_content(), 'hamshack_logbook' ) ? '' : 'narrow'; ?> entry-content">
+		<div class="container <?php echo hamshack_is_wide_content( get_the_content() ) ? '' : 'narrow'; ?> entry-content">
 			<?php
 			the_content();
 			wp_link_pages();

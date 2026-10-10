@@ -27,6 +27,8 @@
 			<span class="clock" title="<?php esc_attr_e( 'Coordinated Universal Time', 'hamshack' ); ?>"><span class="lbl">UTC</span> <time data-clock="utc"><?php echo esc_html( gmdate( 'H:i' ) ); ?></time></span>
 			<span class="clock hide-sm" title="<?php esc_attr_e( 'Local time', 'hamshack' ); ?>"><span class="lbl"><?php echo esc_html( wp_date( 'T' ) ); ?></span> <time data-clock="local"><?php echo esc_html( wp_date( 'H:i' ) ); ?></time></span>
 			<?php if ( hamshack_opt( 'locator' ) ) : ?><span class="loc hide-sm"><?php hamshack_the_icon( 'pin', 14 ); ?> <?php echo esc_html( hamshack_opt( 'locator' ) ); ?></span><?php endif; ?>
+			<?php hamshack_language_switcher(); ?>
+			<?php do_action( 'hamshack_topbar_end' ); ?>
 		</div>
 	</div>
 </div>

@@ -1,0 +1,4119 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Ham Shack 2.1.0\n"
+"Language: pl_PL\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+
+#. Theme Name of the theme
+#. Author of the theme
+#: style.css inc/station.php:24 inc/station.php:185
+msgid "Ham Shack"
+msgstr "Ham Shack"
+
+#. Description of the theme
+#: style.css
+msgid ""
+"Dark amateur-radio blog theme for radio amateurs. Includes on-air status, "
+"events calendar with iCal feed, QSO logbook with ADIF import/export, station"
+" page, QSL card, contact form, widgets and one-click site setup."
+msgstr ""
+"Ciemny motyw bloga krótkofalarskiego. Zawiera status na antenie, kalendarz "
+"wydarzeń z kanałem iCal, log QSO z importem/eksportem ADIF, stronę stacji, "
+"kartę QSL, formularz kontaktowy, widżety i konfigurację strony jednym "
+"kliknięciem."
+
+#: 404.php:13
+msgid "QRT – signal lost"
+msgstr "QRT – sygnał utracony"
+
+#: 404.php:14
+msgid ""
+"This page has faded into the noise. Try a search, or head back to the home "
+"page."
+msgstr ""
+"Ta strona utonęła w szumach. Spróbuj wyszukiwania lub wróć na stronę główną."
+
+#: 404.php:16
+msgid "Back to the shack"
+msgstr "Powrót do shacku"
+
+#: archive-hamshack_event.php:13
+msgid "Events calendar"
+msgstr "Kalendarz wydarzeń"
+
+#. translators: %d: comment count
+#: comments.php:17
+msgid "%d comment"
+msgid_plural "%d comments"
+msgstr[0] "%d komentarz"
+msgstr[1] "%d komentarze"
+msgstr[2] "%d komentarzy"
+
+#: comments.php:37
+msgid "Leave a comment"
+msgstr "Zostaw komentarz"
+
+#: comments.php:39
+msgid "Your email address will not be published. Callsigns welcome!"
+msgstr ""
+"Twój adres e-mail nie zostanie opublikowany. Znaki wywoławcze mile widziane!"
+
+#: footer.php:18 inc/logbook.php:26 page-station.php:22
+#: template-parts/status-card.php:35
+msgid "QTH"
+msgstr "QTH"
+
+#: footer.php:18
+msgid "Loc"
+msgstr "Lok."
+
+#: footer.php:55
+msgid "Back to top"
+msgstr "Do góry"
+
+#: front-page.php:29
+msgid "Read the blog"
+msgstr "Czytaj bloga"
+
+#: front-page.php:31
+msgid "Are you in my log?"
+msgstr "Czy jesteś w moim logu?"
+
+#: front-page.php:44
+msgid "Illustration of an HF transceiver showing 14.074 MHz"
+msgstr "Ilustracja transceivera KF pokazującego 14,074 MHz"
+
+#: front-page.php:55 front-page.php:114 inc/app.php:100
+#: single-hamshack_event.php:19
+msgid "Calendar"
+msgstr "Kalendarz"
+
+#: front-page.php:55
+msgid "Contests, nets & activations"
+msgstr "Zawody, sieci i aktywacje"
+
+#: front-page.php:56 front-page.php:139 inc/app.php:99 inc/dashboard.php:93
+#: inc/logbook.php:41 inc/logbook.php:46 inc/logbook.php:49
+msgid "Logbook"
+msgstr "Log"
+
+#: front-page.php:56
+msgid "Search your callsign"
+msgstr "Wyszukaj swój znak"
+
+#: front-page.php:57
+msgid "Station"
+msgstr "Stacja"
+
+#: front-page.php:57
+msgid "Rigs, antennas & QSL"
+msgstr "Sprzęt, anteny i QSL"
+
+#: front-page.php:58 front-page.php:165 inc/app.php:98
+msgid "Live"
+msgstr "Na żywo"
+
+#: front-page.php:58
+msgid "FT8, DX cluster & greyline"
+msgstr "FT8, DX cluster i greyline"
+
+#: front-page.php:59 front-page.php:170
+msgid "QSO map"
+msgstr "Mapa QSO"
+
+#: front-page.php:59
+msgid "Everyone I have worked"
+msgstr "Wszyscy, z którymi pracowałem"
+
+#: front-page.php:60
+msgid "Contact"
+msgstr "Kontakt"
+
+#: front-page.php:60
+msgid "Skeds & QSL requests"
+msgstr "Skedy i prośby o QSL"
+
+#: front-page.php:87
+msgid "From the shack"
+msgstr "Z shacku"
+
+#: front-page.php:88 index.php:23
+msgid "Latest posts"
+msgstr "Najnowsze wpisy"
+
+#: front-page.php:90
+msgid "All posts"
+msgstr "Wszystkie wpisy"
+
+#: front-page.php:110
+msgid "On the air"
+msgstr "Na antenie"
+
+#: front-page.php:111
+msgid "Upcoming events"
+msgstr "Nadchodzące wydarzenia"
+
+#: front-page.php:119
+msgid "No events scheduled right now."
+msgstr "Obecnie brak zaplanowanych wydarzeń."
+
+#: front-page.php:140
+msgid "Recent QSOs"
+msgstr "Ostatnie QSO"
+
+#: front-page.php:143
+msgid "Full log"
+msgstr "Pełny log"
+
+#: front-page.php:152 inc/live.php:577 inc/propagation.php:363
+msgid "Band conditions"
+msgstr "Warunki propagacji"
+
+#: front-page.php:166
+msgid "The world from the shack"
+msgstr "Świat z shacku"
+
+#: front-page.php:173
+msgid "Awards"
+msgstr "Dyplomy"
+
+#: front-page.php:176
+msgid "Live page"
+msgstr "Strona na żywo"
+
+#: front-page.php:197
+msgid "The station"
+msgstr "Stacja"
+
+#: front-page.php:198
+msgid "Behind the signal"
+msgstr "Za sygnałem"
+
+#: front-page.php:209
+msgid "Station & QSL info"
+msgstr "Stacja i informacje QSL"
+
+#: front-page.php:212
+msgid "Arrange a sked"
+msgstr "Umów sked"
+
+#: header.php:16
+msgid "Skip to content"
+msgstr "Przejdź do treści"
+
+#: header.php:27
+msgid "Coordinated Universal Time"
+msgstr "Uniwersalny czas koordynowany"
+
+#: header.php:28
+msgid "Local time"
+msgstr "Czas lokalny"
+
+#: header.php:46
+msgid "Menu"
+msgstr "Menu"
+
+#: header.php:50 inc/setup.php:53
+msgid "Main menu"
+msgstr "Menu główne"
+
+#: header.php:63 header.php:65 inc/logbook.php:631 searchform.php:13
+msgid "Search"
+msgstr "Szukaj"
+
+#: header.php:64
+msgid "Search…"
+msgstr "Szukaj…"
+
+#: inc/activation.php:27
+msgid ""
+"Build the site (pages, menu, calendar, logbook, widgets and sample content) "
+"in one click:"
+msgstr ""
+"Zbuduj stronę (strony, menu, kalendarz, log, widżety i przykładowe treści) "
+"jednym kliknięciem:"
+
+#: inc/activation.php:27 inc/activation.php:68
+msgid "Run site setup"
+msgstr "Uruchom konfigurację strony"
+
+#: inc/activation.php:31 inc/activation.php:38
+msgid "Setup & help"
+msgstr "Konfiguracja i pomoc"
+
+#: inc/activation.php:40
+msgid "Setup complete! Your site is ready."
+msgstr "Konfiguracja zakończona! Twoja strona jest gotowa."
+
+#: inc/activation.php:40
+msgid "View site →"
+msgstr "Zobacz stronę →"
+
+#: inc/activation.php:43
+msgid "One-click site setup"
+msgstr "Konfiguracja strony jednym kliknięciem"
+
+#: inc/activation.php:44
+msgid ""
+"Creates everything the site needs. It is safe to run again – existing pages,"
+" menus and categories are kept, only missing items are added."
+msgstr ""
+"Tworzy wszystko, czego potrzebuje strona. Można ją bezpiecznie uruchomić "
+"ponownie – istniejące strony, menu i kategorie zostaną zachowane, dodane "
+"zostaną tylko brakujące elementy."
+
+#: inc/activation.php:46
+msgid "Pages: Home, Blog, Calendar, Logbook, Station, Contact"
+msgstr "Strony: Strona główna, Blog, Kalendarz, Log, Stacja, Kontakt"
+
+#: inc/activation.php:47
+msgid "Main & footer menus, sidebar and footer widgets"
+msgstr "Menu główne i w stopce, widżety w pasku bocznym i stopce"
+
+#: inc/activation.php:48
+msgid "Blog categories and event types (Contest, Net, Activation…)"
+msgstr "Kategorie bloga i typy wydarzeń (Zawody, Sieć, Aktywacja…)"
+
+#: inc/activation.php:49
+msgid "Pretty permalinks, your time zone and date format"
+msgstr "Przyjazne linki, Twoja strefa czasowa i format daty"
+
+#: inc/activation.php:55
+msgid "1. Your station"
+msgstr "1. Twoja stacja"
+
+#: inc/activation.php:57 inc/contact.php:80 inc/dashboard.php:57
+#: inc/logbook.php:227 inc/newsletter.php:465 inc/qsl.php:369
+#: inc/station.php:235
+msgid "Callsign"
+msgstr "Znak wywoławczy"
+
+#: inc/activation.php:58
+msgid "Your name"
+msgstr "Twoje imię"
+
+#: inc/activation.php:59
+msgid "QTH (town, county, country)"
+msgstr "QTH (miejscowość, region, kraj)"
+
+#: inc/activation.php:60 inc/station.php:238
+msgid "Maidenhead locator"
+msgstr "Lokator Maidenhead"
+
+#: inc/activation.php:61 inc/station.php:242 page-station.php:22
+msgid "ITU zone"
+msgstr "Strefa ITU"
+
+#: inc/activation.php:62 inc/station.php:243 page-station.php:22
+msgid "CQ zone"
+msgstr "Strefa CQ"
+
+#: inc/activation.php:63 inc/station.php:241
+msgid "Licence"
+msgstr "Licencja"
+
+#: inc/activation.php:64
+msgid "Time zone"
+msgstr "Strefa czasowa"
+
+#: inc/activation.php:66
+msgid "2. Build the site"
+msgstr "2. Zbuduj stronę"
+
+#: inc/activation.php:67
+msgid "Also add example blog posts and events (edit or delete them later)"
+msgstr ""
+"Dodaj też przykładowe wpisy i wydarzenia (możesz je później edytować lub "
+"usunąć)"
+
+#: inc/activation.php:72
+msgid "Shortcodes"
+msgstr "Shortcody"
+
+#: inc/activation.php:74
+msgid ""
+"Month calendar with navigation, legend, agenda and iCal subscribe link."
+msgstr ""
+"Kalendarz miesięczny z nawigacją, legendą, agendą i linkiem do subskrypcji "
+"iCal."
+
+#: inc/activation.php:75
+msgid "List of upcoming events."
+msgstr "Lista nadchodzących wydarzeń."
+
+#: inc/activation.php:76
+msgid "Public logbook with \"Are you in my log?\" search and stats."
+msgstr "Publiczny log z wyszukiwarką \"Czy jesteś w moim logu?\" i statystykami."
+
+#: inc/activation.php:77
+msgid "Just the QSO statistics and band bars."
+msgstr "Tylko statystyki QSO i wykresy pasm."
+
+#: inc/activation.php:78
+msgid "Contact form (anti-spam built in)."
+msgstr "Formularz kontaktowy (z wbudowaną ochroną antyspamową)."
+
+#: inc/activation.php:80
+msgid "Calendar feed for Google / Apple / Outlook: %s"
+msgstr "Kanał kalendarza dla Google / Apple / Outlook: %s"
+
+#: inc/activation.php:88 inc/community.php:281 inc/contests.php:224
+#: inc/dashboard.php:102 inc/integrations.php:199 inc/logbook.php:371
+#: inc/logbook.php:442 inc/newsletter.php:497 inc/newsletter.php:515
+#: inc/newsletter.php:534 inc/qrz.php:458 inc/qsl.php:395 inc/rig.php:384
+#: inc/seo.php:230 inc/seo.php:273 inc/station.php:130
+msgid "Not allowed."
+msgstr "Brak uprawnień."
+
+#: inc/activation.php:570
+msgid "Ham Shack 2.0 is ready!"
+msgstr "Ham Shack 2.0 jest gotowy!"
+
+#: inc/activation.php:570
+msgid ""
+"New pages were added under “Radio” in the main menu: Live, QSO Map, Stats & "
+"Awards, Satellites, Activations, Gallery and Learn. QSOs are being enriched "
+"with country, zones and positions in the background."
+msgstr ""
+"W menu głównym w sekcji „Radio” dodano nowe strony: Na żywo, Mapa QSO, "
+"Statystyki i dyplomy, Satelity, Aktywacje, Galeria i Nauka. QSO są w tle "
+"uzupełniane o kraj, strefy i pozycje."
+
+#: inc/activation.php:570 inc/activation.php:623
+msgid "Hide"
+msgstr "Ukryj"
+
+#: inc/activation.php:623
+msgid "Ham Shack 2.1 is ready!"
+msgstr "Ham Shack 2.1 jest gotowy!"
+
+#: inc/activation.php:623
+msgid ""
+"New pages under “Radio”: Propagation, Contests, Book a sked, Repeaters and "
+"QSL Wall. Set up notifications, Club Log, APRS and the web SDR in Ham Shack "
+"→ Integrations."
+msgstr ""
+"Nowe strony w menu „Radio”: Propagacja, Zawody, Umów sked, Przemienniki i "
+"Ściana QSL. Powiadomienia, Club Log, APRS i web SDR ustawisz w Ham Shack → "
+"Integracje."
+
+#: inc/activation.php:623
+msgid "Open Integrations"
+msgstr "Otwórz Integracje"
+
+#: inc/app.php:164
+msgid "Offline"
+msgstr "Offline"
+
+#: inc/app.php:166
+msgid "No signal…"
+msgstr "Brak sygnału…"
+
+#: inc/app.php:166
+msgid ""
+"You are offline and this page has not been saved yet. Pages you visited "
+"before still open – try again when you are back on the air."
+msgstr ""
+"Jesteś offline, a ta strona nie została jeszcze zapisana. Strony odwiedzone "
+"wcześniej nadal się otworzą – spróbuj ponownie, gdy wrócisz na pasmo."
+
+#: inc/app.php:166
+msgid "Try again"
+msgstr "Spróbuj ponownie"
+
+#: inc/app.php:213
+msgid "Light / dark"
+msgstr "Jasny / ciemny"
+
+#: inc/awards.php:201
+msgid "%d confirmed"
+msgstr "%d potwierdzonych"
+
+#: inc/awards.php:204
+msgid "%1$d of %2$d worked, %3$d confirmed"
+msgstr "%1$d z %2$d zrobionych, %3$d potwierdzonych"
+
+#: inc/awards.php:219 inc/awards.php:427 inc/geo.php:566
+#: inc/newsletter.php:456 inc/newsletter.php:470
+msgid "confirmed"
+msgstr "potwierdzone"
+
+#: inc/awards.php:219 inc/awards.php:354 inc/awards.php:427
+msgid "worked"
+msgstr "zrobione"
+
+#: inc/awards.php:284
+msgid "The logbook is empty – statistics appear here after the first QSOs."
+msgstr "Log jest pusty – statystyki pojawią się tu po pierwszych QSO."
+
+#: inc/awards.php:286 inc/geo.php:571 inc/propagation.php:147
+msgid "Europe"
+msgstr "Europa"
+
+#: inc/awards.php:286 inc/propagation.php:147
+msgid "Asia"
+msgstr "Azja"
+
+#: inc/awards.php:286 inc/propagation.php:147
+msgid "Africa"
+msgstr "Afryka"
+
+#: inc/awards.php:286 inc/propagation.php:147
+msgid "North America"
+msgstr "Ameryka Północna"
+
+#: inc/awards.php:286 inc/propagation.php:147
+msgid "South America"
+msgstr "Ameryka Południowa"
+
+#: inc/awards.php:286 inc/propagation.php:147
+msgid "Oceania"
+msgstr "Oceania"
+
+#: inc/awards.php:288
+msgid "England"
+msgstr "Anglia"
+
+#: inc/awards.php:288
+msgid "Scotland"
+msgstr "Szkocja"
+
+#: inc/awards.php:288
+msgid "Wales"
+msgstr "Walia"
+
+#: inc/awards.php:288
+msgid "Northern Ireland"
+msgstr "Irlandia Północna"
+
+#: inc/awards.php:288
+msgid "Isle of Man"
+msgstr "Wyspa Man"
+
+#: inc/awards.php:288
+msgid "Jersey"
+msgstr "Jersey"
+
+#: inc/awards.php:288
+msgid "Guernsey"
+msgstr "Guernsey"
+
+#: inc/awards.php:288
+msgid "Ireland"
+msgstr "Irlandia"
+
+#: inc/awards.php:330 inc/contests.php:326 inc/dashboard.php:71
+#: inc/extras.php:268 inc/extras.php:370 inc/geo.php:563 inc/logbook.php:493
+#: inc/qsl.php:294 inc/qsl.php:337 inc/qsl.php:379
+msgid "QSOs"
+msgstr "QSO"
+
+#: inc/awards.php:331
+msgid "DXCC entities"
+msgstr "Podmioty DXCC"
+
+#: inc/awards.php:332 inc/awards.php:348 inc/geo.php:626 inc/logbook.php:496
+msgid "Grid squares"
+msgstr "Lokatory"
+
+#: inc/awards.php:333
+msgid "km in total"
+msgstr "km łącznie"
+
+#: inc/awards.php:335
+msgid "Best DX: %1$s, %2$s"
+msgstr "Najlepszy DX: %1$s, %2$s"
+
+#: inc/awards.php:339
+msgid "Awards progress"
+msgstr "Postęp w dyplomach"
+
+#: inc/awards.php:342
+msgid "Countries / entities – 100 for the award"
+msgstr "Kraje / podmioty – 100 do dyplomu"
+
+#: inc/awards.php:343
+msgid "Worked All Continents"
+msgstr "Worked All Continents"
+
+#: inc/awards.php:344
+msgid "Worked All Zones – CQ zones"
+msgstr "Worked All Zones – strefy CQ"
+
+#: inc/awards.php:345
+msgid "ITU zones"
+msgstr "Strefy ITU"
+
+#: inc/awards.php:346
+msgid "Worked All States (USA)"
+msgstr "Worked All States (USA)"
+
+#: inc/awards.php:347 inc/awards.php:360
+msgid "British Isles"
+msgstr "Wyspy Brytyjskie"
+
+#: inc/awards.php:347
+msgid "All 8 DXCC entities of the British Isles"
+msgstr "Wszystkie 8 podmiotów DXCC Wysp Brytyjskich"
+
+#: inc/awards.php:348
+msgid "Maidenhead squares (4 characters)"
+msgstr "Kwadraty Maidenhead (4 znaki)"
+
+#: inc/awards.php:350
+msgid "Grid squares on this band (VUCC: 100 on 6 m / 2 m, 50 on 70 cm)"
+msgstr "Lokatory na tym paśmie (VUCC: 100 na 6 m / 2 m, 50 na 70 cm)"
+
+#: inc/awards.php:354
+msgid "confirmed (QSL card, LoTW, eQSL or QRZ.com)"
+msgstr "potwierdzone (karta QSL, LoTW, eQSL lub QRZ.com)"
+
+#: inc/awards.php:358
+msgid "Continents"
+msgstr "Kontynenty"
+
+#: inc/awards.php:368 inc/contests.php:330
+msgid "CQ zones"
+msgstr "Strefy CQ"
+
+#: inc/awards.php:372
+msgid "US states"
+msgstr "Stany USA"
+
+#: inc/awards.php:377
+msgid "Activity"
+msgstr "Aktywność"
+
+#: inc/awards.php:380
+msgid "QSOs per month (last 2 years)"
+msgstr "QSO miesięcznie (ostatnie 2 lata)"
+
+#: inc/awards.php:381
+msgid "QSOs per month"
+msgstr "QSO miesięcznie"
+
+#: inc/awards.php:384 inc/station.php:256
+msgid "Bands"
+msgstr "Pasma"
+
+#: inc/awards.php:388 inc/community.php:433 inc/station.php:261
+msgid "Modes"
+msgstr "Emisje"
+
+#: inc/awards.php:392
+msgid "Time of day (UTC)"
+msgstr "Pora dnia (UTC)"
+
+#: inc/awards.php:393
+msgid "QSOs by hour of day"
+msgstr "QSO według godziny"
+
+#: inc/awards.php:396
+msgid "Most worked countries"
+msgstr "Najczęściej robione kraje"
+
+#: inc/awards.php:406
+msgid "Years"
+msgstr "Lata"
+
+#: inc/awards.php:408
+msgid "First QSO in the log: %1$s · latest: %2$s"
+msgstr "Pierwsze QSO w logu: %1$s · ostatnie: %2$s"
+
+#: inc/awards.php:412
+msgid "DXCC by band"
+msgstr "DXCC według pasm"
+
+#: inc/awards.php:415
+msgid "Entity"
+msgstr "Podmiot"
+
+#: inc/awards.php:415
+msgid "Cont."
+msgstr "Kont."
+
+#: inc/badge.php:238
+msgid "QRZ biography"
+msgstr "Biografia QRZ"
+
+#: inc/badge.php:245
+msgid "QRZ.com biography"
+msgstr "Biografia na QRZ.com"
+
+#: inc/badge.php:246
+msgid ""
+"A ready-made biography for your QRZ.com page in the style of this website. "
+"Status and logbook are live images served by this site, so they stay up to "
+"date on QRZ automatically."
+msgstr ""
+"Gotowa biografia na Twoją stronę QRZ.com w stylu tej witryny. Status i log "
+"to obrazy generowane na żywo przez tę stronę, więc na QRZ aktualizują się "
+"automatycznie."
+
+#: inc/badge.php:248
+msgid "Code to paste"
+msgstr "Kod do wklejenia"
+
+#: inc/badge.php:250
+msgid "Click “Copy code”."
+msgstr "Kliknij „Kopiuj kod”."
+
+#: inc/badge.php:251
+msgid "On QRZ.com open your callsign page → Edit → Biography."
+msgstr "Na QRZ.com otwórz stronę swojego znaku → Edit → Biography."
+
+#: inc/badge.php:252
+msgid ""
+"Switch the editor to HTML / Source mode, delete the old content, paste, and "
+"save."
+msgstr ""
+"Przełącz edytor w tryb HTML / źródła, usuń starą treść, wklej i zapisz."
+
+#: inc/badge.php:254
+msgid "Copy code"
+msgstr "Kopiuj kod"
+
+#: inc/badge.php:254
+msgid "Copied!"
+msgstr "Skopiowano!"
+
+#: inc/badge.php:256
+msgid ""
+"Changed your equipment or texts in Station settings? Come back here and copy"
+" the code again."
+msgstr ""
+"Zmieniłeś sprzęt lub teksty w ustawieniach stacji? Wróć tutaj i skopiuj kod "
+"ponownie."
+
+#: inc/badge.php:259
+msgid "Preview"
+msgstr "Podgląd"
+
+#: inc/brand.php:65
+msgid "AMATEUR RADIO"
+msgstr "KRÓTKOFALARSTWO"
+
+#: inc/clublog.php:127
+msgid "Club Log: last upload (%1$s, %2$s ago): %3$s"
+msgstr "Club Log: ostatnie wysłanie (%1$s, %2$s temu): %3$s"
+
+#: inc/community.php:18
+msgid "QSL card received (pictures)"
+msgstr "Otrzymana karta QSL (zdjęcia)"
+
+#: inc/community.php:20
+msgid "Front"
+msgstr "Przód"
+
+#: inc/community.php:20
+msgid "Back"
+msgstr "Tył"
+
+#: inc/community.php:26
+msgid "Choose picture"
+msgstr "Wybierz zdjęcie"
+
+#: inc/community.php:26
+msgid "Remove"
+msgstr "Usuń"
+
+#: inc/community.php:28
+msgid ""
+"Scan or photograph the card. It appears in the public log and on the QSL "
+"wall, and the QSO is marked as confirmed."
+msgstr ""
+"Zeskanuj lub sfotografuj kartę. Pojawi się w publicznym logu i na ścianie "
+"QSL, a QSO zostanie oznaczone jako potwierdzone."
+
+#: inc/community.php:70
+msgid "See the QSL card"
+msgstr "Zobacz kartę QSL"
+
+#: inc/community.php:76
+msgid ""
+"No QSL cards yet. Open a QSO in the logbook and add a picture of the card in"
+" “QSL card received”."
+msgstr ""
+"Brak kart QSL. Otwórz QSO w logu i dodaj zdjęcie karty w polu „Otrzymana "
+"karta QSL”."
+
+#: inc/community.php:76
+msgid "The first QSL cards are on their way!"
+msgstr "Pierwsze karty QSL są już w drodze!"
+
+#: inc/community.php:93
+msgid "Back of the card"
+msgstr "Tył karty"
+
+#: inc/community.php:111 inc/community.php:113 inc/community.php:114
+msgid "Sked requests"
+msgstr "Prośby o sked"
+
+#: inc/community.php:112 inc/community.php:115
+msgid "Sked request"
+msgstr "Prośba o sked"
+
+#: inc/community.php:116
+msgid "No sked requests yet"
+msgstr "Brak próśb o sked"
+
+#: inc/community.php:199
+msgid "Sked request from %s"
+msgstr "Prośba o sked od %s"
+
+#: inc/community.php:207 inc/contact.php:61 inc/newsletter.php:177
+#: inc/qsl.php:270
+msgid "The form expired – please try again."
+msgstr "Formularz wygasł – spróbuj ponownie."
+
+#: inc/community.php:208 inc/newsletter.php:178
+msgid "That looked automated – please try again."
+msgstr "To wyglądało na automat – spróbuj ponownie."
+
+#: inc/community.php:209 inc/qsl.php:272
+msgid "Too many requests – please try again later."
+msgstr "Zbyt wiele zgłoszeń – spróbuj ponownie później."
+
+#: inc/community.php:210
+msgid "Please enter your callsign and a valid e-mail address."
+msgstr "Podaj swój znak i poprawny adres e-mail."
+
+#: inc/community.php:211
+msgid "Please pick a date and time (UTC) at least an hour from now."
+msgstr "Wybierz datę i godzinę (UTC) co najmniej godzinę od teraz."
+
+#: inc/community.php:212 inc/qsl.php:276
+msgid "Something went wrong. Please try again later."
+msgstr "Coś poszło nie tak. Spróbuj ponownie później."
+
+#: inc/community.php:218
+msgid "Thanks! I will check the date and confirm by e-mail. 73!"
+msgstr "Dzięki! Sprawdzę termin i potwierdzę e-mailem. 73!"
+
+#: inc/community.php:226
+msgid "Your callsign"
+msgstr "Twój znak"
+
+#: inc/community.php:227 inc/contact.php:79 inc/logbook.php:25 inc/qsl.php:316
+#: inc/qsl.php:371
+msgid "Name"
+msgstr "Imię"
+
+#: inc/community.php:230 inc/extras.php:241 inc/extras.php:268
+#: inc/logbook.php:522
+msgid "Date"
+msgstr "Data"
+
+#: inc/community.php:231 inc/logbook.php:19
+msgid "Time (UTC)"
+msgstr "Godzina (UTC)"
+
+#: inc/community.php:234 inc/contests.php:337 inc/events.php:118
+#: inc/geo.php:628 inc/logbook.php:21 inc/logbook.php:229 inc/logbook.php:525
+#: inc/logbook.php:625
+msgid "Band"
+msgstr "Pasmo"
+
+#: inc/community.php:234 inc/community.php:235
+msgid "Any"
+msgstr "Dowolne"
+
+#: inc/community.php:235 inc/contests.php:337 inc/contests.php:376
+#: inc/dashboard.php:45 inc/dashboard.php:59 inc/events.php:125
+#: inc/geo.php:635 inc/logbook.php:22 inc/logbook.php:230 inc/logbook.php:526
+#: inc/station.php:225
+msgid "Mode"
+msgstr "Emisja"
+
+#: inc/community.php:236 inc/events.php:117 inc/logbook.php:20
+#: inc/station.php:224
+msgid "Frequency (MHz)"
+msgstr "Częstotliwość (MHz)"
+
+#: inc/community.php:238
+msgid "E-mail (for the confirmation)"
+msgstr "E-mail (do potwierdzenia)"
+
+#: inc/community.php:239 inc/contact.php:86 inc/live.php:478 inc/qsl.php:320
+#: inc/qsl.php:374
+msgid "Message"
+msgstr "Wiadomość"
+
+#: inc/community.php:239
+msgid "Your QTH, antenna, power… anything useful"
+msgstr "Twój QTH, antena, moc… cokolwiek przydatnego"
+
+#: inc/community.php:241
+msgid ""
+"All times in UTC – it is %s UTC now. Your e-mail is only used to confirm the"
+" sked."
+msgstr ""
+"Wszystkie godziny w UTC – teraz jest %s UTC. E-mail służy wyłącznie do "
+"potwierdzenia skedu."
+
+#: inc/community.php:242
+msgid "Request a sked"
+msgstr "Poproś o sked"
+
+#: inc/community.php:250
+msgid "Sked"
+msgstr "Sked"
+
+#: inc/community.php:250 inc/events.php:175
+msgid "Band / mode"
+msgstr "Pasmo / emisja"
+
+#: inc/community.php:250 inc/newsletter.php:465 inc/qsl.php:338
+#: inc/rig.php:309 inc/station.php:217
+msgid "Status"
+msgstr "Status"
+
+#: inc/community.php:250 inc/qsl.php:339
+msgid "Received"
+msgstr "Otrzymano"
+
+#: inc/community.php:262
+msgid "Accepted"
+msgstr "Zaakceptowany"
+
+#: inc/community.php:262 inc/qsl.php:350
+msgid "New"
+msgstr "Nowa"
+
+#: inc/community.php:267
+msgid "Accept"
+msgstr "Akceptuj"
+
+#: inc/community.php:267
+msgid "Decline"
+msgstr "Odrzuć"
+
+#: inc/community.php:433
+msgid "Repeater"
+msgstr "Przemiennik"
+
+#: inc/community.php:433
+msgid "Output"
+msgstr "Wyjście"
+
+#: inc/community.php:433
+msgid "Input"
+msgstr "Wejście"
+
+#: inc/community.php:433
+msgid "Tone / CC"
+msgstr "Ton / CC"
+
+#: inc/community.php:433 single-hamshack_event.php:50
+msgid "Where"
+msgstr "Gdzie"
+
+#: inc/community.php:439
+msgid "No repeaters found – add your own in Ham Shack → Integrations."
+msgstr "Nie znaleziono przemienników – dodaj własne w Ham Shack → Integracje."
+
+#: inc/community.php:445
+msgid ""
+"Repeaters within %1$d km. UK data from %2$s (ETCC) – please report changes "
+"there."
+msgstr ""
+"Przemienniki w promieniu %1$d km. Dane brytyjskie z %2$s (ETCC) – zmiany "
+"zgłaszaj tam."
+
+#: inc/community.php:447
+msgid "Repeaters within %d km of my station."
+msgstr "Przemienniki w promieniu %d km od mojej stacji."
+
+#: inc/community.php:467
+msgid ""
+"Listen to the bands through a web receiver – it opens in your browser, no "
+"software needed."
+msgstr ""
+"Posłuchaj pasm przez odbiornik internetowy – działa w przeglądarce, bez "
+"instalowania programów."
+
+#: inc/community.php:468
+msgid "Open in a new window ↗"
+msgstr "Otwórz w nowym oknie ↗"
+
+#: inc/community.php:469
+msgid "Listen here"
+msgstr "Słuchaj tutaj"
+
+#: inc/community.php:516 inc/geo.php:574 template-parts/status-card.php:37
+msgid "%s ago"
+msgstr "%s temu"
+
+#: inc/community.php:520
+msgid "%1$s was last heard on APRS %2$s ago near %3$s."
+msgstr "%1$s był ostatnio słyszany w APRS %2$s temu w pobliżu %3$s."
+
+#: inc/contact.php:48
+msgid "New message from the website"
+msgstr "Nowa wiadomość ze strony"
+
+#: inc/contact.php:62
+msgid "Your message looked automated. Please try again."
+msgstr "Twoja wiadomość wyglądała na automatyczną. Spróbuj ponownie."
+
+#: inc/contact.php:63
+msgid "Too many messages – please try again later."
+msgstr "Zbyt wiele wiadomości – spróbuj ponownie później."
+
+#: inc/contact.php:64
+msgid "Please fill in your name, a valid email and a message."
+msgstr "Podaj imię, poprawny adres e-mail i treść wiadomości."
+
+#: inc/contact.php:65
+msgid "The message could not be sent. Please try again later."
+msgstr "Nie udało się wysłać wiadomości. Spróbuj ponownie później."
+
+#: inc/contact.php:71
+msgid "Thanks – your message is on its way. 73!"
+msgstr "Dzięki – wiadomość jest w drodze. 73!"
+
+#: inc/contact.php:80
+msgid "optional"
+msgstr "opcjonalnie"
+
+#: inc/contact.php:83 inc/qsl.php:372
+msgid "Email"
+msgstr "E-mail"
+
+#: inc/contact.php:84
+msgid "Subject"
+msgstr "Temat"
+
+#: inc/contact.php:84
+msgid "Sked request, QSL, question…"
+msgstr "Prośba o sked, QSL, pytanie…"
+
+#: inc/contact.php:88
+msgid "Send message"
+msgstr "Wyślij wiadomość"
+
+#: inc/contests.php:192
+msgid "Contest mode"
+msgstr "Tryb zawodów"
+
+#: inc/contests.php:194 inc/contests.php:217
+msgid "I’m taking part"
+msgstr "Biorę udział"
+
+#: inc/contests.php:195
+msgid ""
+"Shows it in my calendar and turns on the live contest scoreboard while it "
+"runs."
+msgstr ""
+"Pokazuje zawody w kalendarzu i włącza tablicę wyników na żywo w czasie ich "
+"trwania."
+
+#: inc/contests.php:197
+msgid "Imported from the WA7BNM Contest Calendar."
+msgstr "Zaimportowane z kalendarza zawodów WA7BNM."
+
+#: inc/contests.php:217
+msgid "Not taking part"
+msgstr "Nie biorę udziału"
+
+#: inc/contests.php:321
+msgid "CONTEST"
+msgstr "ZAWODY"
+
+#: inc/contests.php:321
+msgid "SOON"
+msgstr "WKRÓTCE"
+
+#: inc/contests.php:323
+msgid "%s left"
+msgstr "zostało %s"
+
+#: inc/contests.php:323
+msgid "starts in %s"
+msgstr "start za %s"
+
+#: inc/contests.php:327
+msgid "rate /h (10 min)"
+msgstr "tempo /h (10 min)"
+
+#: inc/contests.php:328
+msgid "last hour"
+msgstr "ostatnia godzina"
+
+#: inc/contests.php:337 inc/logbook.php:524
+msgid "Call"
+msgstr "Znak"
+
+#: inc/contests.php:337 inc/dashboard.php:64 inc/live.php:478 inc/live.php:507
+#: inc/logbook.php:232 inc/logbook.php:528
+msgid "Country"
+msgstr "Kraj"
+
+#: inc/contests.php:343
+msgid ""
+"Counted live from the logbook (WSJT-X QSOs arrive instantly, QRZ.com sync "
+"every few minutes). Not an official score."
+msgstr ""
+"Liczone na żywo z logu (QSO z WSJT-X od razu, synchronizacja z QRZ.com co "
+"kilka minut). To nie jest oficjalny wynik."
+
+#: inc/contests.php:358
+msgid "I am not in a contest right now – see the contests coming up below."
+msgstr "Nie biorę teraz udziału w zawodach – najbliższe zawody poniżej."
+
+#: inc/contests.php:374
+msgid "Contests in the next days"
+msgstr "Zawody w najbliższych dniach"
+
+#: inc/contests.php:376
+msgid "Contest"
+msgstr "Zawody"
+
+#: inc/contests.php:376
+msgid "Starts (UTC)"
+msgstr "Początek (UTC)"
+
+#: inc/contests.php:376
+msgid "Ends (UTC)"
+msgstr "Koniec (UTC)"
+
+#: inc/contests.php:379
+msgid "I’m in!"
+msgstr "Biorę udział!"
+
+#: inc/contests.php:379
+msgid "running"
+msgstr "trwają"
+
+#: inc/contests.php:387
+msgid "No contests imported yet."
+msgstr "Nie zaimportowano jeszcze zawodów."
+
+#: inc/contests.php:389
+msgid ""
+"Contest list from the %s (Bruce Horn, WA7BNM) – always check the rules there"
+" before the contest."
+msgstr ""
+"Lista zawodów z %s (Bruce Horn, WA7BNM) – przed zawodami zawsze sprawdź tam "
+"regulamin."
+
+#: inc/contests.php:389
+msgid "Updated %s ago."
+msgstr "Zaktualizowano %s temu."
+
+#: inc/dashboard.php:16
+msgid "📻 Shack control panel"
+msgstr "📻 Panel sterowania shackiem"
+
+#: inc/dashboard.php:31
+msgid "QSO logged. 73!"
+msgstr "QSO zapisane w logu. 73!"
+
+#: inc/dashboard.php:34 inc/station.php:215
+msgid "On-air status"
+msgstr "Status nadawania"
+
+#: inc/dashboard.php:44
+msgid "MHz"
+msgstr "MHz"
+
+#: inc/dashboard.php:48
+msgid "Status note (optional)"
+msgstr "Notatka do statusu (opcjonalnie)"
+
+#: inc/dashboard.php:49
+msgid "Update status"
+msgstr "Aktualizuj status"
+
+#: inc/dashboard.php:52
+msgid "Quick log"
+msgstr "Szybki wpis do logu"
+
+#: inc/dashboard.php:66
+msgid "Log it (time = now UTC)"
+msgstr "Zapisz w logu (czas = teraz UTC)"
+
+#: inc/dashboard.php:69
+msgid "Log statistics"
+msgstr "Statystyki logu"
+
+#: inc/dashboard.php:72
+msgid "calls"
+msgstr "znaków"
+
+#: inc/dashboard.php:73
+msgid "countries"
+msgstr "krajów"
+
+#: inc/dashboard.php:78
+msgid "Coming up"
+msgstr "Wkrótce"
+
+#: inc/dashboard.php:83
+msgid "Nothing scheduled."
+msgstr "Nic nie zaplanowano."
+
+#: inc/dashboard.php:91
+msgid "Write a post"
+msgstr "Napisz wpis"
+
+#: inc/dashboard.php:92 inc/events.php:20
+msgid "Add event"
+msgstr "Dodaj wydarzenie"
+
+#: inc/dashboard.php:94 inc/station.php:31 inc/station.php:208
+msgid "Station settings"
+msgstr "Ustawienia stacji"
+
+#: inc/events.php:18 inc/events.php:27 inc/events.php:28
+msgid "Events"
+msgstr "Wydarzenia"
+
+#: inc/events.php:19
+msgid "Event"
+msgstr "Wydarzenie"
+
+#: inc/events.php:21
+msgid "Add new event"
+msgstr "Dodaj nowe wydarzenie"
+
+#: inc/events.php:22
+msgid "Edit event"
+msgstr "Edytuj wydarzenie"
+
+#: inc/events.php:23
+msgid "New event"
+msgstr "Nowe wydarzenie"
+
+#: inc/events.php:24
+msgid "View event"
+msgstr "Zobacz wydarzenie"
+
+#: inc/events.php:25
+msgid "Search events"
+msgstr "Szukaj wydarzeń"
+
+#: inc/events.php:26
+msgid "No events found"
+msgstr "Nie znaleziono wydarzeń"
+
+#: inc/events.php:45 inc/events.php:47
+msgid "Event types"
+msgstr "Typy wydarzeń"
+
+#: inc/events.php:46 taxonomy-hamshack_event_type.php:20
+msgid "Event type"
+msgstr "Rodzaj wydarzenia"
+
+#: inc/events.php:89
+msgid "Event details"
+msgstr "Szczegóły wydarzenia"
+
+#: inc/events.php:104
+msgid "Starts"
+msgstr "Początek"
+
+#: inc/events.php:105
+msgid "Ends"
+msgstr "Koniec"
+
+#: inc/events.php:106
+msgid "All-day event"
+msgstr "Wydarzenie całodniowe"
+
+#: inc/events.php:107
+msgid "Times are in the site time zone (%s). Visitors also see the UTC time."
+msgstr ""
+"Godziny podano w strefie czasowej strony (%s). Odwiedzający widzą też czas "
+"UTC."
+
+#: inc/events.php:108
+msgid "Repeats"
+msgstr "Powtarzanie"
+
+#: inc/events.php:110
+msgid "Does not repeat"
+msgstr "Nie powtarza się"
+
+#: inc/events.php:111
+msgid "Every week"
+msgstr "Co tydzień"
+
+#: inc/events.php:112
+msgid "Every 2 weeks"
+msgstr "Co 2 tygodnie"
+
+#: inc/events.php:113
+msgid "Every month (same date)"
+msgstr "Co miesiąc (ten sam dzień)"
+
+#: inc/events.php:115
+msgid "Repeat until"
+msgstr "Powtarzaj do"
+
+#: inc/events.php:116
+msgid "Location"
+msgstr "Miejsce"
+
+#: inc/events.php:116
+msgid "Home QTH, park reference, club hall…"
+msgstr "Domowy QTH, numer parku, siedziba klubu…"
+
+#: inc/events.php:123
+msgid "Multi-band"
+msgstr "Wielopasmowo"
+
+#: inc/events.php:130
+msgid "Mixed"
+msgstr "Mieszane"
+
+#: inc/events.php:132
+msgid "More info link"
+msgstr "Link do szczegółów"
+
+#: inc/events.php:174 single-hamshack_event.php:38
+msgid "When"
+msgstr "Kiedy"
+
+#: inc/events.php:356
+msgid "all day"
+msgstr "cały dzień"
+
+#: inc/events.php:423
+msgid "Previous month"
+msgstr "Poprzedni miesiąc"
+
+#: inc/events.php:427
+msgid "Next month"
+msgstr "Następny miesiąc"
+
+#: inc/events.php:428
+msgid "Today"
+msgstr "Dziś"
+
+#: inc/events.php:430
+msgid "Subscribe in Google/Apple/Outlook calendar"
+msgstr "Subskrybuj w kalendarzu Google/Apple/Outlook"
+
+#: inc/events.php:434
+msgid "Mon"
+msgstr "Pn"
+
+#: inc/events.php:434
+msgid "Tue"
+msgstr "Wt"
+
+#: inc/events.php:434
+msgid "Wed"
+msgstr "Śr"
+
+#: inc/events.php:434
+msgid "Thu"
+msgstr "Cz"
+
+#: inc/events.php:434
+msgid "Fri"
+msgstr "Pt"
+
+#: inc/events.php:434
+msgid "Sat"
+msgstr "Sb"
+
+#: inc/events.php:434
+msgid "Sun"
+msgstr "Nd"
+
+#: inc/events.php:475
+msgid "Agenda – %s"
+msgstr "Plan – %s"
+
+#: inc/events.php:479
+msgid ""
+"Nothing scheduled this month yet – check back soon or listen out on the "
+"bands!"
+msgstr ""
+"W tym miesiącu nic jeszcze nie zaplanowano – zajrzyj wkrótce albo nasłuchuj "
+"na pasmach!"
+
+#: inc/events.php:525
+msgid "No upcoming events scheduled."
+msgstr "Brak zaplanowanych wydarzeń."
+
+#: inc/events.php:603
+msgid "Radio events"
+msgstr "Wydarzenia radiowe"
+
+#: inc/extras.php:23
+msgid "FM voice repeater, APRS 145.825, SSTV events"
+msgstr "Przemiennik FM (fonia), APRS 145.825, sesje SSTV"
+
+#: inc/extras.php:24
+msgid "FM repeater · up 145.850 (67 Hz) / down 436.795"
+msgstr "Przemiennik FM · up 145.850 (67 Hz) / down 436.795"
+
+#: inc/extras.php:25
+msgid "Linear transponder · up 145.935–145.995 / down 435.610–435.670"
+msgstr "Transponder liniowy · up 145.935–145.995 / down 435.610–435.670"
+
+#: inc/extras.php:26
+msgid "Linear transponder (mode B) – the 1974 veteran"
+msgstr "Transponder liniowy (mode B) – weteran z 1974 roku"
+
+#: inc/extras.php:27
+msgid "Linear transponder · down 435.800–435.900"
+msgstr "Transponder liniowy · down 435.800–435.900"
+
+#: inc/extras.php:28
+msgid "FUNcube telemetry 145.935 BPSK, transponder at night"
+msgstr "Telemetria FUNcube 145.935 BPSK, nocą transponder"
+
+#: inc/extras.php:29
+msgid "GreenCube digipeater 435.310"
+msgstr "Digipeater GreenCube 435.310"
+
+#: inc/extras.php:30
+msgid "FM repeater · up 145.850 / down 435.400"
+msgstr "Przemiennik FM · up 145.850 / down 435.400"
+
+#: inc/extras.php:31
+msgid "FM repeater (part-time)"
+msgstr "Przemiennik FM (okresowo)"
+
+#: inc/extras.php:32
+msgid "Linear transponder · down 435.180"
+msgstr "Transponder liniowy · down 435.180"
+
+#: inc/extras.php:101
+msgid "Overhead now!"
+msgstr "Teraz nad nami!"
+
+#: inc/extras.php:102
+msgid "in %s"
+msgstr "za %s"
+
+#: inc/extras.php:103
+msgid "h"
+msgstr "godz."
+
+#: inc/extras.php:104 inc/geo.php:575
+msgid "min"
+msgstr "min"
+
+#: inc/extras.php:105
+msgid "No passes above the minimum elevation in the next 48 hours."
+msgstr ""
+"Brak przelotów powyżej minimalnej elewacji w ciągu najbliższych 48 godzin."
+
+#: inc/extras.php:106
+msgid "Orbit data is not available right now – try again later."
+msgstr "Dane orbitalne są teraz niedostępne – spróbuj później."
+
+#: inc/extras.php:107
+msgid "max"
+msgstr "maks."
+
+#: inc/extras.php:108
+msgid "altitude"
+msgstr "wysokość"
+
+#: inc/extras.php:109
+msgid "elevation"
+msgstr "elewacja"
+
+#: inc/extras.php:110
+msgid "azimuth"
+msgstr "azymut"
+
+#: inc/extras.php:119
+msgid "Min. elevation"
+msgstr "Min. elewacja"
+
+#: inc/extras.php:127
+msgid "Passes over %1$s (%2$s) in the next 48 hours"
+msgstr "Przeloty nad %1$s (%2$s) w ciągu najbliższych 48 godzin"
+
+#: inc/extras.php:130
+msgid "Satellite"
+msgstr "Satelita"
+
+#: inc/extras.php:130
+msgid "Start (local)"
+msgstr "Początek (czas lokalny)"
+
+#: inc/extras.php:130
+msgid "Max el."
+msgstr "Maks. el."
+
+#: inc/extras.php:130
+msgid "Duration"
+msgstr "Czas trwania"
+
+#: inc/extras.php:130
+msgid "Rises / sets"
+msgstr "Wschód / zachód"
+
+#: inc/extras.php:134
+msgid ""
+"Orbits from CelesTrak, calculated in your browser with satellite.js (SGP4). "
+"Times are local to the station; frequencies are the usual published ones – "
+"always check the latest status at AMSAT before a pass."
+msgstr ""
+"Orbity z CelesTrak, obliczane w Twojej przeglądarce przez satellite.js "
+"(SGP4). Godziny podano w czasie lokalnym stacji; częstotliwości to typowe "
+"publikowane wartości – przed przelotem zawsze sprawdź aktualny status w "
+"AMSAT."
+
+#: inc/extras.php:149 inc/extras.php:154 inc/extras.php:347
+msgid "Activations"
+msgstr "Aktywacje"
+
+#: inc/extras.php:150
+msgid "Activation"
+msgstr "Aktywacja"
+
+#: inc/extras.php:151
+msgid "Add activation"
+msgstr "Dodaj aktywację"
+
+#: inc/extras.php:152
+msgid "Add a new activation"
+msgstr "Dodaj nową aktywację"
+
+#: inc/extras.php:153
+msgid "Edit activation"
+msgstr "Edytuj aktywację"
+
+#: inc/extras.php:155
+msgid "No activations yet"
+msgstr "Brak aktywacji"
+
+#: inc/extras.php:177
+msgid "Other / portable"
+msgstr "Inne / portable"
+
+#: inc/extras.php:228
+msgid "Activation details"
+msgstr "Szczegóły aktywacji"
+
+#: inc/extras.php:235
+msgid "Programme"
+msgstr "Program"
+
+#: inc/extras.php:240 inc/extras.php:268 inc/extras.php:370
+msgid "Reference"
+msgstr "Referencja"
+
+#: inc/extras.php:242
+msgid "Locator (6 characters)"
+msgstr "Lokator (6 znaków)"
+
+#: inc/extras.php:243
+msgid "Latitude"
+msgstr "Szerokość geograficzna"
+
+#: inc/extras.php:244
+msgid "Longitude"
+msgstr "Długość geograficzna"
+
+#: inc/extras.php:246
+msgid ""
+"Give either the locator or exact coordinates (right-click a spot in Google "
+"Maps to copy them). QSOs are counted automatically from the logbook when "
+"they carry this reference as MY_POTA_REF / MY_SOTA_REF / MY_WWFF_REF (set it"
+" in your logging program or on QRZ.com)."
+msgstr ""
+"Podaj lokator albo dokładne współrzędne (kliknij prawym przyciskiem miejsce "
+"w Mapach Google, aby je skopiować). QSO są liczone automatycznie z logu, "
+"jeśli mają tę referencję w polu MY_POTA_REF / MY_SOTA_REF / MY_WWFF_REF "
+"(ustaw ją w programie do logowania lub na QRZ.com)."
+
+#: inc/extras.php:309 inc/extras.php:361
+msgid "%d QSO"
+msgid_plural "%d QSOs"
+msgstr[0] "%d QSO"
+msgstr[1] "%d QSO"
+msgstr[2] "%d QSO"
+
+#: inc/extras.php:311
+msgid "Reference page"
+msgstr "Strona referencji"
+
+#: inc/extras.php:348
+msgid "Different references"
+msgstr "Różne referencje"
+
+#: inc/extras.php:349
+msgid "QSOs from the field"
+msgstr "QSO z terenu"
+
+#: inc/extras.php:367
+msgid "More references from the logbook"
+msgstr "Więcej referencji z logu"
+
+#: inc/extras.php:370
+msgid "Dates"
+msgstr "Daty"
+
+#: inc/extras.php:380
+msgid "No activations yet – the first park or summit is coming soon!"
+msgstr "Jeszcze brak aktywacji – pierwszy park lub szczyt już wkrótce!"
+
+#: inc/extras.php:397
+msgid "Site gallery"
+msgstr "Galeria strony"
+
+#: inc/extras.php:399
+msgid "Show in the gallery"
+msgstr "Pokaż w galerii"
+
+#: inc/extras.php:402
+msgid "Album"
+msgstr "Album"
+
+#: inc/extras.php:405
+msgid "e.g. Shack, Antennas, Portable, Events"
+msgstr "np. Shack, Anteny, Portable, Wydarzenia"
+
+#: inc/extras.php:420
+msgid "Add to site gallery"
+msgstr "Dodaj do galerii strony"
+
+#: inc/extras.php:421
+msgid "Remove from site gallery"
+msgstr "Usuń z galerii strony"
+
+#: inc/extras.php:448
+msgid ""
+"No photos in the gallery yet. In Media → Library open a photo and tick “Show"
+" in the gallery” (or select several in list view and use the bulk action "
+"“Add to site gallery”)."
+msgstr ""
+"W galerii nie ma jeszcze zdjęć. W Media → Biblioteka otwórz zdjęcie i "
+"zaznacz „Pokaż w galerii” (albo zaznacz kilka w widoku listy i użyj akcji "
+"zbiorczej „Dodaj do galerii strony”)."
+
+#: inc/extras.php:449
+msgid "Photos are coming soon."
+msgstr "Zdjęcia już wkrótce."
+
+#: inc/extras.php:465 inc/live.php:428 index.php:36
+msgid "All"
+msgstr "Wszystkie"
+
+#: inc/geo.php:442
+msgid "Monthly"
+msgstr "Miesięcznie"
+
+#: inc/geo.php:564
+msgid "km"
+msgstr "km"
+
+#: inc/geo.php:565
+msgid "approximate position (country centre)"
+msgstr "przybliżona pozycja (środek kraju)"
+
+#: inc/geo.php:567
+msgid "last QSO"
+msgstr "ostatnie QSO"
+
+#: inc/geo.php:568
+msgid "Zoom in"
+msgstr "Przybliż"
+
+#: inc/geo.php:569
+msgid "Zoom out"
+msgstr "Oddal"
+
+#: inc/geo.php:570
+msgid "Whole world"
+msgstr "Cały świat"
+
+#: inc/geo.php:572 inc/live.php:479 inc/live.php:508
+msgid "Loading…"
+msgstr "Wczytywanie…"
+
+#: inc/geo.php:573
+msgid "Nothing to show yet."
+msgstr "Na razie nie ma nic do pokazania."
+
+#: inc/geo.php:576 inc/live.php:448 inc/logbook.php:228 inc/logbook.php:523
+msgid "UTC"
+msgstr "UTC"
+
+#: inc/geo.php:577
+msgid "Local"
+msgstr "Lokalny"
+
+#: inc/geo.php:578
+msgid "Sun overhead"
+msgstr "Słońce w zenicie"
+
+#: inc/geo.php:579 inc/live.php:450
+msgid "Sunrise"
+msgstr "Wschód słońca"
+
+#: inc/geo.php:580 inc/live.php:451
+msgid "Sunset"
+msgstr "Zachód słońca"
+
+#: inc/geo.php:581
+msgid "heard by"
+msgstr "słyszany przez"
+
+#: inc/geo.php:582
+msgid "SNR"
+msgstr "SNR"
+
+#: inc/geo.php:583
+msgid "stations"
+msgstr "stacje"
+
+#: inc/geo.php:584
+msgid "farthest"
+msgstr "najdalej"
+
+#: inc/geo.php:624 inc/logbook.php:563
+msgid "View"
+msgstr "Widok"
+
+#: inc/geo.php:625
+msgid "Stations"
+msgstr "Stacje"
+
+#: inc/geo.php:629 inc/logbook.php:626 inc/propagation.php:153
+msgid "All bands"
+msgstr "Wszystkie pasma"
+
+#: inc/geo.php:636
+msgid "All modes"
+msgstr "Wszystkie emisje"
+
+#: inc/geo.php:642
+msgid "Paths"
+msgstr "Trasy"
+
+#: inc/geo.php:643
+msgid "Day / night"
+msgstr "Dzień / noc"
+
+#: inc/geo.php:644
+msgid "Find callsign"
+msgstr "Znajdź znak"
+
+#: inc/geo.php:644
+msgid "Find callsign…"
+msgstr "Znajdź znak…"
+
+#: inc/geo.php:652
+msgid "Longest contacts"
+msgstr "Najdłuższe łączności"
+
+#: inc/helpers.php:101
+msgid "On air"
+msgstr "Na antenie"
+
+#: inc/helpers.php:102
+msgid "Portable / activating"
+msgstr "Portable / aktywacja"
+
+#: inc/helpers.php:103
+msgid "Listening (RX only)"
+msgstr "Nasłuch (tylko RX)"
+
+#: inc/helpers.php:104
+msgid "Off air (QRT)"
+msgstr "QRT (nie nadaję)"
+
+#: inc/helpers.php:201
+msgid "N0NBH classic – HF & VHF conditions + live Sun image (tall)"
+msgstr "N0NBH klasyczny – warunki HF i VHF + aktualny obraz Słońca (wysoki)"
+
+#: inc/helpers.php:202
+msgid "HF & VHF conditions, MUF, EME (tall)"
+msgstr "Warunki HF i VHF, MUF, EME (wysoki)"
+
+#: inc/helpers.php:203
+msgid "Band conditions, multi-colour (medium)"
+msgstr "Warunki na pasmach, wielokolorowy (średni)"
+
+#: inc/helpers.php:204
+msgid "Band conditions, compact"
+msgstr "Warunki na pasmach, kompaktowy"
+
+#: inc/helpers.php:205
+msgid "Band conditions only (small)"
+msgstr "Tylko warunki na pasmach (mały)"
+
+#: inc/helpers.php:206
+msgid "Small summary"
+msgstr "Krótkie podsumowanie"
+
+#: inc/helpers.php:207
+msgid "Europe – HF & VHF conditions (wide)"
+msgstr "Europa – warunki HF i VHF (szeroki)"
+
+#: inc/helpers.php:208
+msgid "Europe – band conditions (wide)"
+msgstr "Europa – warunki na pasmach (szeroki)"
+
+#: inc/helpers.php:209
+msgid "Current image of the Sun (wide)"
+msgstr "Aktualny obraz Słońca (szeroki)"
+
+#: inc/helpers.php:210
+msgid "30-day solar flux & sunspot graphs (wide)"
+msgstr "Wykresy strumienia słonecznego i plam z 30 dni (szeroki)"
+
+#: inc/helpers.php:211
+msgid "World sunlight map with flux & MUF (wide)"
+msgstr "Mapa oświetlenia świata ze strumieniem i MUF (szeroki)"
+
+#: inc/helpers.php:212
+msgid "World sunlight map (grey line)"
+msgstr "Mapa oświetlenia świata (grey line)"
+
+#: inc/helpers.php:297
+msgid "Language"
+msgstr "Język"
+
+#: inc/integrations.php:65
+msgid "I go on the air (status ON AIR / Portable)"
+msgstr "Wchodzę na pasmo (status ON AIR / Portable)"
+
+#: inc/integrations.php:66
+msgid "A new blog post is published"
+msgstr "Opublikowano nowy wpis na blogu"
+
+#: inc/integrations.php:67
+msgid "A new DXCC entity appears in the log"
+msgstr "W logu pojawia się nowy kraj DXCC"
+
+#: inc/integrations.php:68
+msgid "Somebody spots me on the DX cluster"
+msgstr "Ktoś spotuje mnie w DX clusterze"
+
+#: inc/integrations.php:69
+msgid "Geomagnetic storm (Kp 5 or more) – aurora possible"
+msgstr "Burza geomagnetyczna (Kp 5 lub więcej) – możliwa zorza"
+
+#: inc/integrations.php:70
+msgid "Thunderstorm risk at the QTH – disconnect the antennas"
+msgstr "Ryzyko burzy w QTH – odłącz anteny"
+
+#: inc/integrations.php:71
+msgid "A new sked request arrives"
+msgstr "Przychodzi nowa prośba o sked"
+
+#: inc/integrations.php:76 inc/integrations.php:112
+msgid "Integrations"
+msgstr "Integracje"
+
+#: inc/integrations.php:95
+msgid "saved (…%s) – leave empty to keep"
+msgstr "zapisane (…%s) – zostaw puste, by zachować"
+
+#: inc/integrations.php:96
+msgid "remove"
+msgstr "usuń"
+
+#: inc/integrations.php:104
+msgid "On"
+msgstr "Włączone"
+
+#: inc/integrations.php:113 inc/newsletter.php:452 inc/rig.php:305
+msgid "Saved."
+msgstr "Zapisano."
+
+#: inc/integrations.php:120
+msgid "Notifications"
+msgstr "Powiadomienia"
+
+#: inc/integrations.php:121
+msgid ""
+"Automatic posts to your Discord server, a Telegram channel or any web hook "
+"(Zapier / Make / IFTTT can pass them on to Facebook, X or e-mail)."
+msgstr ""
+"Automatyczne wiadomości na serwer Discord, kanał Telegram lub dowolny web "
+"hook (Zapier / Make / IFTTT przekażą je dalej na Facebooka, X lub e-mail)."
+
+#: inc/integrations.php:124
+msgid "Discord web hook URL"
+msgstr "Adres web hooka Discord"
+
+#: inc/integrations.php:124
+msgid ""
+"Discord: Server settings → Integrations → Webhooks → New webhook → Copy URL."
+msgstr ""
+"Discord: Ustawienia serwera → Integracje → Webhooki → Nowy webhook → Kopiuj "
+"URL."
+
+#: inc/integrations.php:125
+msgid "Telegram bot token"
+msgstr "Token bota Telegram"
+
+#: inc/integrations.php:125
+msgid ""
+"Create a bot with @BotFather and add it to your channel as an administrator."
+msgstr ""
+"Utwórz bota przez @BotFather i dodaj go do kanału jako administratora."
+
+#: inc/integrations.php:126
+msgid "Telegram chat / channel"
+msgstr "Czat / kanał Telegram"
+
+#: inc/integrations.php:126
+msgid "e.g. @my_channel or the numeric chat id."
+msgstr "np. @moj_kanal lub numeryczny identyfikator czatu."
+
+#: inc/integrations.php:127
+msgid "Other web hook (JSON)"
+msgstr "Inny web hook (JSON)"
+
+#: inc/integrations.php:127
+msgid ""
+"Receives {\"event\", \"title\", \"text\", \"url\"} as JSON – use it with "
+"Zapier, Make or IFTTT to post on Facebook."
+msgstr ""
+"Otrzymuje {\"event\", \"title\", \"text\", \"url\"} jako JSON – użyj z "
+"Zapier, Make lub IFTTT, by publikować na Facebooku."
+
+#: inc/integrations.php:129
+msgid "Send a message when…"
+msgstr "Wyślij wiadomość, gdy…"
+
+#: inc/integrations.php:135
+msgid "Save and send a test message"
+msgstr "Zapisz i wyślij wiadomość testową"
+
+#: inc/integrations.php:140
+msgid ""
+"The DX cluster always marks spots that would be a <strong>new DXCC or new "
+"band</strong> for you and shows Club Log’s <em>Most Wanted</em> rank – no "
+"account needed. Fill in the fields below only if you also want new QSOs "
+"uploaded to Club Log automatically."
+msgstr ""
+"DX cluster zawsze oznacza spoty, które byłyby dla Ciebie <strong>nowym DXCC "
+"lub nowym pasmem</strong>, i pokazuje pozycję na liście <em>Most Wanted</em>"
+" Club Log – bez konta. Wypełnij pola poniżej tylko, jeśli chcesz też "
+"automatycznie wysyłać nowe QSO do Club Log."
+
+#: inc/integrations.php:143
+msgid "Upload new QSOs"
+msgstr "Wysyłaj nowe QSO"
+
+#: inc/integrations.php:143
+msgid ""
+"Each QSO added to the log (QRZ sync, WSJT-X, by hand) is sent to Club Log in"
+" real time."
+msgstr ""
+"Każde QSO dodane do logu (synchronizacja QRZ, WSJT-X, ręcznie) trafia do "
+"Club Log w czasie rzeczywistym."
+
+#: inc/integrations.php:144
+msgid "Club Log e-mail"
+msgstr "E-mail w Club Log"
+
+#: inc/integrations.php:145
+msgid "Club Log application password"
+msgstr "Hasło aplikacji Club Log"
+
+#: inc/integrations.php:145
+msgid "Club Log → Settings → App Passwords. Not your main password."
+msgstr "Club Log → Settings → App Passwords. Nie Twoje główne hasło."
+
+#: inc/integrations.php:146
+msgid "Club Log API key"
+msgstr "Klucz API Club Log"
+
+#: inc/integrations.php:146
+msgid ""
+"Request a free API key from the Club Log helpdesk (clublog.freshdesk.com)."
+msgstr ""
+"Poproś o darmowy klucz API w pomocy technicznej Club Log "
+"(clublog.freshdesk.com)."
+
+#: inc/integrations.php:152
+msgid "APRS & web SDR"
+msgstr "APRS i web SDR"
+
+#: inc/integrations.php:155
+msgid "APRS callsign-SSID"
+msgstr "Znak APRS z SSID"
+
+#: inc/integrations.php:155
+msgid ""
+"e.g. N0CALL-9 (car) or N0CALL-7 (handheld). Your last position shows on the "
+"Live page while you are portable."
+msgstr ""
+"np. N0CALL-9 (samochód) lub N0CALL-7 (ręczniak). Twoja ostatnia pozycja "
+"pojawia się na stronie Na żywo, gdy jesteś w terenie."
+
+#: inc/integrations.php:156
+msgid "aprs.fi API key"
+msgstr "Klucz API aprs.fi"
+
+#: inc/integrations.php:156
+msgid "Free: log in at aprs.fi → Account settings → API key."
+msgstr "Za darmo: zaloguj się na aprs.fi → Account settings → API key."
+
+#: inc/integrations.php:157
+msgid "Web SDR address"
+msgstr "Adres web SDR"
+
+#: inc/integrations.php:157
+msgid ""
+"Your own KiwiSDR / OpenWebRX, or a public receiver near you (e.g. a WebSDR)."
+" Shown on the Live page so visitors can listen."
+msgstr ""
+"Twój własny KiwiSDR / OpenWebRX albo publiczny odbiornik w pobliżu (np. "
+"WebSDR). Pokazywany na stronie Na żywo, żeby odwiedzający mogli posłuchać."
+
+#: inc/integrations.php:158
+msgid "Web SDR name"
+msgstr "Nazwa web SDR"
+
+#: inc/integrations.php:164
+msgid "Contests & repeaters"
+msgstr "Zawody i przemienniki"
+
+#: inc/integrations.php:167
+msgid "Import contests"
+msgstr "Importuj zawody"
+
+#: inc/integrations.php:167
+msgid ""
+"Adds the next 8 days of contests from the WA7BNM Contest Calendar to your "
+"calendar once a day."
+msgstr ""
+"Raz dziennie dodaje do kalendarza zawody z najbliższych 8 dni z kalendarza "
+"WA7BNM."
+
+#: inc/integrations.php:168
+msgid "Only contests containing"
+msgstr "Tylko zawody zawierające"
+
+#: inc/integrations.php:168
+msgid ""
+"Comma-separated words, e.g. <code>RSGB, CQ WW, IARU, UKEI, 2m, FT</code>. "
+"Empty = all contests."
+msgstr ""
+"Słowa oddzielone przecinkami, np. <code>RSGB, CQ WW, IARU, UKEI, 2m, "
+"FT</code>. Puste = wszystkie zawody."
+
+#: inc/integrations.php:169
+msgid "Skip contests containing"
+msgstr "Pomiń zawody zawierające"
+
+#: inc/integrations.php:169
+msgid "e.g. <code>QSO Party, RTTY</code>"
+msgstr "np. <code>QSO Party, RTTY</code>"
+
+#: inc/integrations.php:170
+msgid "Repeaters within"
+msgstr "Przemienniki w promieniu"
+
+#: inc/integrations.php:170
+msgid ""
+"kilometres of your QTH. In the UK the list comes from ukrepeater.net "
+"automatically – elsewhere add your repeaters below."
+msgstr ""
+"km od Twojego QTH. W Wielkiej Brytanii lista pobiera się automatycznie z "
+"ukrepeater.net – w innych krajach dodaj przemienniki poniżej."
+
+#: inc/integrations.php:172
+msgid "Extra repeaters"
+msgstr "Dodatkowe przemienniki"
+
+#: inc/integrations.php:174
+msgid "One per line: callsign, output MHz, input MHz, CTCSS, locator, place."
+msgstr ""
+"Jeden w linii: znak, wyjście MHz, wejście MHz, CTCSS, lokator, miejscowość."
+
+#: inc/integrations.php:180
+msgid "App & speed"
+msgstr "Aplikacja i szybkość"
+
+#: inc/integrations.php:183
+msgid "Installable app (PWA)"
+msgstr "Aplikacja do zainstalowania (PWA)"
+
+#: inc/integrations.php:183
+msgid ""
+"Visitors can add the site to their phone’s home screen; it opens like an app"
+" and works offline with the last pages viewed."
+msgstr ""
+"Odwiedzający mogą dodać stronę do ekranu głównego telefonu; otwiera się jak "
+"aplikacja i działa offline z ostatnio oglądanymi stronami."
+
+#: inc/integrations.php:184
+msgid "Light / dark switch"
+msgstr "Przełącznik jasny / ciemny"
+
+#: inc/integrations.php:184
+msgid "Adds a sun/moon button to the top bar. The site stays dark by default."
+msgstr ""
+"Dodaje przycisk słońce/księżyc na górnym pasku. Domyślnie strona pozostaje "
+"ciemna."
+
+#: inc/integrations.php:185
+msgid "WebP images"
+msgstr "Obrazy WebP"
+
+#: inc/integrations.php:185
+msgid ""
+"New JPEG and PNG uploads are saved as WebP (much smaller files) if your "
+"server supports it; the original file is kept."
+msgstr ""
+"Nowo wgrywane pliki JPEG i PNG są zapisywane jako WebP (dużo mniejsze "
+"pliki), jeśli serwer to obsługuje; oryginał zostaje zachowany."
+
+#: inc/integrations.php:186
+msgid "Deferred scripts"
+msgstr "Odroczone skrypty"
+
+#: inc/integrations.php:186
+msgid "Theme scripts load without blocking the page."
+msgstr "Skrypty motywu ładują się bez blokowania strony."
+
+#: inc/integrations.php:187
+msgid "No emoji script"
+msgstr "Bez skryptu emoji"
+
+#: inc/integrations.php:187
+msgid ""
+"Removes WordPress’ emoji helper script (browsers show emoji themselves)."
+msgstr "Usuwa skrypt emoji WordPressa (przeglądarki same wyświetlają emoji)."
+
+#: inc/integrations.php:191
+msgid "Save all"
+msgstr "Zapisz wszystko"
+
+#: inc/integrations.php:234
+msgid "Test message"
+msgstr "Wiadomość testowa"
+
+#: inc/integrations.php:234
+msgid "Notifications from %s work. 73!"
+msgstr "Powiadomienia z %s działają. 73!"
+
+#: inc/integrations.php:235
+msgid "No notification channel is filled in."
+msgstr "Nie wypełniono żadnego kanału powiadomień."
+
+#: inc/learn.php:21 inc/learn.php:74 inc/learn.php:96
+msgid "Play"
+msgstr "Odtwórz"
+
+#: inc/learn.php:22 inc/learn.php:75 inc/learn.php:97
+msgid "Stop"
+msgstr "Stop"
+
+#: inc/learn.php:23 inc/learn.php:78
+msgid "Check"
+msgstr "Sprawdź"
+
+#: inc/learn.php:24
+msgid "Accuracy: %s%%"
+msgstr "Poprawność: %s%%"
+
+#: inc/learn.php:25
+msgid "Great – over 90%! Ready for lesson %s."
+msgstr "Świetnie – ponad 90%! Możesz przejść do lekcji %s."
+
+#: inc/learn.php:26
+msgid "Keep practising this lesson until you reach 90%."
+msgstr "Ćwicz tę lekcję, aż osiągniesz 90%."
+
+#: inc/learn.php:27
+msgid "Characters in this lesson"
+msgstr "Znaki w tej lekcji"
+
+#: inc/learn.php:28
+msgid "Listen…"
+msgstr "Słuchaj…"
+
+#: inc/learn.php:29
+msgid "Correct!"
+msgstr "Dobrze!"
+
+#: inc/learn.php:30
+msgid "It was %s"
+msgstr "To było %s"
+
+#: inc/learn.php:31
+msgid "Score: %1$s / %2$s · streak %3$s"
+msgstr "Wynik: %1$s / %2$s · seria %3$s"
+
+#: inc/learn.php:32
+msgid "Question %1$s of %2$s"
+msgstr "Pytanie %1$s z %2$s"
+
+#: inc/learn.php:33
+msgid "You scored %1$s out of %2$s."
+msgstr "Twój wynik: %1$s z %2$s."
+
+#: inc/learn.php:34
+msgid "Well done – that would be a pass. 73!"
+msgstr "Brawo – to byłby zdany egzamin. 73!"
+
+#: inc/learn.php:35
+msgid "Not quite there yet – read the explanations and try again."
+msgstr "Jeszcze nie tym razem – przeczytaj wyjaśnienia i spróbuj ponownie."
+
+#: inc/learn.php:36
+msgid "New quiz"
+msgstr "Nowy quiz"
+
+#: inc/learn.php:37
+msgid "Next question"
+msgstr "Następne pytanie"
+
+#: inc/learn.php:38
+msgid "See result"
+msgstr "Zobacz wynik"
+
+#: inc/learn.php:39
+msgid "sent"
+msgstr "nadano"
+
+#: inc/learn.php:40
+msgid "you"
+msgstr "Ty"
+
+#: inc/learn.php:55
+msgid "Character speed"
+msgstr "Prędkość znaków"
+
+#: inc/learn.php:56
+msgid "Effective speed"
+msgstr "Prędkość efektywna"
+
+#: inc/learn.php:57
+msgid "Tone"
+msgstr "Ton"
+
+#: inc/learn.php:58
+msgid "Volume"
+msgstr "Głośność"
+
+#: inc/learn.php:61
+msgid "Koch lessons"
+msgstr "Lekcje metodą Kocha"
+
+#: inc/learn.php:62
+msgid "Callsign copy"
+msgstr "Odbiór znaków"
+
+#: inc/learn.php:63
+msgid "Text to Morse"
+msgstr "Tekst na Morse'a"
+
+#: inc/learn.php:67
+msgid ""
+"The Koch method starts with just two characters at full speed. Copy each "
+"group, and when you reach 90% move on – one new character per lesson."
+msgstr ""
+"Metoda Kocha zaczyna się od zaledwie dwóch znaków w pełnej prędkości. "
+"Odbieraj każdą grupę, a gdy osiągniesz 90%, idź dalej – jeden nowy znak na "
+"lekcję."
+
+#: inc/learn.php:69
+msgid "Lesson"
+msgstr "Lekcja"
+
+#: inc/learn.php:70
+msgid "Groups"
+msgstr "Grupy"
+
+#: inc/learn.php:77
+msgid "Type what you hear, groups separated by spaces…"
+msgstr "Wpisz, co słyszysz, grupy oddzielaj spacjami…"
+
+#: inc/learn.php:83
+msgid ""
+"A random callsign is sent – type it and press Enter. Getting it right speeds"
+" things up a little, a mistake slows it down."
+msgstr ""
+"Nadawany jest losowy znak wywoławczy – wpisz go i naciśnij Enter. Poprawna "
+"odpowiedź trochę przyspiesza tempo, błąd je spowalnia."
+
+#: inc/learn.php:85
+msgid "Next callsign"
+msgstr "Następny znak"
+
+#: inc/learn.php:86
+msgid "Repeat"
+msgstr "Powtórz"
+
+#: inc/learn.php:103
+msgid "Morse code chart"
+msgstr "Tabela alfabetu Morse'a"
+
+#: inc/learn.php:122
+msgid ""
+"Practice questions in the style of the UK Foundation exam, written for this "
+"site. Always check the current syllabus and licence conditions with the RSGB"
+" and Ofcom."
+msgstr ""
+"Pytania ćwiczeniowe w stylu brytyjskiego egzaminu Foundation, napisane dla "
+"tej strony. Aktualny program i warunki licencji zawsze sprawdzaj w RSGB i "
+"Ofcom."
+
+#: inc/live.php:331
+msgid "%1$s spotted by %2$s"
+msgstr "%1$s zespotowany przez %2$s"
+
+#: inc/live.php:366
+msgid "PSK Reporter is not answering right now."
+msgstr "PSK Reporter w tej chwili nie odpowiada."
+
+#: inc/live.php:419
+msgid ""
+"WSJT-X is not running at the moment – decodes appear here live whenever I am"
+" on FT8/FT4."
+msgstr ""
+"WSJT-X nie jest teraz uruchomiony – dekody pojawiają się tu na żywo, gdy "
+"pracuję na FT8/FT4."
+
+#: inc/live.php:420
+msgid "Live from the shack"
+msgstr "Na żywo z shacku"
+
+#: inc/live.php:421
+msgid "transmitting"
+msgstr "nadaje"
+
+#: inc/live.php:422
+msgid "listening"
+msgstr "nasłuchuje"
+
+#: inc/live.php:423
+msgid "calling me!"
+msgstr "woła mnie!"
+
+#: inc/live.php:424
+msgid "No spots for these bands right now."
+msgstr "Brak spotów na tych pasmach w tej chwili."
+
+#: inc/live.php:425
+msgid "That is me – thanks for the spot!"
+msgstr "To ja – dzięki za spot!"
+
+#: inc/live.php:426
+msgid "updated %s s ago"
+msgstr "zaktualizowano %s s temu"
+
+#: inc/live.php:427
+msgid "stations heard"
+msgstr "usłyszane stacje"
+
+#: inc/live.php:429
+msgid "My bands"
+msgstr "Moje pasma"
+
+#: inc/live.php:430 inc/logbook.php:550
+msgid "NEW ONE"
+msgstr "NOWY"
+
+#: inc/live.php:431
+msgid "new band"
+msgstr "nowe pasmo"
+
+#: inc/live.php:432
+msgid "Most Wanted #%s (Club Log)"
+msgstr "Most Wanted #%s (Club Log)"
+
+#: inc/live.php:449
+msgid "Local – %s"
+msgstr "Lokalnie – %s"
+
+#: inc/live.php:453
+msgid ""
+"The soft band between day and night is the greyline – low-band DX (160–40 m)"
+" often opens along it around sunrise and sunset."
+msgstr ""
+"Łagodna strefa między dniem a nocą to greyline – DX na dolnych pasmach "
+"(160–40 m) często otwiera się wzdłuż niej o wschodzie i zachodzie słońca."
+
+#: inc/live.php:470
+msgid "FT8 / FT4 live"
+msgstr "FT8 / FT4 na żywo"
+
+#: inc/live.php:501
+msgid "Digital"
+msgstr "Emisje cyfrowe"
+
+#: inc/live.php:502
+msgid "Only new for me"
+msgstr "Tylko nowe dla mnie"
+
+#: inc/live.php:507
+msgid "Comment"
+msgstr "Komentarz"
+
+#: inc/live.php:507
+msgid "Spotter"
+msgstr "Spotujący"
+
+#: inc/live.php:513
+msgid "Recent spots of %s"
+msgstr "Ostatnie spoty %s"
+
+#: inc/live.php:521
+msgid "Spots from the worldwide DX cluster via %s, refreshed every minute."
+msgstr "Spoty z ogólnoświatowego DX cluster przez %s, odświeżane co minutę."
+
+#: inc/live.php:537
+msgid "Full map on PSK Reporter ↗"
+msgstr "Pełna mapa w PSK Reporter ↗"
+
+#: inc/live.php:539
+msgid ""
+"Stations that decoded my digital signals (FT8, FT4, WSPR, PSK…) in the last "
+"6 hours, reported automatically to PSK Reporter by Philip Gladstone."
+msgstr ""
+"Stacje, które odebrały moje sygnały cyfrowe (FT8, FT4, WSPR, PSK…) w ciągu "
+"ostatnich 6 godzin, automatycznie zgłoszone do PSK Reporter autorstwa "
+"Philipa Gladstone'a."
+
+#: inc/live.php:553
+msgid "On the air now"
+msgstr "Teraz na antenie"
+
+#: inc/live.php:558
+msgid "Day, night and the greyline"
+msgstr "Dzień, noc i greyline"
+
+#: inc/live.php:562
+msgid "Who hears me (PSK Reporter)"
+msgstr "Kto mnie słyszy (PSK Reporter)"
+
+#: inc/live.php:568
+msgid "Where am I (APRS)"
+msgstr "Gdzie jestem (APRS)"
+
+#: inc/live.php:573
+msgid "DX cluster"
+msgstr "DX cluster"
+
+#: inc/live.php:582
+msgid "Listen to the bands"
+msgstr "Posłuchaj pasm"
+
+#: inc/logbook.php:17
+msgid "Callsign worked"
+msgstr "Znak korespondenta"
+
+#: inc/logbook.php:18
+msgid "Date (UTC)"
+msgstr "Data (UTC)"
+
+#: inc/logbook.php:23
+msgid "RST sent"
+msgstr "RST nadany"
+
+#: inc/logbook.php:24
+msgid "RST rcvd"
+msgstr "RST odebrany"
+
+#: inc/logbook.php:27 page-station.php:22 template-parts/status-card.php:34
+msgid "Locator"
+msgstr "Lokator"
+
+#: inc/logbook.php:28
+msgid "Country / DXCC"
+msgstr "Kraj / DXCC"
+
+#: inc/logbook.php:29
+msgid "POTA/SOTA/WWFF ref"
+msgstr "Ref. POTA/SOTA/WWFF"
+
+#: inc/logbook.php:30 inc/logbook.php:557
+msgid "QSL sent"
+msgstr "QSL wysłana"
+
+#: inc/logbook.php:31
+msgid "QSL rcvd"
+msgstr "QSL otrzymana"
+
+#: inc/logbook.php:32
+msgid "Notes"
+msgstr "Notatki"
+
+#: inc/logbook.php:42
+msgid "QSO"
+msgstr "QSO"
+
+#: inc/logbook.php:43
+msgid "Log QSO"
+msgstr "Zapisz QSO"
+
+#: inc/logbook.php:44
+msgid "Log a new QSO"
+msgstr "Zapisz nowe QSO"
+
+#: inc/logbook.php:45
+msgid "Edit QSO"
+msgstr "Edytuj QSO"
+
+#: inc/logbook.php:47
+msgid "Search log"
+msgstr "Szukaj w logu"
+
+#: inc/logbook.php:48
+msgid "No QSOs logged yet"
+msgstr "Brak zapisanych QSO"
+
+#: inc/logbook.php:80
+msgid "Callsign is required."
+msgstr "Znak wywoławczy jest wymagany."
+
+#: inc/logbook.php:128
+msgid "QSO details"
+msgstr "Szczegóły QSO"
+
+#: inc/logbook.php:161
+msgid "auto from freq"
+msgstr "auto z częstotliwości"
+
+#: inc/logbook.php:177
+msgid "No"
+msgstr "Nie"
+
+#: inc/logbook.php:177
+msgid "Yes"
+msgstr "Tak"
+
+#: inc/logbook.php:177
+msgid "Requested"
+msgstr "Zamówiona"
+
+#: inc/logbook.php:177
+msgid "Queued"
+msgstr "W kolejce"
+
+#. translators: 1: DXCC number, 2: continent, 3: CQ zone, 4: ITU zone, 5:
+#. distance
+#: inc/logbook.php:199
+msgid "Automatic: DXCC #%1$s · %2$s · CQ %3$s · ITU %4$s · %5$s km"
+msgstr "Automatycznie: DXCC #%1$s · %2$s · CQ %3$s · ITU %4$s · %5$s km"
+
+#: inc/logbook.php:208
+msgid ""
+"Date and time are UTC. Band is filled in automatically from the frequency. "
+"Only callsign, date, time, band, mode, RST and country are shown publicly – "
+"name, QTH and notes stay private."
+msgstr ""
+"Data i godzina w UTC. Pasmo uzupełnia się automatycznie na podstawie "
+"częstotliwości. Publicznie widoczne są tylko znak, data, godzina, pasmo, "
+"emisja, RST i kraj – imię, QTH i notatki pozostają prywatne."
+
+#: inc/logbook.php:231 inc/logbook.php:527
+msgid "RST s/r"
+msgstr "RST n/o"
+
+#: inc/logbook.php:233
+msgid "QSL s/r"
+msgstr "QSL w/o"
+
+#: inc/logbook.php:299
+msgid "QRZ sync & ADIF"
+msgstr "Synchronizacja QRZ i ADIF"
+
+#: inc/logbook.php:306
+msgid "QRZ.com sync & ADIF import / export"
+msgstr "Synchronizacja z QRZ.com oraz import / eksport ADIF"
+
+#: inc/logbook.php:308
+msgid "Imported %1$d QSOs, skipped %2$d duplicates."
+msgstr "Zaimportowano QSO: %1$d, pominięto duplikatów: %2$d."
+
+#: inc/logbook.php:312
+msgid "Import ADIF (.adi)"
+msgstr "Import ADIF (.adi)"
+
+#: inc/logbook.php:313
+msgid ""
+"Export an ADIF file from WSJT-X, Log4OM, N1MM, QRZ Logbook, HRD, etc. and "
+"upload it here. Duplicates (same call, date, time and band) are skipped."
+msgstr ""
+"Wyeksportuj plik ADIF z WSJT-X, Log4OM, N1MM, QRZ Logbook, HRD itp. i "
+"prześlij go tutaj. Duplikaty (ten sam znak, data, godzina i pasmo) są "
+"pomijane."
+
+#: inc/logbook.php:318
+msgid "Import"
+msgstr "Importuj"
+
+#: inc/logbook.php:322
+msgid "Export ADIF"
+msgstr "Eksportuj ADIF"
+
+#: inc/logbook.php:323
+msgid "Your log currently holds %d QSOs."
+msgstr "Liczba QSO w Twoim logu: %d."
+
+#: inc/logbook.php:324
+msgid "Download .adi file"
+msgstr "Pobierz plik .adi"
+
+#: inc/logbook.php:375
+msgid "No file uploaded."
+msgstr "Nie przesłano pliku."
+
+#: inc/logbook.php:494
+msgid "Unique calls"
+msgstr "Unikalne znaki"
+
+#: inc/logbook.php:495
+msgid "Countries"
+msgstr "Kraje"
+
+#: inc/logbook.php:529
+msgid "QSL"
+msgstr "QSL"
+
+#: inc/logbook.php:530
+msgid "eQSL"
+msgstr "eQSL"
+
+#: inc/logbook.php:534
+msgid "No QSOs found."
+msgstr "Nie znaleziono QSO."
+
+#: inc/logbook.php:550
+msgid "First QSO with this DXCC entity"
+msgstr "Pierwsze QSO z tym krajem DXCC"
+
+#: inc/logbook.php:550
+msgid "First QSO in this grid square"
+msgstr "Pierwsze QSO z tym lokatorem"
+
+#: inc/logbook.php:550
+msgid "new grid"
+msgstr "nowy lokator"
+
+#: inc/logbook.php:557
+msgid "QSL received"
+msgstr "QSL otrzymana"
+
+#: inc/logbook.php:623
+msgid "Search callsign"
+msgstr "Szukaj znaku"
+
+#: inc/logbook.php:624
+msgid "Are you in my log? Enter your callsign…"
+msgstr "Jesteś w moim logu? Wpisz swój znak…"
+
+#: inc/logbook.php:637
+msgid "%1$s – found %2$d QSO in the log. Thanks for the contact, 73!"
+msgid_plural "%1$s – found %2$d QSOs in the log. Thanks for the contacts, 73!"
+msgstr[0] "%1$s – znaleziono %2$d QSO w logu. Dzięki za łączność, 73!"
+msgstr[1] "%1$s – znaleziono %2$d QSO w logu. Dzięki za łączności, 73!"
+msgstr[2] "%1$s – znaleziono %2$d QSO w logu. Dzięki za łączności, 73!"
+
+#: inc/logbook.php:639
+msgid "No QSOs with %s yet – hope to work you soon!"
+msgstr "Brak jeszcze QSO z %s – mam nadzieję, że wkrótce się usłyszymy!"
+
+#: inc/logbook.php:650
+msgid ""
+"Download your personal eQSL card for each QSO below – or request a paper "
+"card."
+msgstr ""
+"Pobierz swoją osobistą kartę eQSL za każde QSO poniżej – albo zamów kartę "
+"papierową."
+
+#: inc/newsletter.php:33 inc/newsletter.php:35 inc/newsletter.php:36
+#: inc/newsletter.php:455
+msgid "Subscribers"
+msgstr "Subskrybenci"
+
+#: inc/newsletter.php:34
+msgid "Subscriber"
+msgstr "Subskrybent"
+
+#: inc/newsletter.php:37
+msgid "No subscribers yet"
+msgstr "Brak subskrybentów"
+
+#: inc/newsletter.php:38
+msgid "Search subscribers"
+msgstr "Szukaj subskrybentów"
+
+#: inc/newsletter.php:156
+msgid "Confirm your subscription to %s"
+msgstr "Potwierdź subskrypcję %s"
+
+#: inc/newsletter.php:157
+msgid ""
+"Hello! Please confirm that you would like an e-mail whenever a new post "
+"appears on the blog. If you did not ask for this, just ignore this message."
+msgstr ""
+"Cześć! Potwierdź, że chcesz dostawać e-mail za każdym razem, gdy na blogu "
+"pojawi się nowy wpis. Jeśli to nie Ty, po prostu zignoruj tę wiadomość."
+
+#: inc/newsletter.php:159
+msgid "Yes, subscribe me"
+msgstr "Tak, zapisz mnie"
+
+#: inc/newsletter.php:162
+msgid "Please confirm your subscription"
+msgstr "Potwierdź swoją subskrypcję"
+
+#: inc/newsletter.php:171
+msgid "Almost there – check your inbox and click the confirmation link."
+msgstr "Prawie gotowe – sprawdź skrzynkę i kliknij link potwierdzający."
+
+#: inc/newsletter.php:172
+msgid ""
+"Thank you! Your subscription is confirmed – you will hear about new posts. "
+"73!"
+msgstr "Dziękuję! Subskrypcja potwierdzona – dam znać o nowych wpisach. 73!"
+
+#: inc/newsletter.php:173
+msgid "You have been unsubscribed and your address deleted. 73!"
+msgstr "Wypisano Cię, a Twój adres został usunięty. 73!"
+
+#: inc/newsletter.php:174
+msgid "You are already subscribed – thanks!"
+msgstr "Już subskrybujesz – dzięki!"
+
+#: inc/newsletter.php:175
+msgid "Please enter a valid e-mail address."
+msgstr "Wpisz poprawny adres e-mail."
+
+#: inc/newsletter.php:176
+msgid "Please tick the box to agree to receive e-mails."
+msgstr "Zaznacz pole, aby wyrazić zgodę na otrzymywanie e-maili."
+
+#: inc/newsletter.php:179
+msgid "Too many attempts – please try again later."
+msgstr "Zbyt wiele prób – spróbuj ponownie później."
+
+#: inc/newsletter.php:180
+msgid "This link is no longer valid."
+msgstr "Ten link jest już nieważny."
+
+#: inc/newsletter.php:181
+msgid "The e-mail could not be sent. Please try again later."
+msgstr "Nie udało się wysłać e-maila. Spróbuj ponownie później."
+
+#: inc/newsletter.php:195
+msgid "Close"
+msgstr "Zamknij"
+
+#: inc/newsletter.php:211
+msgid "Get new posts by e-mail"
+msgstr "Otrzymuj nowe wpisy e-mailem"
+
+#: inc/newsletter.php:212
+msgid ""
+"One short e-mail when something new goes up on the blog. No spam, "
+"unsubscribe with one click."
+msgstr ""
+"Jeden krótki e-mail, gdy na blogu pojawi się coś nowego. Bez spamu, "
+"wypisanie jednym kliknięciem."
+
+#: inc/newsletter.php:223 inc/newsletter.php:465
+msgid "E-mail"
+msgstr "E-mail"
+
+#: inc/newsletter.php:224
+msgid "your@email"
+msgstr "twoj@email"
+
+#: inc/newsletter.php:226 inc/newsletter.php:227
+msgid "Callsign (optional)"
+msgstr "Znak wywoławczy (opcjonalnie)"
+
+#: inc/newsletter.php:229
+msgid "Subscribe"
+msgstr "Subskrybuj"
+
+#: inc/newsletter.php:231
+msgid ""
+"I agree to receive e-mails about new posts. My address is used for nothing "
+"else and is deleted when I unsubscribe."
+msgstr ""
+"Zgadzam się na otrzymywanie e-maili o nowych wpisach. Mój adres nie będzie "
+"używany do niczego innego i zostanie usunięty po wypisaniu się."
+
+#: inc/newsletter.php:255
+msgid "Ham Shack: Newsletter"
+msgstr "Ham Shack: Newsletter"
+
+#: inc/newsletter.php:255
+msgid "E-mail sign-up for new posts."
+msgstr "Zapis e-mailowy na nowe wpisy."
+
+#: inc/newsletter.php:259
+msgid "New posts by e-mail"
+msgstr "Nowe wpisy e-mailem"
+
+#: inc/newsletter.php:265
+msgid "Title"
+msgstr "Tytuł"
+
+#: inc/newsletter.php:313
+msgid "Every 2 minutes"
+msgstr "Co 2 minuty"
+
+#: inc/newsletter.php:391 inc/newsletter.php:524
+msgid "Read the post"
+msgstr "Przeczytaj wpis"
+
+#. translators: 1: callsign, 2: unsubscribe link
+#: inc/newsletter.php:394
+msgid "You get this because you subscribed to new posts from %1$s. %2$s"
+msgstr ""
+"Otrzymujesz tę wiadomość, ponieważ subskrybujesz nowe wpisy od %1$s. %2$s"
+
+#: inc/newsletter.php:396
+msgid "Unsubscribe"
+msgstr "Wypisz się"
+
+#: inc/newsletter.php:415 inc/newsletter.php:438 inc/newsletter.php:451
+msgid "Newsletter"
+msgstr "Newsletter"
+
+#: inc/newsletter.php:419
+msgid "Sent to %d subscribers."
+msgstr "Wysłano do subskrybentów: %d."
+
+#: inc/newsletter.php:422
+msgid "Do not e-mail this post to subscribers"
+msgstr "Nie wysyłaj tego wpisu subskrybentom"
+
+#: inc/newsletter.php:424
+msgid "Queued – it goes out a few minutes after publishing."
+msgstr "W kolejce – zostanie wysłany kilka minut po publikacji."
+
+#: inc/newsletter.php:453
+msgid "Test e-mail sent to your admin address."
+msgstr "Testowy e-mail wysłano na adres administratora."
+
+#: inc/newsletter.php:456
+msgid "waiting for confirmation"
+msgstr "oczekuje na potwierdzenie"
+
+#: inc/newsletter.php:458
+msgid "Sending in progress: %d post(s) in the queue."
+msgstr "Trwa wysyłka: wpisy w kolejce: %d."
+
+#: inc/newsletter.php:461
+msgid "Export CSV"
+msgstr "Eksportuj CSV"
+
+#: inc/newsletter.php:462
+msgid "Send me a test e-mail (latest post)"
+msgstr "Wyślij mi testowy e-mail (najnowszy wpis)"
+
+#: inc/newsletter.php:465
+msgid "Since"
+msgstr "Od"
+
+#: inc/newsletter.php:470
+msgid "pending"
+msgstr "oczekuje"
+
+#: inc/newsletter.php:472
+msgid "Delete this subscriber?"
+msgstr "Usunąć tego subskrybenta?"
+
+#: inc/newsletter.php:472
+msgid "Delete"
+msgstr "Usuń"
+
+#: inc/newsletter.php:481 inc/rig.php:329
+msgid "Settings"
+msgstr "Ustawienia"
+
+#: inc/newsletter.php:483
+msgid "Automatic e-mails"
+msgstr "Automatyczne e-maile"
+
+#: inc/newsletter.php:483
+msgid "E-mail subscribers when I publish a new post"
+msgstr "Wysyłaj e-mail do subskrybentów, gdy opublikuję nowy wpis"
+
+#: inc/newsletter.php:484
+msgid "Delay"
+msgstr "Opóźnienie"
+
+#: inc/newsletter.php:484
+msgid "minutes after publishing (time to fix typos)"
+msgstr "minut po publikacji (czas na poprawienie literówek)"
+
+#: inc/newsletter.php:485
+msgid "Batch size"
+msgstr "Rozmiar paczki"
+
+#: inc/newsletter.php:485
+msgid "e-mails every 2 minutes (keep it low on shared hosting)"
+msgstr "e-maili co 2 minuty (na hostingu współdzielonym ustaw niską wartość)"
+
+#: inc/newsletter.php:486
+msgid "Sign-up box"
+msgstr "Formularz zapisu"
+
+#: inc/newsletter.php:486
+msgid "Show the sign-up box under every post"
+msgstr "Pokazuj formularz zapisu pod każdym wpisem"
+
+#: inc/newsletter.php:487
+msgid ""
+"You can also use the shortcode [hamshack_subscribe] or the “Ham Shack: "
+"Newsletter” widget. For reliable delivery install an SMTP plugin (e.g. WP "
+"Mail SMTP) and send through your mailbox."
+msgstr ""
+"Możesz też użyć shortcode'u [hamshack_subscribe] lub widżetu „Ham Shack: "
+"Newsletter”. Aby e-maile dochodziły niezawodnie, zainstaluj wtyczkę SMTP "
+"(np. WP Mail SMTP) i wysyłaj przez swoją skrzynkę."
+
+#: inc/newsletter.php:489 inc/qrz.php:443 inc/rig.php:352
+msgid "Save"
+msgstr "Zapisz"
+
+#: inc/notify.php:107
+msgid "%s is portable and on the air"
+msgstr "%s jest w terenie i nadaje"
+
+#: inc/notify.php:107
+msgid "%s is on the air"
+msgstr "%s jest na paśmie"
+
+#: inc/notify.php:142
+msgid "New one! %s"
+msgstr "Nowy kraj! %s"
+
+#: inc/notify.php:143
+msgid "First QSO with %1$s: %2$s on %3$s %4$s."
+msgstr "Pierwsze QSO z %1$s: %2$s na %3$s %4$s."
+
+#: inc/propagation.php:92
+msgid "MUF (3000 km) near me"
+msgstr "MUF (3000 km) w pobliżu"
+
+#: inc/propagation.php:96
+msgid "open"
+msgstr "otwarte"
+
+#: inc/propagation.php:96
+msgid "marginal"
+msgstr "słabe"
+
+#: inc/propagation.php:96
+msgid "closed"
+msgstr "zamknięte"
+
+#: inc/propagation.php:100
+msgid "No fresh ionosonde data near the station right now."
+msgstr "Brak świeżych danych z jonosond w pobliżu stacji."
+
+#: inc/propagation.php:104
+msgid "%d ionosondes"
+msgstr "jonosondy: %d"
+
+#: inc/propagation.php:105
+msgid ""
+"MUF(D) = the highest frequency that reflects over a 3000 km hop at each "
+"ionosonde. Data: %s (GIRO and other ionosonde networks), refreshed every 15 "
+"minutes. “Open” is a guide, not a promise – listen on the band!"
+msgstr ""
+"MUF(D) = najwyższa częstotliwość odbijana na skoku 3000 km nad każdą "
+"jonosondą. Dane: %s (GIRO i inne sieci jonosond), odświeżane co 15 minut. "
+"„Otwarte” to wskazówka, nie obietnica – posłuchaj na paśmie!"
+
+#: inc/propagation.php:160
+msgid ""
+"When my QSOs with each continent happen, hour by hour (UTC). Each row is "
+"scaled on its own: the brightest squares are the best times for that "
+"continent from my QTH."
+msgstr ""
+"Kiedy robię QSO z poszczególnymi kontynentami, godzina po godzinie (UTC). "
+"Każdy wiersz ma własną skalę: najjaśniejsze pola to najlepsze pory dla "
+"danego kontynentu z mojego QTH."
+
+#: inc/propagation.php:184
+msgid "Geomagnetic storm: Kp %s"
+msgstr "Burza geomagnetyczna: Kp %s"
+
+#: inc/propagation.php:184
+msgid ""
+"Aurora possible – listen on 6 m and 2 m to the north (CW/SSB sound rough). "
+"HF may be disturbed."
+msgstr ""
+"Możliwa zorza – słuchaj na 6 m i 2 m w kierunku północnym (CW/SSB brzmią "
+"chropowato). KF może być zakłócone."
+
+#: inc/propagation.php:192
+msgid "Extreme storm (G5)"
+msgstr "Ekstremalna burza (G5)"
+
+#: inc/propagation.php:194
+msgid "Severe storm (G4)"
+msgstr "Bardzo silna burza (G4)"
+
+#: inc/propagation.php:196
+msgid "Strong storm (G3)"
+msgstr "Silna burza (G3)"
+
+#: inc/propagation.php:198
+msgid "Moderate storm (G2)"
+msgstr "Umiarkowana burza (G2)"
+
+#: inc/propagation.php:200
+msgid "Minor storm (G1)"
+msgstr "Słaba burza (G1)"
+
+#: inc/propagation.php:202
+msgid "Active"
+msgstr "Aktywne"
+
+#: inc/propagation.php:204
+msgid "Unsettled"
+msgstr "Niespokojne"
+
+#: inc/propagation.php:206
+msgid "Quiet"
+msgstr "Spokojne"
+
+#: inc/propagation.php:212
+msgid "Space weather data is not available right now."
+msgstr "Dane o pogodzie kosmicznej są teraz niedostępne."
+
+#: inc/propagation.php:219
+msgid "Planetary K index, last 3 days"
+msgstr "Planetarny indeks K, ostatnie 3 dni"
+
+#: inc/propagation.php:237
+msgid "Kp index now"
+msgstr "Indeks Kp teraz"
+
+#: inc/propagation.php:240
+msgid "Aurora alert!"
+msgstr "Alarm zorzowy!"
+
+#: inc/propagation.php:240
+msgid ""
+"Point the beam north and listen on 6 m and 2 m – aurora signals sound rough "
+"and buzzy. HF, especially high-latitude paths, may be poor."
+msgstr ""
+"Skieruj antenę na północ i słuchaj na 6 m i 2 m – sygnały zorzowe brzmią "
+"chropowato i brzęczą. KF, zwłaszcza trasy polarne, mogą być słabe."
+
+#: inc/propagation.php:242
+msgid ""
+"The geomagnetic field is active – polar HF paths can be noisy; worth keeping"
+" an eye on 6 m for aurora."
+msgstr ""
+"Pole geomagnetyczne jest aktywne – trasy polarne na KF mogą być zaszumione; "
+"warto obserwować 6 m pod kątem zorzy."
+
+#: inc/propagation.php:244
+msgid ""
+"The geomagnetic field is calm – good news for HF, especially the low bands "
+"and polar paths."
+msgstr ""
+"Pole geomagnetyczne jest spokojne – dobra wiadomość dla KF, zwłaszcza "
+"niskich pasm i tras polarnych."
+
+#: inc/propagation.php:246
+msgid "Data: %s, updated every 3 hours."
+msgstr "Dane: %s, aktualizowane co 3 godziny."
+
+#: inc/propagation.php:291
+msgid "Thunderstorm risk at %s"
+msgstr "Ryzyko burzy: %s"
+
+#: inc/propagation.php:291
+msgid ""
+"Thunderstorms possible in the next hours – disconnect and ground the "
+"antennas."
+msgstr "W najbliższych godzinach możliwe burze – odłącz i uziem anteny."
+
+#: inc/propagation.php:299
+msgid "Clear sky"
+msgstr "Bezchmurnie"
+
+#: inc/propagation.php:301
+msgid "Partly cloudy"
+msgstr "Częściowe zachmurzenie"
+
+#: inc/propagation.php:303
+msgid "Overcast"
+msgstr "Pochmurno"
+
+#: inc/propagation.php:305
+msgid "Fog"
+msgstr "Mgła"
+
+#: inc/propagation.php:307
+msgid "Drizzle"
+msgstr "Mżawka"
+
+#: inc/propagation.php:309
+msgid "Rain"
+msgstr "Deszcz"
+
+#: inc/propagation.php:311
+msgid "Snow"
+msgstr "Śnieg"
+
+#: inc/propagation.php:313
+msgid "Rain showers"
+msgstr "Przelotny deszcz"
+
+#: inc/propagation.php:315
+msgid "Snow showers"
+msgstr "Przelotny śnieg"
+
+#: inc/propagation.php:317
+msgid "Thunderstorm"
+msgstr "Burza"
+
+#: inc/propagation.php:323
+msgid "Weather data is not available right now."
+msgstr "Dane pogodowe są teraz niedostępne."
+
+#: inc/propagation.php:333
+msgid "Thunderstorm risk in the next hours"
+msgstr "Ryzyko burzy w najbliższych godzinach"
+
+#: inc/propagation.php:333
+msgid ""
+"Disconnect the antennas from the radios and ground the feeders. Stay safe!"
+msgstr ""
+"Odłącz anteny od radiostacji i uziem przewody zasilające. Uważaj na siebie!"
+
+#: inc/propagation.php:335
+msgid "Gusts up to %d km/h"
+msgstr "Porywy do %d km/h"
+
+#: inc/propagation.php:335
+msgid "Lower the mast or check the guy lines."
+msgstr "Opuść maszt lub sprawdź odciągi."
+
+#: inc/propagation.php:339
+msgid "Wind"
+msgstr "Wiatr"
+
+#: inc/propagation.php:340
+msgid "Gusts"
+msgstr "Porywy"
+
+#: inc/propagation.php:341
+msgid "Pressure"
+msgstr "Ciśnienie"
+
+#: inc/propagation.php:343
+msgid "Weather at the QTH from %1$s. Live lightning: %2$s."
+msgstr "Pogoda w QTH z %1$s. Wyładowania na żywo: %2$s."
+
+#: inc/propagation.php:356
+msgid "Where the bands are open (MUF)"
+msgstr "Gdzie pasma są otwarte (MUF)"
+
+#: inc/propagation.php:357
+msgid "Best times from my QTH"
+msgstr "Najlepsze pory z mojego QTH"
+
+#: inc/propagation.php:358
+msgid "Space weather"
+msgstr "Pogoda kosmiczna"
+
+#: inc/propagation.php:359
+msgid "Weather at the shack"
+msgstr "Pogoda przy shacku"
+
+#: inc/qrz.php:87
+msgid "QRZ.com returned HTTP %d."
+msgstr "QRZ.com zwróciło HTTP %d."
+
+#: inc/qrz.php:241
+msgid "Unknown error from QRZ.com."
+msgstr "Nieznany błąd z QRZ.com."
+
+#: inc/qrz.php:273
+msgid "No QRZ.com API key saved yet."
+msgstr "Nie zapisano jeszcze klucza API QRZ.com."
+
+#: inc/qrz.php:276
+msgid "A sync is already running – try again in a few minutes."
+msgstr "Synchronizacja już trwa – spróbuj ponownie za kilka minut."
+
+#: inc/qrz.php:322
+msgid "%1$d new, %2$d updated, %3$d unchanged."
+msgstr "Nowe: %1$d, zaktualizowane: %2$d, bez zmian: %3$d."
+
+#: inc/qrz.php:336
+msgid "Every 15 minutes"
+msgstr "Co 15 minut"
+
+#: inc/qrz.php:337
+msgid "Every 30 minutes"
+msgstr "Co 30 minut"
+
+#: inc/qrz.php:346
+msgid "every 15 minutes"
+msgstr "co 15 minut"
+
+#: inc/qrz.php:347
+msgid "every 30 minutes"
+msgstr "co 30 minut"
+
+#: inc/qrz.php:348
+msgid "every hour"
+msgstr "co godzinę"
+
+#: inc/qrz.php:349
+msgid "twice a day"
+msgstr "dwa razy dziennie"
+
+#: inc/qrz.php:350
+msgid "once a day"
+msgstr "raz dziennie"
+
+#: inc/qrz.php:392
+msgid "QRZ.com settings saved."
+msgstr "Zapisano ustawienia QRZ.com."
+
+#: inc/qrz.php:393
+msgid "Sync finished:"
+msgstr "Synchronizacja zakończona:"
+
+#: inc/qrz.php:394
+msgid "Sync failed:"
+msgstr "Synchronizacja nieudana:"
+
+#: inc/qrz.php:395
+msgid "Connected to QRZ.com – the API key works."
+msgstr "Połączono z QRZ.com – klucz API działa."
+
+#: inc/qrz.php:396
+msgid "QRZ.com rejected the connection:"
+msgstr "QRZ.com odrzuciło połączenie:"
+
+#: inc/qrz.php:397
+msgid "API key removed and automatic sync switched off."
+msgstr "Klucz API usunięty, automatyczna synchronizacja wyłączona."
+
+#: inc/qrz.php:406
+msgid "QRZ.com Logbook – automatic sync"
+msgstr "QRZ.com Logbook – automatyczna synchronizacja"
+
+#: inc/qrz.php:407
+msgid ""
+"Pulls your QSOs from your QRZ.com logbook into this site automatically – new"
+" contacts and QSL confirmations included. Requires a QRZ subscription with "
+"Logbook API access."
+msgstr ""
+"Automatycznie pobiera Twoje QSO z logu QRZ.com na tę stronę – łącznie z "
+"nowymi łącznościami i potwierdzeniami QSL. Wymaga subskrypcji QRZ z dostępem"
+" do Logbook API."
+
+#: inc/qrz.php:411
+msgid "Not connected yet."
+msgstr "Jeszcze nie połączono."
+
+#: inc/qrz.php:411
+msgid "Paste your QRZ Logbook API key below."
+msgstr "Wklej poniżej swój klucz API QRZ Logbook."
+
+#: inc/qrz.php:413
+msgid "Automatic sync is ON"
+msgstr "Automatyczna synchronizacja WŁĄCZONA"
+
+#: inc/qrz.php:413
+msgid "Automatic sync is OFF"
+msgstr "Automatyczna synchronizacja WYŁĄCZONA"
+
+#: inc/qrz.php:415
+msgid "last run %s ago"
+msgstr "ostatnio %s temu"
+
+#: inc/qrz.php:416
+msgid "error: "
+msgstr "błąd: "
+
+#: inc/qrz.php:419
+msgid "next run in %s"
+msgstr "następna za %s"
+
+#: inc/qrz.php:428
+msgid "Logbook API key"
+msgstr "Klucz API logu"
+
+#: inc/qrz.php:430
+msgid ""
+"Find it on QRZ.com in your <em>Logbook settings</em>, in the API section. "
+"Leave empty to keep the saved key. It is stored only in this site's database"
+" and never shown on the website."
+msgstr ""
+"Znajdziesz go na QRZ.com w <em>ustawieniach logu (Logbook settings)</em>, w "
+"sekcji API. Zostaw puste, aby zachować zapisany klucz. Jest przechowywany "
+"wyłącznie w bazie danych tej strony i nigdy nie jest na niej wyświetlany."
+
+#: inc/qrz.php:432
+msgid "Automatic sync"
+msgstr "Automatyczna synchronizacja"
+
+#: inc/qrz.php:433
+msgid "Download new QSOs from QRZ.com automatically"
+msgstr "Automatycznie pobieraj nowe QSO z QRZ.com"
+
+#: inc/qrz.php:439
+msgid ""
+"Tip: for 15-minute syncing set up a real cron job in your hosting panel "
+"(every 15 minutes), otherwise WordPress only runs scheduled tasks when "
+"someone visits the site."
+msgstr ""
+"Wskazówka: aby synchronizować co 15 minut, ustaw prawdziwe zadanie cron w "
+"panelu hostingu (co 15 minut) – w przeciwnym razie WordPress uruchamia "
+"zaplanowane zadania tylko wtedy, gdy ktoś odwiedza stronę."
+
+#: inc/qrz.php:445
+msgid "Test connection"
+msgstr "Testuj połączenie"
+
+#: inc/qrz.php:446
+msgid "Sync now"
+msgstr "Synchronizuj teraz"
+
+#: inc/qrz.php:447
+msgid ""
+"Download the whole QRZ logbook again? Existing QSOs are updated, not "
+"duplicated."
+msgstr ""
+"Pobrać ponownie cały log z QRZ? Istniejące QSO zostaną zaktualizowane, a nie"
+" zduplikowane."
+
+#: inc/qrz.php:447
+msgid "Full re-sync"
+msgstr "Pełna ponowna synchronizacja"
+
+#: inc/qrz.php:448
+msgid "Remove key"
+msgstr "Usuń klucz"
+
+#: inc/qrz.php:491
+msgid "unknown error"
+msgstr "nieznany błąd"
+
+#: inc/qrz.php:500
+msgid "Logbook: %s"
+msgstr "Log: %s"
+
+#: inc/qrz.php:503
+msgid "Callsign: %s"
+msgstr "Znak: %s"
+
+#: inc/qrz.php:506
+msgid "QSOs on QRZ: %s"
+msgstr "QSO na QRZ: %s"
+
+#: inc/qrz.php:535
+msgid "last sync %1$s ago – %2$s"
+msgstr "ostatnia synchronizacja %1$s temu – %2$s"
+
+#: inc/qrz.php:537
+msgid "not synced yet"
+msgstr "jeszcze nie synchronizowano"
+
+#: inc/qrz.php:539
+msgid "manage"
+msgstr "zarządzaj"
+
+#: inc/qsl.php:127 inc/qsl.php:129 inc/qsl.php:130
+msgid "QSL requests"
+msgstr "Zamówienia QSL"
+
+#: inc/qsl.php:128 inc/qsl.php:131
+msgid "QSL request"
+msgstr "Zamówienie QSL"
+
+#: inc/qsl.php:132
+msgid "No QSL requests yet"
+msgstr "Brak próśb o QSL"
+
+#: inc/qsl.php:164
+msgid "Via the bureau"
+msgstr "Przez biuro QSL"
+
+#: inc/qsl.php:165
+msgid "Direct by post"
+msgstr "Direct (pocztą)"
+
+#: inc/qsl.php:166
+msgid "I have already sent my card"
+msgstr "Moja karta została już wysłana"
+
+#: inc/qsl.php:271
+msgid "Your request looked automated. Please try again."
+msgstr "Twoje zgłoszenie wygląda na automatyczne. Spróbuj ponownie."
+
+#: inc/qsl.php:273
+msgid "Please tick at least one QSO."
+msgstr "Zaznacz co najmniej jedno QSO."
+
+#: inc/qsl.php:274
+msgid "Please enter a valid email address (or leave it empty)."
+msgstr "Wpisz poprawny adres e-mail (lub zostaw to pole puste)."
+
+#: inc/qsl.php:275
+msgid "For a direct card I need your postal address."
+msgstr "Do wysłania karty direct potrzebuję Twojego adresu pocztowego."
+
+#: inc/qsl.php:281
+msgid "Would you like a paper QSL card? Request it here (OQRS)"
+msgstr "Chcesz papierową kartę QSL? Poproś o nią tutaj (OQRS)"
+
+#: inc/qsl.php:283
+msgid ""
+"Thanks – your QSL request is in. I will send the card as soon as I can. 73!"
+msgstr ""
+"Dzięki – Twoja prośba o QSL dotarła. Wyślę kartę najszybciej, jak to "
+"możliwe. 73!"
+
+#: inc/qsl.php:304
+msgid "(card already sent)"
+msgstr "(karta już wysłana)"
+
+#: inc/qsl.php:310
+msgid "How should the card travel?"
+msgstr "Jak wysłać kartę?"
+
+#: inc/qsl.php:317
+msgid "Email (for a confirmation)"
+msgstr "E-mail (do potwierdzenia)"
+
+#: inc/qsl.php:319
+msgid "Postal address (only for direct cards)"
+msgstr "Adres pocztowy (tylko dla kart direct)"
+
+#: inc/qsl.php:322
+msgid ""
+"Your address is used only to post the card and is deleted once the card is "
+"sent."
+msgstr ""
+"Twój adres służy wyłącznie do wysłania karty i zostanie usunięty po jej "
+"wysłaniu."
+
+#: inc/qsl.php:323
+msgid "Request QSL card"
+msgstr "Poproś o kartę QSL"
+
+#: inc/qsl.php:336
+msgid "Request"
+msgstr "Prośba"
+
+#: inc/qsl.php:350
+msgid "Sent"
+msgstr "Wysłano"
+
+#: inc/qsl.php:355 inc/qsl.php:385
+msgid "Mark card as sent"
+msgstr "Oznacz kartę jako wysłaną"
+
+#: inc/qsl.php:362
+msgid "Request details"
+msgstr "Szczegóły prośby"
+
+#: inc/qsl.php:370
+msgid "Route"
+msgstr "Sposób wysyłki"
+
+#: inc/qsl.php:373
+msgid "Address"
+msgstr "Adres"
+
+#: inc/qsl.php:385
+msgid ""
+"Sets \"QSL sent\" on the QSOs, emails the requester and deletes the postal "
+"address."
+msgstr ""
+"Ustawia „QSL wysłana” przy QSO, wysyła e-mail do proszącego i usuwa adres "
+"pocztowy."
+
+#: inc/qsl.php:387
+msgid "Card sent"
+msgstr "Karta wysłana"
+
+#: inc/rig.php:291
+msgid "Live rig (HRD + WSJT-X)"
+msgstr "Radio na żywo (HRD + WSJT-X)"
+
+#: inc/rig.php:291 inc/rig.php:331
+msgid "Live rig"
+msgstr "Radio na żywo"
+
+#: inc/rig.php:303
+msgid "Live rig – frequency from Ham Radio Deluxe, decodes from WSJT-X"
+msgstr "Radio na żywo – częstotliwość z Ham Radio Deluxe, dekody z WSJT-X"
+
+#: inc/rig.php:312
+msgid "Live rig is OFF."
+msgstr "Radio na żywo jest WYŁĄCZONE."
+
+#: inc/rig.php:312
+msgid "Tick “Enable” below and save."
+msgstr "Zaznacz poniżej „Włącz” i zapisz."
+
+#: inc/rig.php:314
+msgid "Receiving from the shack PC"
+msgstr "Odbieram dane z komputera w shacku"
+
+#: inc/rig.php:317
+msgid "last update %s ago"
+msgstr "ostatnia aktualizacja %s temu"
+
+#: inc/rig.php:319
+msgid "No data right now."
+msgstr "Obecnie brak danych."
+
+#: inc/rig.php:319
+msgid "Last reading %s ago."
+msgstr "Ostatni odczyt %s temu."
+
+#: inc/rig.php:321
+msgid "Waiting for the first reading from the shack PC."
+msgstr "Czekam na pierwszy odczyt z komputera w shacku."
+
+#: inc/rig.php:332
+msgid ""
+"Enable – accept frequency updates from my shack PC and show them live on the"
+" website"
+msgstr ""
+"Włącz – przyjmuj aktualizacje częstotliwości z mojego komputera w shacku i "
+"pokazuj je na żywo na stronie"
+
+#: inc/rig.php:334
+msgid "Automatic ON AIR"
+msgstr "Automatyczne ON AIR"
+
+#: inc/rig.php:335
+msgid "Switch to ON AIR when data arrives, back to OFF AIR when it stops"
+msgstr ""
+"Przełącz na ON AIR, gdy napływają dane, i z powrotem na QRT, gdy przestaną"
+
+#: inc/rig.php:336
+msgid ""
+"If you set “Portable” by hand it is left alone – only the frequency is "
+"updated."
+msgstr ""
+"Jeśli ręcznie ustawisz „Portable”, status pozostanie bez zmian – "
+"aktualizowana będzie tylko częstotliwość."
+
+#: inc/rig.php:338
+msgid "Go OFF AIR after"
+msgstr "Przejdź na QRT po"
+
+#: inc/rig.php:339
+msgid "minutes without data"
+msgstr "minutach bez danych"
+
+#: inc/rig.php:341
+msgid "WSJT-X"
+msgstr "WSJT-X"
+
+#: inc/rig.php:342
+msgid "Show live FT8/FT4 decodes on the website (Live page and home page)"
+msgstr ""
+"Pokazuj na stronie dekody FT8/FT4 na żywo (strona Live i strona główna)"
+
+#: inc/rig.php:343
+msgid ""
+"Add QSOs logged in WSJT-X to the logbook straight away (duplicates from QRZ "
+"sync are skipped)"
+msgstr ""
+"Od razu dodawaj do logu QSO zapisane w WSJT-X (duplikaty z synchronizacji "
+"QRZ są pomijane)"
+
+#: inc/rig.php:347
+msgid "Last data from WSJT-X: %s ago."
+msgstr "Ostatnie dane z WSJT-X: %s temu."
+
+#: inc/rig.php:356
+msgid "Values for the Ham Shack Rig Link script"
+msgstr "Wartości dla skryptu Ham Shack Rig Link"
+
+#: inc/rig.php:357
+msgid ""
+"Copy these two values into config.txt next to the script on your shack PC."
+msgstr ""
+"Skopiuj te dwie wartości do pliku config.txt obok skryptu na komputerze w "
+"shacku."
+
+#: inc/rig.php:363
+msgid "Copy it now – for safety it is shown only once."
+msgstr ""
+"Skopiuj go teraz – ze względów bezpieczeństwa jest wyświetlany tylko raz."
+
+#: inc/rig.php:366
+msgid "Lost it? Generate a new one and update config.txt."
+msgstr "Zgubiony? Wygeneruj nowy i zaktualizuj config.txt."
+
+#: inc/rig.php:368
+msgid "No token yet."
+msgstr "Brak tokenu."
+
+#: inc/rig.php:373
+msgid "Make a new token? The old one stops working immediately."
+msgstr "Utworzyć nowy token? Stary natychmiast przestanie działać."
+
+#: inc/rig.php:373
+msgid "Generate new token"
+msgstr "Wygeneruj nowy token"
+
+#: inc/rig.php:373
+msgid "Generate token"
+msgstr "Wygeneruj token"
+
+#: inc/seo.php:33
+msgid "Amateur radio event on the %s calendar."
+msgstr "Wydarzenie krótkofalarskie w kalendarzu %s."
+
+#: inc/seo.php:146 inc/seo.php:299
+msgid "Backup & export"
+msgstr "Kopia zapasowa i eksport"
+
+#: inc/seo.php:301
+msgid "Settings restored."
+msgstr "Ustawienia przywrócone."
+
+#: inc/seo.php:301
+msgid "That file is not a Ham Shack settings backup."
+msgstr "Ten plik nie jest kopią ustawień Ham Shack."
+
+#: inc/seo.php:304
+msgid "Download a backup of the radio data"
+msgstr "Pobierz kopię zapasową danych radiowych"
+
+#: inc/seo.php:305
+msgid ""
+"One ZIP with the logbook (ADIF), station settings, events, activations, QSL "
+"requests and newsletter subscribers. The QRZ.com API key and Rig Link token "
+"are left out on purpose."
+msgstr ""
+"Jeden plik ZIP z logiem (ADIF), ustawieniami stacji, wydarzeniami, "
+"aktywacjami, prośbami o QSL i subskrybentami newslettera. Klucz API QRZ.com "
+"i token Rig Link są celowo pomijane."
+
+#: inc/seo.php:307
+msgid "Download ZIP backup"
+msgstr "Pobierz kopię ZIP"
+
+#: inc/seo.php:308
+msgid "Logbook only (.adi)"
+msgstr "Tylko log (.adi)"
+
+#: inc/seo.php:309
+msgid "Settings only (.json)"
+msgstr "Tylko ustawienia (.json)"
+
+#: inc/seo.php:313
+msgid "Restore settings"
+msgstr "Przywróć ustawienia"
+
+#: inc/seo.php:314
+msgid ""
+"Upload settings.json from a backup to restore the station settings. (The "
+"logbook comes back through QRZ sync or ADIF import.)"
+msgstr ""
+"Prześlij plik settings.json z kopii zapasowej, aby przywrócić ustawienia "
+"stacji. (Log wraca przez synchronizację z QRZ lub import ADIF)."
+
+#: inc/seo.php:317
+msgid "Restore"
+msgstr "Przywróć"
+
+#: inc/seo.php:320
+msgid "Full-site backup (recommended)"
+msgstr "Kopia zapasowa całej strony (zalecane)"
+
+#: inc/seo.php:322
+msgid ""
+"Install the free plugin <strong>UpdraftPlus</strong> (Plugins → Add New → "
+"search “UpdraftPlus”)."
+msgstr ""
+"Zainstaluj darmową wtyczkę <strong>UpdraftPlus</strong> (Wtyczki → Dodaj "
+"nową → wyszukaj „UpdraftPlus”)."
+
+#: inc/seo.php:323
+msgid ""
+"Settings → UpdraftPlus Backups → Settings: files <strong>weekly</strong>, "
+"database <strong>daily</strong>, keep 4 copies."
+msgstr ""
+"Ustawienia → UpdraftPlus Backups → Ustawienia: pliki <strong>co "
+"tydzień</strong>, baza danych <strong>codziennie</strong>, przechowuj 4 "
+"kopie."
+
+#: inc/seo.php:324
+msgid ""
+"Choose remote storage – e.g. <strong>Google Drive</strong> or Dropbox – so a"
+" copy lives outside your hosting."
+msgstr ""
+"Wybierz zdalne miejsce przechowywania – np. <strong>Google Drive</strong> "
+"lub Dropbox – aby kopia była poza Twoim hostingiem."
+
+#: inc/seo.php:325
+msgid ""
+"Click “Backup Now” once to check it works. Your host’s cPanel “Backup” tool "
+"is a good extra safety net."
+msgstr ""
+"Kliknij raz „Backup Now”, aby sprawdzić, czy działa. Narzędzie „Backup” w "
+"cPanelu Twojego hostingu to dobre dodatkowe zabezpieczenie."
+
+#: inc/setup.php:37
+msgid "Amber"
+msgstr "Bursztynowy"
+
+#: inc/setup.php:38
+msgid "Cyan"
+msgstr "Cyjan"
+
+#: inc/setup.php:39
+msgid "Signal green"
+msgstr "Sygnałowa zieleń"
+
+#: inc/setup.php:40
+msgid "On-air red"
+msgstr "Czerwień ON AIR"
+
+#: inc/setup.php:41
+msgid "Night"
+msgstr "Noc"
+
+#: inc/setup.php:42
+msgid "Panel"
+msgstr "Panel"
+
+#: inc/setup.php:43
+msgid "Text"
+msgstr "Tekst"
+
+#: inc/setup.php:54
+msgid "Footer menu"
+msgstr "Menu w stopce"
+
+#: inc/setup.php:71
+msgid "Blog sidebar"
+msgstr "Pasek boczny bloga"
+
+#: inc/setup.php:71
+msgid "Shown next to posts and archives."
+msgstr "Wyświetlany obok wpisów i archiwów."
+
+#: inc/setup.php:72
+msgid "Footer column 1"
+msgstr "Kolumna stopki 1"
+
+#: inc/setup.php:73
+msgid "Footer column 2"
+msgstr "Kolumna stopki 2"
+
+#: inc/setup.php:74
+msgid "Footer column 3"
+msgstr "Kolumna stopki 3"
+
+#: inc/setup.php:127
+msgid "Home"
+msgstr "Strona główna"
+
+#: inc/setup.php:150
+msgid "%d min read"
+msgid_plural "%d min read"
+msgstr[0] "%d min czytania"
+msgstr[1] "%d min czytania"
+msgstr[2] "%d min czytania"
+
+#: inc/setup.php:179 single.php:56
+msgid "Previous"
+msgstr "Poprzednie"
+
+#: inc/setup.php:180 single.php:59
+msgid "Next"
+msgstr "Następne"
+
+#: inc/setup.php:184
+msgid "Pagination"
+msgstr "Paginacja"
+
+#: inc/setup.php:228
+msgid "Your comment is awaiting moderation."
+msgstr "Twój komentarz czeka na moderację."
+
+#: inc/station.php:23
+msgid "Ham Shack Station"
+msgstr "Stacja Ham Shack"
+
+#: inc/station.php:169
+msgid "+ Log a QSO"
+msgstr "+ Dodaj QSO"
+
+#: inc/station.php:170
+msgid "+ Add event"
+msgstr "+ Dodaj wydarzenie"
+
+#: inc/station.php:185
+msgid ""
+"Use the Dashboard to change your on-air status and the Logbook / Events "
+"menus to add entries."
+msgstr ""
+"Status nadawania zmienisz w Kokpicie, a wpisy dodasz w menu Log / "
+"Wydarzenia."
+
+#: inc/station.php:221
+msgid ""
+"Shown in the site header and on the home page. Tip: you can also switch it "
+"from the admin bar at the top of the screen."
+msgstr ""
+"Wyświetlany w nagłówku strony i na stronie głównej. Wskazówka: możesz go też"
+" przełączyć z paska administracyjnego u góry ekranu."
+
+#: inc/station.php:224
+msgid "e.g. 14.074 or 145.500"
+msgstr "np. 14.074 lub 145.500"
+
+#: inc/station.php:225
+msgid "e.g. FT8, SSB, FM"
+msgstr "np. FT8, SSB, FM"
+
+#: inc/station.php:226
+msgid "Status note"
+msgstr "Notatka do statusu"
+
+#: inc/station.php:226
+msgid "e.g. \"Portable from the hills – calling CQ\""
+msgstr "np. „Portable z gór – wołam CQ”"
+
+#: inc/station.php:232
+msgid "Station identity"
+msgstr "Dane stacji"
+
+#: inc/station.php:236
+msgid "Operator name"
+msgstr "Imię operatora"
+
+#: inc/station.php:236
+msgid "Optional – shown on the Station page."
+msgstr "Opcjonalnie – wyświetlane na stronie Stacja."
+
+#: inc/station.php:237
+msgid "QTH (location)"
+msgstr "QTH (lokalizacja)"
+
+#: inc/station.php:238
+msgid "4 or 6 characters, e.g. JO62 or JO62qm."
+msgstr "4 lub 6 znaków, np. JO62 albo JO62qm."
+
+#: inc/station.php:239
+msgid "Latitude (maps)"
+msgstr "Szerokość geogr. (mapy)"
+
+#: inc/station.php:239
+msgid ""
+"Optional, e.g. 51.0688 – the exact spot for maps, distances and satellite "
+"passes. Empty = centre of the locator square."
+msgstr ""
+"Opcjonalnie, np. 51.0688 – dokładne miejsce dla map, odległości i przelotów "
+"satelitów. Puste = środek kwadratu lokatora."
+
+#: inc/station.php:240
+msgid "Longitude (maps)"
+msgstr "Długość geogr. (mapy)"
+
+#: inc/station.php:240
+msgid "Optional, e.g. -1.7945 (west is negative)."
+msgstr "Opcjonalnie, np. -1.7945 (zachód jest ujemny)."
+
+#: inc/station.php:244
+msgid "QSL info"
+msgstr "Info QSL"
+
+#: inc/station.php:250
+msgid "Equipment, bands & modes"
+msgstr "Sprzęt, pasma i emisje"
+
+#: inc/station.php:253
+msgid "Radios (one per line)"
+msgstr "Radia (jedno w wierszu)"
+
+#: inc/station.php:253
+msgid "Format: \"Name – details\". Example: Yaesu FT-891 – HF/6 m, 100 W"
+msgstr "Format: „Nazwa – szczegóły”. Przykład: Yaesu FT-891 – HF/6 m, 100 W"
+
+#: inc/station.php:254
+msgid "Antennas (one per line)"
+msgstr "Anteny (jedna w wierszu)"
+
+#: inc/station.php:270
+msgid "Home page & display"
+msgstr "Strona główna i wyświetlanie"
+
+#: inc/station.php:273
+msgid "Hero headline"
+msgstr "Nagłówek główny"
+
+#: inc/station.php:274
+msgid "Hero intro text"
+msgstr "Tekst wprowadzający"
+
+#: inc/station.php:275
+msgid "Footer text"
+msgstr "Tekst stopki"
+
+#: inc/station.php:277
+msgid "Sections"
+msgstr "Sekcje"
+
+#: inc/station.php:278
+msgid "Show N0NBH solar-terrestrial / band conditions on the home page"
+msgstr ""
+"Pokazuj na stronie głównej dane słoneczno-geomagnetyczne / warunki "
+"propagacji N0NBH"
+
+#: inc/station.php:279
+msgid "Show recent QSOs on the home page"
+msgstr "Pokazuj ostatnie QSO na stronie głównej"
+
+#: inc/station.php:280
+msgid "Show the live section (greyline map and FT8 decodes) on the home page"
+msgstr ""
+"Pokazuj na stronie głównej sekcję na żywo (mapa greyline i dekody FT8)"
+
+#: inc/station.php:282
+msgid "N0NBH banner – home page"
+msgstr "Baner N0NBH – strona główna"
+
+#: inc/station.php:282
+msgid "N0NBH banner – sidebar widget"
+msgstr "Baner N0NBH – widżet w pasku bocznym"
+
+#: inc/station.php:292
+msgid ""
+"Live solar-terrestrial data by Paul L Herrman, N0NBH (%s). The credit link "
+"is always kept, as N0NBH asks. Data updates hourly."
+msgstr ""
+"Dane słoneczno-geomagnetyczne na żywo od Paula L Herrmana, N0NBH (%s). Link "
+"z podziękowaniem jest zawsze zachowany, zgodnie z prośbą N0NBH. Dane "
+"aktualizują się co godzinę."
+
+#: inc/station.php:297
+msgid "Links & contact"
+msgstr "Linki i kontakt"
+
+#: inc/station.php:300
+msgid "Contact form email"
+msgstr "E-mail formularza kontaktowego"
+
+#: inc/station.php:300
+msgid ""
+"Messages from the contact form go here. Leave empty to use the site admin "
+"email."
+msgstr ""
+"Tutaj trafiają wiadomości z formularza kontaktowego. Zostaw puste, aby użyć "
+"e-maila administratora strony."
+
+#: inc/station.php:301
+msgid "QRZ.com page"
+msgstr "Strona QRZ.com"
+
+#: inc/station.php:310
+msgid "Save station settings"
+msgstr "Zapisz ustawienia stacji"
+
+#: inc/widgets.php:23
+msgid "Title:"
+msgstr "Tytuł:"
+
+#: inc/widgets.php:57
+msgid "How many:"
+msgstr "Ile:"
+
+#: inc/widgets.php:67
+msgid "Ham Shack: Station status"
+msgstr "Ham Shack: Status stacji"
+
+#: inc/widgets.php:67
+msgid "On-air status, frequency, locator and live UTC clock."
+msgstr "Status nadawania, częstotliwość, lokator i zegar UTC na żywo."
+
+#: inc/widgets.php:79
+msgid "Ham Shack: Upcoming events"
+msgstr "Ham Shack: Nadchodzące wydarzenia"
+
+#: inc/widgets.php:79
+msgid "Next contests, nets and activations from the calendar."
+msgstr "Najbliższe zawody, kręgi (nety) i aktywacje z kalendarza."
+
+#: inc/widgets.php:87
+msgid "No upcoming events."
+msgstr "Brak nadchodzących wydarzeń."
+
+#: inc/widgets.php:89
+msgid "Full calendar"
+msgstr "Pełny kalendarz"
+
+#: inc/widgets.php:97
+msgid "Ham Shack: Latest QSOs"
+msgstr "Ham Shack: Ostatnie QSO"
+
+#: inc/widgets.php:97
+msgid "Most recent contacts from the logbook."
+msgstr "Najnowsze łączności z logu."
+
+#: inc/widgets.php:120
+msgid "Ham Shack: N0NBH band conditions"
+msgstr "Ham Shack: Warunki propagacji N0NBH"
+
+#: inc/widgets.php:120
+msgid ""
+"Live N0NBH solar-terrestrial banner (hamqsl.com) – choose any of the N0NBH "
+"banners."
+msgstr ""
+"Baner N0NBH z danymi słoneczno-geomagnetycznymi na żywo (hamqsl.com) – "
+"wybierz dowolny baner N0NBH."
+
+#: inc/widgets.php:124
+msgid "N0NBH banner:"
+msgstr "Baner N0NBH:"
+
+#: inc/widgets.php:125
+msgid "— as in Station settings —"
+msgstr "— jak w ustawieniach stacji —"
+
+#: index.php:12
+msgid "blog"
+msgstr "blog"
+
+#. translators: %s search term
+#: index.php:19
+msgid "Search: %s"
+msgstr "Szukaj: %s"
+
+#: index.php:35
+msgid "Categories"
+msgstr "Kategorie"
+
+#: index.php:62
+msgid "Nothing heard on this frequency…"
+msgstr "Na tej częstotliwości cisza…"
+
+#: index.php:63
+msgid "No posts match. Try another search:"
+msgstr "Brak pasujących wpisów. Spróbuj innego wyszukiwania:"
+
+#: page-station.php:37
+msgid "Radios"
+msgstr "Radia"
+
+#: page-station.php:46
+msgid "Antennas"
+msgstr "Anteny"
+
+#: page-station.php:56
+msgid "Bands & modes"
+msgstr "Pasma i emisje"
+
+#: page-station.php:75
+msgid "Confirming contacts"
+msgstr "Potwierdzanie łączności"
+
+#: page-station.php:80
+msgid "Check the logbook"
+msgstr "Sprawdź log"
+
+#: page-station.php:87
+msgid "%s QSL card"
+msgstr "Karta QSL %s"
+
+#: searchform.php:11
+msgid "Search for:"
+msgstr "Szukaj:"
+
+#: searchform.php:12
+msgid "Search the blog…"
+msgstr "Szukaj na blogu…"
+
+#: sidebar.php:12
+msgid "Sidebar"
+msgstr "Pasek boczny"
+
+#: single-hamshack_event.php:24
+msgid "This event has already taken place."
+msgstr "To wydarzenie już się odbyło."
+
+#: single-hamshack_event.php:40
+msgid "Repeats every week"
+msgstr "Powtarza się co tydzień"
+
+#: single-hamshack_event.php:40
+msgid "Repeats every 2 weeks"
+msgstr "Powtarza się co 2 tygodnie"
+
+#: single-hamshack_event.php:40
+msgid "Repeats every month"
+msgstr "Powtarza się co miesiąc"
+
+#: single-hamshack_event.php:42
+msgid "until %s"
+msgstr "do %s"
+
+#: single-hamshack_event.php:47
+msgid "Frequency"
+msgstr "Częstotliwość"
+
+#: single-hamshack_event.php:58
+msgid "More info"
+msgstr "Więcej informacji"
+
+#: single-hamshack_event.php:76
+msgid "Also coming up"
+msgstr "Wkrótce także"
+
+#: single.php:36
+msgid "Pages:"
+msgstr "Strony:"
+
+#: single.php:46
+msgid "thanks for reading, 73!"
+msgstr "dzięki za lekturę, 73!"
+
+#: taxonomy-hamshack_event_type.php:28
+msgid "Nothing of this type scheduled in the next 12 months."
+msgstr ""
+"Brak zaplanowanych wydarzeń tego typu w ciągu najbliższych 12 miesięcy."
+
+#: template-parts/solar.php:16
+msgid "Live solar-terrestrial data by N0NBH: %s"
+msgstr "Dane słoneczno-geomagnetyczne na żywo od N0NBH: %s"
+
+#: template-parts/solar.php:18
+msgid "Live N0NBH data is taking a break."
+msgstr "Dane N0NBH na żywo są chwilowo niedostępne."
+
+#: template-parts/solar.php:18
+msgid "View it on hamqsl.com"
+msgstr "Zobacz na hamqsl.com"
+
+#: template-parts/solar.php:19
+msgid "Live data"
+msgstr "Dane na żywo"
+
+#: template-parts/status-card.php:20
+msgid "Current frequency"
+msgstr "Bieżąca częstotliwość"
+
+#: template-parts/status-card.php:27
+msgid "Live from the rig"
+msgstr "Na żywo z radia"
+
+#: template-parts/status-card.php:37
+msgid "Updated"
+msgstr "Zaktualizowano"

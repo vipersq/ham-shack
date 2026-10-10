@@ -18,6 +18,8 @@ function hamshack_defaults() {
 		'op_name'       => '',
 		'qth'           => '',
 		'locator'       => '',
+		'lat'           => '',
+		'lon'           => '',
 		'licence'       => '',
 		'itu_zone'      => '',
 		'cq_zone'       => '',
@@ -43,6 +45,7 @@ function hamshack_defaults() {
 		'solar_banner'  => 'solarn0nbh',
 		'solar_home'    => 'solarn0nbh',
 		'show_logbook'  => 1,
+		'show_live'     => 1,
 		'qsl_info'      => 'QSL via eQSL, LoTW or direct. 73!',
 		'footer_text'   => '73 de {callsign}',
 	);
@@ -61,6 +64,9 @@ function hamshack_opt( $key, $default = null ) {
 	}
 	if ( array_key_exists( $key, $opts ) && '' !== $opts[ $key ] ) {
 		$value = $opts[ $key ];
+		if ( function_exists( 'pll__' ) && is_string( $value ) && in_array( $key, hamshack_translatable_opts(), true ) && ! is_admin() ) {
+			$value = pll__( $value );
+		}
 		// Texts may contain {callsign}, {qth}, {locator} placeholders.
 		if ( is_string( $value ) && false !== strpos( $value, '{' ) && ! in_array( $key, array( 'callsign', 'qth', 'locator' ), true ) ) {
 			$value = strtr( $value, array( '{callsign}' => $opts['callsign'], '{qth}' => $opts['qth'], '{locator}' => $opts['locator'] ) );
@@ -232,4 +238,89 @@ function hamshack_facts( array $pairs ) {
 		}
 	}
 	return $out;
+}
+
+/**
+ * Does the content hold a wide app (calendar, logbook, maps…)? Then the page uses the full container.
+ *
+ * @param string $content Post content.
+ */
+function hamshack_is_wide_content( $content ) {
+	$wide = apply_filters( 'hamshack_wide_shortcodes', array( 'hamshack_calendar', 'hamshack_logbook', 'hamshack_qso_map', 'hamshack_awards', 'hamshack_live', 'hamshack_greyline', 'hamshack_dx_cluster', 'hamshack_psk', 'hamshack_ft8', 'hamshack_satellites', 'hamshack_activations', 'hamshack_gallery', 'hamshack_morse', 'hamshack_quiz', 'hamshack_propagation', 'hamshack_muf', 'hamshack_best_times', 'hamshack_space_weather', 'hamshack_weather', 'hamshack_contests', 'hamshack_contest', 'hamshack_qsl_wall', 'hamshack_sked', 'hamshack_repeaters', 'hamshack_sdr', 'hamshack_aprs' ) );
+	foreach ( $wide as $sc ) {
+		if ( has_shortcode( $content, $sc ) ) {
+			return true;
+		}
+	}
+	return false;
+}
+
+/**
+ * Where to send a visitor back to after a form post (the page the form was on).
+ *
+ * wp_get_referer() returns false when the form posts to its own URL, so use the raw referer.
+ */
+function hamshack_back_url() {
+	$ref = wp_get_raw_referer();
+	return $ref ? wp_validate_redirect( $ref, home_url( '/' ) ) : home_url( '/' );
+}
+
+/**
+ * Station texts that can be translated with Polylang (Languages → Translations).
+ */
+function hamshack_translatable_opts() {
+	return array( 'hero_title', 'hero_text', 'qsl_info', 'footer_text', 'licence', 'qth', 'rigs', 'antennas' );
+}
+
+add_action( 'init', function () {
+	if ( function_exists( 'pll_register_string' ) ) {
+		$opts = wp_parse_args( (array) get_option( 'hamshack_station', array() ), hamshack_defaults() );
+		foreach ( hamshack_translatable_opts() as $k ) {
+			if ( ! empty( $opts[ $k ] ) && is_string( $opts[ $k ] ) ) {
+				pll_register_string( 'hamshack_' . $k, $opts[ $k ], 'Ham Shack', false !== strpos( $opts[ $k ], "\n" ) );
+			}
+		}
+	}
+} );
+
+/**
+ * EN | PL switcher in the top bar (only when Polylang is active).
+ */
+function hamshack_language_switcher() {
+	if ( ! function_exists( 'pll_the_languages' ) ) {
+		return;
+	}
+	$langs = pll_the_languages( array( 'raw' => 1, 'hide_if_empty' => 0, 'hide_if_no_translation' => 0 ) );
+	if ( ! is_array( $langs ) || count( $langs ) < 2 ) {
+		return;
+	}
+	echo '<span class="lang-switch" aria-label="' . esc_attr__( 'Language', 'hamshack' ) . '">';
+	foreach ( $langs as $l ) {
+		printf(
+			'<a href="%1$s" lang="%2$s" hreflang="%2$s"%3$s>%4$s</a>',
+			esc_url( $l['url'] ),
+			esc_attr( $l['locale'] ? str_replace( '_', '-', $l['locale'] ) : $l['slug'] ),
+			! empty( $l['current_lang'] ) ? ' class="is-current" aria-current="true"' : '',
+			esc_html( strtoupper( $l['slug'] ) )
+		);
+	}
+	echo '</span>';
+}
+
+/**
+ * Signed time stamp for public forms: shows when the form was loaded, cannot be faked
+ * and – unlike a nonce – keeps working when the page is cached.
+ */
+function hamshack_form_stamp() {
+	$t = time();
+	return $t . '.' . substr( hash_hmac( 'sha256', 'm6form|' . $t, wp_salt( 'nonce' ) ), 0, 20 );
+}
+
+/** @return int Time stamp, or 0 if the signature is wrong. */
+function hamshack_form_stamp_check( $stamp ) {
+	$p = explode( '.', (string) $stamp );
+	if ( 2 !== count( $p ) || ! ctype_digit( $p[0] ) ) {
+		return 0;
+	}
+	return hash_equals( substr( hash_hmac( 'sha256', 'm6form|' . $p[0], wp_salt( 'nonce' ) ), 0, 20 ), $p[1] ) ? (int) $p[0] : 0;
 }

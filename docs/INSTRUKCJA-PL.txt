@@ -66,6 +66,10 @@ BIOGRAFIA NA QRZ.COM
 SHORTCODE'Y
   [hamshack_calendar]  [hamshack_events limit="5"]  [hamshack_logbook]
   [hamshack_logbook_stats]  [hamshack_contact]
+  Nowe w 2.0: [hamshack_qso_map] [hamshack_awards] [hamshack_live] [hamshack_ft8]
+  [hamshack_greyline] [hamshack_psk] [hamshack_dx_cluster] [hamshack_satellites]
+  [hamshack_activations] [hamshack_gallery] [hamshack_morse] [hamshack_quiz]
+  [hamshack_subscribe]
 
 WSKAZÓWKI
   - Formularz kontaktowy używa poczty WordPressa; gdy maile nie dochodzą,
@@ -75,5 +79,53 @@ WSKAZÓWKI
   - Publicznie widać tylko znak, datę, godzinę, pasmo, emisję, RST i kraj QSO;
     imiona, QTH i notatki zostają prywatne.
 
+NOWOŚCI W WERSJI 2.0
+  Aktualizacja z 1.x: Wygląd -> Motywy -> Dodaj nowy -> Wyślij hamshack-theme.zip ->
+  „Zastąp bieżący wgranym”, potem wejdź do panelu. Motyw sam doda strony i menu „Radio”
+  (Live, QSO Map, Stats & Awards, Satellites, Activations, Gallery, Learn), widżet
+  newslettera i w tle uzupełni QSO o kraj, kontynent, strefy, pozycję i odległość.
+  - QSO Map – cały log na mapie świata (pasma, emisje, kwadraty lokatora, dzień/noc).
+  - Stats & Awards – postęp DXCC, WAC, WAZ, ITU, WAS, Wyspy Brytyjskie, lokatory, VUCC + wykresy.
+  - Live – dekody FT8/FT4 z WSJT-X (Rig Link 2.0), greyline z zegarami, PSK Reporter, DX Cluster.
+  - Satellites – przeloty satelitów na 48 h nad Twoją stacją + pozycje na żywo.
+  - Activations – aktywacje POTA/SOTA/WWFF na mapie (Ham Shack -> Activations).
+  - Gallery – zdjęcia oznaczone w Mediach „Show in the gallery” (albo akcja masowa).
+  - Learn – trener Morse'a (Koch, znaki wywoławcze, tekst) i quiz w stylu Foundation.
+  - W logu: karta eQSL do pobrania (PNG) i formularz prośby o papierową kartę (OQRS);
+    prośby w Ham Shack -> QSL requests.
+  - Newsletter (Ham Shack -> Newsletter) – podwójne potwierdzenie, mail po nowym wpisie.
+    Zainstaluj WP Mail SMTP, żeby maile nie wpadały do spamu.
+  - SEO, Backup & export (ZIP z logiem i ustawieniami), tłumaczenie na polski.
+    Przełącznik EN | PL – zainstaluj wtyczkę Polylang i dodaj języki.
+  - Station settings: wpisz dokładne współrzędne (Latitude/Longitude) – mapy, odległości
+    i przeloty satelitów będą dokładne.
+  - Rig Link 2.0: w WSJT-X ustaw Settings -> Reporting -> UDP Server 127.0.0.1, port 2237.
+
 Podziękowania: dane o propagacji – Paul L Herrman N0NBH (hamqsl.com); link z
 podziękowaniem zostaje zawsze. Motyw i Rig Link to wolne oprogramowanie (GPL v2+). 73!
+
+NOWOŚCI W WERSJI 2.1
+  Aktualizacja z 2.0: tak samo – wyślij nowy hamshack-theme.zip, „Zastąp bieżący wgranym”,
+  wejdź do panelu. Motyw doda strony Propagation, Contests, Book a sked, Repeaters, QSL Wall
+  na końcu menu „Radio” i włączy codzienny import zawodów. Rig Link bez zmian (2.0).
+  Nowe usługi ustawiasz w Ham Shack -> Integrations (klucze i hasła wpisuj tylko tam).
+  - Propagation – mapa MUF na żywo z jonosond (KC2G): które pasma są teraz otwarte;
+    „najlepsze godziny” z Twojego logu (kontynent x godzina UTC); indeks Kp z NOAA
+    z alarmem zorzowym; pogoda w QTH (Open-Meteo) z ostrzeżeniem o burzy i wietrze.
+  - Contests – zawody z najbliższych 8 dni z kalendarza WA7BNM. W kalendarzu pojawiają się
+    dopiero po kliknięciu „Biorę udział”; w czasie zawodów na stronie głównej jest tablica
+    wyników na żywo (QSO, tempo/h, DXCC, strefy CQ).
+  - Book a sked – formularz umawiania łączności; w Ham Shack -> Sked requests klikasz
+    „Akceptuj” (wydarzenie + e-mail z linkiem do Google Calendar) albo „Odrzuć”.
+  - Repeaters – mapa i tabela przemienników w promieniu 60 km (w UK automatycznie
+    z ukrepeater.net, w innych krajach wpisz własne w Integrations).
+  - QSL Wall – zdjęcia papierowych kart (przód i tył) dodawane w QSO; karta obraca się
+    po najechaniu, miniatura pojawia się też w publicznym logu.
+  - DX Cluster: znaczki NOWY / nowe pasmo / Most Wanted (Club Log) i filtr „Tylko nowe dla mnie”.
+    Logbook: znaczki NOWY (pierwsze QSO z krajem) i „nowy lokator”.
+  - Live: pozycja z APRS (aprs.fi) i odbiornik WebSDR/KiwiSDR w stronie.
+  - Powiadomienia na Discord, Telegram lub webhook (np. Zapier -> Facebook): ON AIR,
+    nowy wpis, nowy kraj, spot w clusterze, burza geomagnetyczna, burza w QTH, sked.
+  - Club Log: opcjonalne wysyłanie nowych QSO w czasie rzeczywistym.
+  - Aplikacja (PWA) na telefon z trybem offline, przełącznik jasny/ciemny,
+    zdjęcia WebP, szybsze ładowanie skryptów.

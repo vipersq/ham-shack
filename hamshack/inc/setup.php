@@ -77,6 +77,7 @@ function hamshack_widgets_init() {
 add_action( 'wp_enqueue_scripts', 'hamshack_assets' );
 function hamshack_assets() {
 	wp_enqueue_style( 'hamshack', get_stylesheet_uri(), array(), HAMSHACK_VERSION );
+	wp_enqueue_style( 'hamshack-apps', HAMSHACK_URI . '/assets/css/apps.css', array( 'hamshack' ), HAMSHACK_VERSION );
 	wp_enqueue_script( 'hamshack', HAMSHACK_URI . '/assets/js/main.js', array(), HAMSHACK_VERSION, true );
 	wp_localize_script(
 		'hamshack',

@@ -6,6 +6,8 @@ Install it, type in your callsign, and your station website is ready: the logo, 
 
 ![Home page](docs/screenshots/home.png)
 
+> **New in 2.1** – live MUF map and band openings, best-times heat map, space weather & storm alerts, automatic contest calendar with a live scoreboard, Discord/Telegram notifications, Club Log (Most Wanted + real-time upload), NEW ONE badges, QSL card wall, sked booking, repeater map, web SDR, APRS position, an installable app (PWA) with offline mode, and a light/dark switch.
+>
 > **New in 2.0** – QSO map, awards & statistics, live FT8 decodes from WSJT-X, DX cluster, PSK Reporter, greyline map, satellite passes, POTA/SOTA activations, photo gallery, downloadable eQSL cards, online QSL requests (OQRS), Morse trainer & quiz, e-mail newsletter, SEO, backups and a Polish translation. See the [changelog](CHANGELOG.md).
 
 ---
@@ -55,6 +57,47 @@ Install it, type in your callsign, and your station website is ready: the logo, 
 ![Greyline](docs/screenshots/greyline.png)
 ![Satellites](docs/screenshots/satellites.png)
 
+### Propagation & contests 🆕
+
+| | |
+|---|---|
+| **Live MUF map** | Ionosonde data ([KC2G](https://prop.kc2g.com/) / GIRO) on the world map, refreshed every 15 minutes, plus *open / marginal / closed* chips for each HF band from the stations nearest to you. |
+| **Best times from my QTH** | A heat map of continent × UTC hour built from your own log – per band – so you can see when each path usually works. |
+| **Space weather** | Planetary K index from NOAA SWPC with a 3-day chart and an **aurora alert** at Kp ≥ 5. |
+| **Weather at the shack** | Open-Meteo forecast with a **thunderstorm warning** (disconnect the antennas!), gust warning and a link to the live Blitzortung lightning map. |
+| **Contest calendar** | The next 8 days of contests from the [WA7BNM Contest Calendar](https://www.contestcalendar.com/), imported daily, with keyword filters. They stay out of your calendar until you tick **I'm taking part**. |
+| **Live contest scoreboard** | While you are in a contest: QSOs, rate per hour, last hour, DXCC, CQ zones, bands and the last 10 QSOs – on the home page, refreshed every minute. |
+
+<p>
+  <img src="docs/screenshots/propagation.png" width="100%" alt="MUF map and best-times heat map">
+</p>
+<p>
+  <img src="docs/screenshots/contest-board.png" width="100%" alt="Live contest scoreboard">
+</p>
+
+### Community & integrations 🆕
+
+| | |
+|---|---|
+| **Notifications** | Automatic messages to a **Discord** channel, a **Telegram** channel or any JSON web hook (Zapier / Make / IFTTT → Facebook, X, e-mail): going on air, new post, new DXCC, spotted on the cluster, aurora, thunderstorm, new sked request. Sent in the background, rate-limited, never pings `@everyone`. |
+| **Club Log** | DX-cluster spots are marked **NEW ONE**, *new band* and with their Club Log **Most Wanted** rank (no account needed). Optionally every new QSO is uploaded to Club Log in real time. |
+| **NEW ONE badges** | The public log marks the first QSO with each DXCC entity and grid square. |
+| **QSL card wall** | Add photos of received paper cards (front and back) to a QSO; they flip on hover on the QSL Wall page and show as thumbnails in the log. |
+| **Book a sked** | A form for arranging a contact (date & time in UTC, band, mode, frequency). Accept it with one click: it goes into your calendar and the other station gets an e-mail with a Google Calendar link and an .ics file. |
+| **Repeater map** | Repeaters around your station on a map and in a table – automatically from ukrepeater.net in the UK, or your own list anywhere else. |
+| **Web SDR** | Embed your KiwiSDR / OpenWebRX or a public WebSDR on the Live page ("Listen here"). |
+| **APRS** | Your last position from aprs.fi on the Live page while you are portable. |
+| **App & speed** | Installable **PWA** (home-screen icon, offline copies of recently visited pages, shortcuts), a **light / dark** switch, WebP uploads, deferred scripts and no emoji script. |
+
+<p>
+  <img src="docs/screenshots/repeaters.png" width="49%" alt="Repeater map">
+  <img src="docs/screenshots/sked.png" width="49%" alt="Sked booking form">
+</p>
+<p>
+  <img src="docs/screenshots/qsl-wall.png" width="49%" alt="QSL card wall">
+  <img src="docs/screenshots/light-mode.png" width="49%" alt="Light mode">
+</p>
+
 ### Learning, community & housekeeping ✨
 
 | | |
@@ -82,9 +125,10 @@ Install it, type in your callsign, and your station website is ready: the logo, 
 
 ## Requirements
 
-- WordPress **6.2+** and PHP **7.4+** (tested on WordPress 7.1)
+- WordPress **6.3+** and PHP **7.4+** (tested on WordPress 7.1); HTTPS for the installable app
 - *Optional* – QRZ.com sync: a QRZ.com subscription that includes Logbook API access
 - *Optional* – Live rig / FT8: Windows 10/11 with Ham Radio Deluxe and/or WSJT-X 2.x
+- *Optional* – a Club Log account (app password + API key) for real-time upload, a free aprs.fi API key for APRS, a Discord web hook or Telegram bot for notifications
 
 ## Installation
 
@@ -94,6 +138,10 @@ Install it, type in your callsign, and your station website is ready: the logo, 
 4. **Ham Shack → Station settings**: radios, antennas, bands, modes, home-page texts, social links, contact e-mail – and your exact latitude/longitude for maps and satellite passes.
 
 > Texts can contain `{callsign}`, `{qth}` and `{locator}`, which are filled in automatically.
+
+### Updating from 2.0
+
+Upload the new zip and choose **Replace current with uploaded**, then open any admin page: the theme adds **Propagation, Contests, Book a sked, Repeaters** and **QSL Wall** to the **Radio** menu and schedules the daily contest import. Set up notifications, Club Log, APRS and the web SDR in **Ham Shack → Integrations**. Rig Link is unchanged.
 
 ### Updating from 1.x
 
@@ -141,6 +189,13 @@ Rig Link is **read-only**, listens on localhost only and is a plain PowerShell s
 | `[hamshack_activations]` | Activations map and list |
 | `[hamshack_gallery album=""]` | Photo gallery |
 | `[hamshack_morse]` · `[hamshack_quiz count="10"]` | Morse trainer and practice quiz |
+| `[hamshack_propagation]` | Complete propagation page (MUF, best times, space weather, weather, N0NBH) |
+| `[hamshack_muf]` · `[hamshack_best_times]` · `[hamshack_space_weather]` · `[hamshack_weather]` | The propagation widgets one by one |
+| `[hamshack_contests]` · `[hamshack_contest]` | Upcoming contests · live scoreboard (shows only during a contest you entered) |
+| `[hamshack_sked]` | Sked booking form |
+| `[hamshack_repeaters]` | Repeater map and table |
+| `[hamshack_qsl_wall]` | Wall of received QSL cards |
+| `[hamshack_sdr]` · `[hamshack_aprs max_age="24"]` | Web SDR player · last APRS position |
 | `[hamshack_subscribe]` | Newsletter sign-up form |
 | `[hamshack_contact]` | Contact form |
 
@@ -151,14 +206,16 @@ Rig Link is **read-only**, listens on localhost only and is a plain PowerShell s
 | `/?hamshack_ics=all` | iCal feed of all events |
 | `/?hamshack_badge=status` · `log` · `logo` · `qsl` | Live SVG images (for QRZ.com) |
 | `/?hamshack_qsl=<id>&call=<CALL>` | A visitor's eQSL card (SVG; only for the matching callsign) |
+| `/?hamshack_pwa=manifest` · `sw` · `offline` | Web app manifest, service worker and offline page |
 | `GET /wp-json/hamshack/v1/rig` · `/live` · `/map` · `/dx` · `/psk` | Public JSON for the live widgets and the map (no private QSO fields) |
 | `POST /wp-json/hamshack/v1/rig` · `/wsjtx` | Rig Link updates (need the `X-HamShack-Token` header) |
 
 ## Privacy & security
 
 - Only callsign, date, time, band, mode, RST, country and position of each QSO are public.
-- The QRZ API key and Rig Link token never appear on public pages or in backups; the token is compared in constant time.
-- All forms use nonces, a honeypot, a minimum fill time and rate limiting. QSL-request addresses are deleted once the card is sent; unsubscribing deletes the e-mail address. Subscriber and QSL-request screens are admin-only.
+- The QRZ API key, Rig Link token, Club Log password and API key, aprs.fi key and web-hook URLs never appear on public pages or in backups (the settings screen shows only their last 4 characters); the token is compared in constant time.
+- Public forms use a signed time stamp (works with page caching), a honeypot, a minimum fill time and rate limiting; logged-in users also get a nonce.
+- The service worker never stores pages viewed while logged in. QSL-request addresses are deleted once the card is sent; unsubscribing deletes the e-mail address. Subscriber and QSL-request screens are admin-only.
 
 ## Data sources & credits
 
@@ -166,6 +223,9 @@ Rig Link is **read-only**, listens on localhost only and is a plain PowerShell s
 - Country file **cty.dat/cty.csv** by Jim Reisert AD1C – [country-files.com](https://www.country-files.com/).
 - DX spots from [HamQTH](https://www.hamqth.com/) / [DX Summit](https://www.dxsummit.fi/); reception reports from [PSK Reporter](https://pskreporter.info/) (Philip Gladstone).
 - Orbital elements from [CelesTrak](https://celestrak.org/) with [AMSAT](https://www.amsat.org/) as fallback; SGP4 by [satellite.js](https://github.com/shashwatak/satellite-js) (MIT).
+- MUF data from [KC2G](https://prop.kc2g.com/) (GIRO and other ionosonde networks); Kp index from [NOAA SWPC](https://www.swpc.noaa.gov/); weather from [Open-Meteo](https://open-meteo.com/); lightning map by [Blitzortung.org](https://www.blitzortung.org/).
+- Contest list from the [WA7BNM Contest Calendar](https://www.contestcalendar.com/) (Bruce Horn, WA7BNM); Most Wanted list and real-time upload by [Club Log](https://clublog.org/) (Michael Wells, G7VJR).
+- UK repeater data from [ukrepeater.net](https://ukrepeater.net/) (ETCC); APRS positions from [aprs.fi](https://aprs.fi/) (Heikki Hannikainen, OH7LZB).
 - Map outlines from [Natural Earth](https://www.naturalearthdata.com/) via world-atlas (public domain).
 - QRZ.com, Ham Radio Deluxe, WSJT-X and other names are trademarks of their owners; this project is not affiliated with them.
 

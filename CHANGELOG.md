@@ -1,5 +1,46 @@
 # Changelog
 
+## 2.1.0 – 2026-10-10
+
+Upgrading from 2.0 is automatic: upload the new theme zip, choose **Replace current with uploaded**,
+then open any admin page. Rig Link is unchanged (2.0).
+
+### Added
+- **Propagation page** (`[hamshack_propagation]`):
+  - live **MUF map** from ionosondes (KC2G / GIRO) with *open / marginal / closed* chips for each HF band,
+  - **best times from my QTH** – continent × UTC-hour heat map from your own log, per band,
+  - **space weather** – NOAA planetary K index, 3-day chart, aurora alert at Kp ≥ 5,
+  - **weather at the shack** – Open-Meteo, thunderstorm and gust warnings, Blitzortung link.
+- **Automatic contest calendar** – daily import of the next 8 days from the WA7BNM Contest Calendar,
+  include/exclude keywords, *I'm taking part* switch (row action and side box); imported contests stay
+  hidden from your calendar until you enter them; old ones are cleaned up and deleted ones never return.
+- **Live contest scoreboard** (`[hamshack_contest]`, also on the home page) – QSOs, rate/h, last hour,
+  DXCC, CQ zones, bands and last 10 QSOs, refreshed every minute.
+- **Notifications** to Discord, Telegram and a generic JSON web hook (Zapier / Make / IFTTT): on air,
+  new post, new DXCC, spotted on the DX cluster, geomagnetic storm, thunderstorm, sked request.
+  Test button, background sending, throttling, no `@everyone` pings.
+- **Club Log** – Most Wanted ranks and *NEW ONE* / *new band* marks on DX-cluster spots, an
+  *Only new for me* filter, and optional real-time upload of new QSOs (paused for 24 h after a login error).
+- **NEW ONE / new grid badges** in the public logbook.
+- **QSL card wall** (`[hamshack_qsl_wall]`) – front/back pictures of received cards on each QSO,
+  flip on hover, lightbox, thumbnails in the log; adding a card marks the QSO as QSL received.
+- **Sked booking** (`[hamshack_sked]`) – public request form, admin list with *Accept* (creates an
+  event, e-mails a Google Calendar link and an .ics file) and *Decline*.
+- **Repeater map** (`[hamshack_repeaters]`) – ukrepeater.net in the UK, your own list anywhere.
+- **Web SDR** (`[hamshack_sdr]`) and **APRS position** (`[hamshack_aprs]`) sections on the Live page.
+- **Installable app (PWA)** – manifest, icons, service worker with offline copies of recently visited
+  pages and an offline page; shortcuts to Live, Logbook and Calendar.
+- **Light / dark switch** in the top bar (remembered per browser; header, footer and maps stay dark).
+- **Speed** – WebP for new uploads, deferred theme scripts, emoji script removed (each can be switched off).
+- **Ham Shack → Integrations** settings screen for all of the above; secrets are masked.
+- Polish translation for all new texts.
+
+### Changed
+- Public forms (contact, OQRS, newsletter, sked) use a signed time stamp instead of a nonce for
+  visitors, so they keep working behind page caches.
+- ADIF export code refactored into `hamshack_adif_record()` (used by the Club Log upload).
+- Date and time inputs are styled like the other fields.
+
 ## 2.0.0 – 2026-10-10
 
 A big feature release. Upgrading from 1.x is automatic: upload the new theme zip, choose

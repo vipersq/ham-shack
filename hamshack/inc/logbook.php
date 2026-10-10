@@ -118,7 +118,9 @@ function hamshack_save_qso( $post_id, array $data ) {
 		update_post_meta( $post_id, '_q_' . $k, $v );
 	}
 	update_post_meta( $post_id, '_q_dt', $clean['date'] . ' ' . $clean['time'] );
+	hamshack_qso_enrich( $post_id, isset( $data['x'] ) && is_array( $data['x'] ) ? $data['x'] : array() );
 	delete_transient( 'hamshack_log_stats' );
+	do_action( 'hamshack_qso_saved', $post_id );
 	return $post_id;
 }
 
@@ -187,6 +189,22 @@ function hamshack_qso_metabox( $post ) {
 		echo '</label></p>';
 	}
 	echo '</div>';
+	if ( ! $is_new && get_post_meta( $post->ID, '_q_geo', true ) ) {
+		$g = function ( $k ) use ( $post ) {
+			return get_post_meta( $post->ID, '_q_' . $k, true );
+		};
+		echo '<p class="hamshack-geo-line">' . esc_html(
+			sprintf(
+				/* translators: 1: DXCC number, 2: continent, 3: CQ zone, 4: ITU zone, 5: distance */
+				__( 'Automatic: DXCC #%1$s · %2$s · CQ %3$s · ITU %4$s · %5$s km', 'hamshack' ),
+				$g( 'dxcc' ),
+				$g( 'cont' ),
+				$g( 'cqz' ),
+				$g( 'ituz' ),
+				number_format_i18n( (int) $g( 'km' ) )
+			)
+		) . '</p>';
+	}
 	echo '<p class="description">' . esc_html__( 'Date and time are UTC. Band is filled in automatically from the frequency. Only callsign, date, time, band, mode, RST and country are shown publicly – name, QTH and notes stay private.', 'hamshack' ) . '</p>';
 }
 
@@ -407,6 +425,7 @@ add_action( 'admin_post_hamshack_adif_import', function () {
 				'qsl_s'   => isset( $r['qsl_sent'] ) ? $r['qsl_sent'] : 'N',
 				'qsl_r'   => isset( $r['qsl_rcvd'] ) ? $r['qsl_rcvd'] : 'N',
 				'comment' => isset( $r['comment'] ) ? $r['comment'] : '',
+				'x'       => hamshack_adif_extras( $r ),
 			)
 		);
 		if ( ! is_wp_error( $res ) ) {
@@ -423,22 +442,7 @@ add_action( 'admin_post_hamshack_adif_export', function () {
 		wp_die( esc_html__( 'Not allowed.', 'hamshack' ) );
 	}
 	check_admin_referer( 'hamshack_adif_export' );
-	$ids = get_posts( array( 'post_type' => 'hamshack_qso', 'posts_per_page' => -1, 'fields' => 'ids', 'meta_key' => '_q_dt', 'orderby' => 'meta_value', 'order' => 'ASC' ) );
-	$f   = function ( $name, $value ) {
-		$value = (string) $value;
-		return '' === $value ? '' : '<' . $name . ':' . strlen( $value ) . '>' . $value . ' ';
-	};
-	$out = 'ADIF export from ' . home_url() . "\n" . $f( 'ADIF_VER', '3.1.4' ) . $f( 'PROGRAMID', 'HamShack-WP' ) . $f( 'CREATED_TIMESTAMP', gmdate( 'Ymd His' ) ) . "<EOH>\n";
-	foreach ( $ids as $id ) {
-		$g    = function ( $k ) use ( $id ) {
-			return get_post_meta( $id, '_q_' . $k, true );
-		};
-		$out .= $f( 'CALL', $g( 'call' ) ) . $f( 'QSO_DATE', str_replace( '-', '', $g( 'date' ) ) ) . $f( 'TIME_ON', str_replace( ':', '', $g( 'time' ) ) )
-			. $f( 'BAND', $g( 'band' ) ) . $f( 'FREQ', $g( 'freq' ) ) . $f( 'MODE', $g( 'mode' ) ) . $f( 'RST_SENT', $g( 'rst_s' ) ) . $f( 'RST_RCVD', $g( 'rst_r' ) )
-			. $f( 'NAME', $g( 'name' ) ) . $f( 'QTH', $g( 'qth' ) ) . $f( 'GRIDSQUARE', $g( 'grid' ) ) . $f( 'COUNTRY', $g( 'country' ) )
-			. $f( 'QSL_SENT', $g( 'qsl_s' ) ) . $f( 'QSL_RCVD', $g( 'qsl_r' ) ) . $f( 'COMMENT', $g( 'comment' ) )
-			. $f( 'STATION_CALLSIGN', hamshack_opt( 'callsign' ) ) . $f( 'MY_GRIDSQUARE', hamshack_opt( 'locator' ) ) . "<EOR>\n";
-	}
+	$out = hamshack_adif_all();
 	nocache_headers();
 	header( 'Content-Type: text/plain; charset=utf-8' );
 	header( 'Content-Disposition: attachment; filename="' . sanitize_file_name( strtolower( hamshack_opt( 'callsign' ) ) . '-log-' . gmdate( 'Ymd' ) ) . '.adi"' );
@@ -509,7 +513,7 @@ add_shortcode( 'hamshack_logbook_stats', 'hamshack_log_stats_html' );
 /**
  * QSO table rows.
  */
-function hamshack_qso_table( $ids, $show_search = false ) {
+function hamshack_qso_table( $ids, $show_search = false, $qsl_call = '' ) {
 	ob_start();
 	?>
 	<div class="table-wrap">
@@ -523,12 +527,15 @@ function hamshack_qso_table( $ids, $show_search = false ) {
 				<th><?php esc_html_e( 'RST s/r', 'hamshack' ); ?></th>
 				<th class="hide-sm"><?php esc_html_e( 'Country', 'hamshack' ); ?></th>
 				<th class="hide-sm"><?php esc_html_e( 'QSL', 'hamshack' ); ?></th>
+				<?php if ( $qsl_call ) : ?><th><?php esc_html_e( 'eQSL', 'hamshack' ); ?></th><?php endif; ?>
 			</tr></thead>
 			<tbody>
 			<?php if ( ! $ids ) : ?>
 				<tr><td colspan="8" class="muted"><?php esc_html_e( 'No QSOs found.', 'hamshack' ); ?></td></tr>
 			<?php endif; ?>
 			<?php
+			$aw     = function_exists( 'hamshack_awards_data' ) ? hamshack_awards_data() : array();
+			$firsts = isset( $aw['firsts'] ) ? $aw['firsts'] : array();
 			foreach ( $ids as $id ) :
 				$g    = function ( $k ) use ( $id ) {
 					return get_post_meta( $id, '_q_' . $k, true );
@@ -538,12 +545,25 @@ function hamshack_qso_table( $ids, $show_search = false ) {
 				<tr>
 					<td class="mono"><?php echo esc_html( $g( 'date' ) ); ?></td>
 					<td class="mono"><?php echo esc_html( $g( 'time' ) ); ?></td>
-					<td class="mono call"><a href="<?php echo esc_url( 'https://www.qrz.com/db/' . rawurlencode( $call ) ); ?>" target="_blank" rel="noopener nofollow"><?php echo esc_html( $call ); ?></a></td>
+					<td class="mono call"><a href="<?php echo esc_url( 'https://www.qrz.com/db/' . rawurlencode( $call ) ); ?>" target="_blank" rel="noopener nofollow"><?php echo esc_html( $call ); ?></a><?php
+					if ( isset( $firsts[ $id ] ) ) {
+						echo 'dxcc' === $firsts[ $id ] ? ' <span class="tag tag-new" title="' . esc_attr__( 'First QSO with this DXCC entity', 'hamshack' ) . '">' . esc_html__( 'NEW ONE', 'hamshack' ) . '</span>' : ' <span class="tag tag-grid" title="' . esc_attr__( 'First QSO in this grid square', 'hamshack' ) . '">' . esc_html__( 'new grid', 'hamshack' ) . '</span>';
+					}
+					?></td>
 					<td><span class="tag"><?php echo esc_html( $g( 'band' ) ); ?></span></td>
 					<td><?php echo esc_html( $g( 'mode' ) ); ?></td>
 					<td class="mono"><?php echo esc_html( $g( 'rst_s' ) . ' / ' . $g( 'rst_r' ) ); ?></td>
 					<td class="hide-sm"><?php echo esc_html( $g( 'country' ) ); ?></td>
-					<td class="hide-sm"><?php echo 'Y' === $g( 'qsl_r' ) ? '<span class="ok" title="' . esc_attr__( 'QSL received', 'hamshack' ) . '">✔</span>' : ( 'Y' === $g( 'qsl_s' ) ? '<span class="muted" title="' . esc_attr__( 'QSL sent', 'hamshack' ) . '">↗</span>' : '' ); // phpcs:ignore ?></td>
+					<td class="hide-sm"><?php echo 'Y' === $g( 'qsl_r' ) ? '<span class="ok" title="' . esc_attr__( 'QSL received', 'hamshack' ) . '">✔</span>' : ( 'Y' === $g( 'qsl_s' ) ? '<span class="muted" title="' . esc_attr__( 'QSL sent', 'hamshack' ) . '">↗</span>' : '' ); echo hamshack_qsl_thumb_link( $id ); // phpcs:ignore ?></td>
+					<?php if ( $qsl_call ) : ?>
+						<td class="eqsl-cell">
+						<?php if ( $call === $qsl_call ) : ?>
+							<?php $u = hamshack_qsl_url( $id, $call ); ?>
+							<button type="button" class="btn btn-sm btn-primary" data-qsl-png="<?php echo esc_url( $u ); ?>" data-name="<?php echo esc_attr( sanitize_file_name( strtolower( hamshack_opt( 'callsign' ) . '-qsl-' . $call . '-' . $g( 'date' ) ) ) ); ?>"><?php hamshack_the_icon( 'download', 15 ); ?> PNG</button>
+							<a class="btn btn-sm" href="<?php echo esc_url( $u ); ?>" target="_blank" rel="noopener"><?php esc_html_e( 'View', 'hamshack' ); ?></a>
+						<?php endif; ?>
+						</td>
+					<?php endif; ?>
 				</tr>
 			<?php endforeach; ?>
 			</tbody>
@@ -622,7 +642,17 @@ add_shortcode( 'hamshack_logbook', function ( $atts ) {
 		</p>
 	<?php endif; ?>
 	<?php
-	echo hamshack_qso_table( $q->posts ); // phpcs:ignore
+	$exact = array();
+	if ( $call && $q->found_posts ) {
+		$exact = get_posts( array( 'post_type' => 'hamshack_qso', 'posts_per_page' => 30, 'fields' => 'ids', 'no_found_rows' => true, 'meta_key' => '_q_dt', 'orderby' => 'meta_value', 'order' => 'DESC', 'meta_query' => array( array( 'key' => '_q_call', 'value' => $call ) ) ) ); // phpcs:ignore
+	}
+	if ( $exact ) {
+		echo '<p class="eqsl-hint">' . hamshack_icon( 'card', 18 ) . ' ' . esc_html__( 'Download your personal eQSL card for each QSO below – or request a paper card.', 'hamshack' ) . '</p>'; // phpcs:ignore
+	}
+	echo hamshack_qso_table( $q->posts, false, $exact ? $call : '' ); // phpcs:ignore
+	if ( $exact ) {
+		echo hamshack_oqrs_form( $call, $exact ); // phpcs:ignore
+	}
 	if ( $q->max_num_pages > 1 ) {
 		echo '<nav class="pagination">' . paginate_links( // phpcs:ignore
 			array(
